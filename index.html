@@ -9,6 +9,7 @@
 <meta property="og:title" content="晨均渼山｜住進見證未來的位置上">
 <meta property="og:description" content="小港大坪頂一梯兩戶，3.3 米室內樓高，988 萬起，限量 3 戶・簽約送車位。線上預約賞屋。">
 <meta property="og:image" content="https://lh3.googleusercontent.com/d/1jY3hKPoVj7n1LaSHo9msyibVACIVNuds=w1200">
+<meta property="og:url" content="https://lialiatu.github.io/the-passionhouse/">
 <meta property="og:locale" content="zh_TW">
 <base target="_top">
 <title>晨均渼山｜小港大坪頂 一梯兩戶綠景住宅</title>
@@ -98,6 +99,10 @@ section.alt .card{background:var(--bg)}
 .works b,.works span{font-size:.9rem;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg)}
 .works b{background:var(--forest);color:var(--forest-ink);border-color:var(--forest)}
 sup{font-size:.62em;line-height:0;vertical-align:super}
+.to-quiz{display:flex;flex-direction:column;gap:2px;align-items:center;text-align:center;margin-top:18px;padding:16px;border:1.5px dashed var(--forest);border-radius:var(--r);text-decoration:none;color:var(--forest);background:var(--forest-soft)}
+.to-quiz b{font-family:var(--serif);font-size:1.1rem}
+.to-quiz span{font-size:.92rem}
+.gift{display:inline-block;margin-top:6px;padding:6px 14px;border-radius:999px;background:var(--brass-soft);color:var(--brass);font-weight:700;width:fit-content}
 .tag.brass{background:var(--brass-soft);color:var(--brass)}
 
 /* 主視覺 */
@@ -270,8 +275,8 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
   <div class="bar">
     <a class="brand" href="#top">晨均渼山</a>
     <nav class="links" aria-label="頁面導覽">
-      <a href="#about">建案介紹</a><a href="#units">戶型</a><a href="#life">生活機能</a><a href="#quiz">找到你的家</a>
-      <a href="#brand">晨均建設</a><a href="#why">為什麼是渼山</a><a href="#gain">你可以獲得</a><a href="#dream">購屋流程</a><a href="#compare">比較</a>
+      <a href="#why">為什麼是渼山</a><a href="#units">戶型</a><a href="#quiz">找到你的家</a><a href="#life">生活機能</a>
+      <a href="#about">建案介紹</a><a href="#brand">晨均建設</a><a href="#gain">你可以獲得</a><a href="#compare">比較</a><a href="#dream">購屋流程</a>
     </nav>
     <a class="btn primary small" href="#book">預約賞屋</a>
   </div>
@@ -297,6 +302,62 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
     </div>
   </section>
 
+  <!-- 為什麼選晨均渼山 -->
+  <section class="sec" id="why">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">為什麼選擇晨均渼山</span>
+        <h2>只有渼山有的五個理由</h2>
+      </div>
+      <div class="grid g3">
+        <div class="card"><span class="tag brass">Only One</span><h3>永久綠意</h3><p class="small muted">基地面向綠林，窗外就是長久的綠景。</p></div>
+        <div class="card"><span class="tag brass">Only One</span><h3>3.3 米室內樓高</h3><p class="small muted">標準層 3.3 米，空間開闊、採光充足。</p></div>
+        <div class="card"><span class="tag brass">Only One</span><h3>高坪效</h3><p class="small muted">實際可使用面積約 26 坪；同為 38 坪，室內多出 3.69 坪。</p></div>
+        <div class="card"><span class="tag brass">Only One</span><h3>iF 得獎建築師</h3><p class="small muted">工二建築，德國 iF 設計獎得獎團隊操刀。</p></div>
+        <div class="card"><span class="tag brass">Only One</span><h3>16 戶社區型華廈</h3><p class="small muted">一梯兩戶，優質鄰里關係，單純好管理。</p></div>
+        <div class="card"><span class="tag">Number One</span><h3>建築規劃・貼心設計・全齡住宅</h3><p class="small muted">人車分流、無障礙電梯、戶戶雙面採光，從兩人世界到三代同堂都住得舒服。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 戶型 -->
+  <section class="sec alt" id="units">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">四種戶型</span>
+        <h2>每一種生活，都有一個名字。哪一個是你？</h2>
+        <p class="lead">2F–4F 標準戶權狀 37–38 坪，全戶開放格局，依家庭需求量身規劃。</p>
+      </div>
+      <div class="grid g4" id="unitCards"></div>
+      <a class="to-quiz" href="#quiz"><b>四種都喜歡、不知道選哪個？</b><span>3 分鐘，免費幫你配對最適合的戶型 ↓</span></a>
+    </div>
+  </section>
+
+  <!-- 互動推薦 -->
+  <section class="sec" id="quiz">
+    <div class="wrap">
+      <div class="head" style="margin-inline:auto;text-align:center;align-items:center">
+        <span class="eyebrow">找到你的家</span>
+        <h2>回答幾個問題，看看哪一戶最適合你</h2>
+        <p class="lead">免費、約 3 分鐘。回答 8 題，送你最適合的戶型、月付試算與車位建議，還能直接預約參觀。</p>
+      </div>
+      <div class="quiz" id="quizBox" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- 生活機能 -->
+  <section class="sec alt" id="life">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">生活機能</span>
+        <h2>5 分鐘車程生活圈，10 分鐘到機場與捷運</h2>
+        <p class="lead">基地位於大坪頂特定區東側，第二進安靜基地；超商步行可達，學校、超市、醫院開車約 5–8 分鐘。</p>
+      </div>
+      <div class="grid g3" id="lifeCards"></div>
+      <p class="small muted" style="margin-top:12px">開車時間為路線規劃估算，未計塞車與紅綠燈；資料整理日期 2026/10/18。標示「示意」的照片為同品牌其他分店，非該分店實景。</p>
+    </div>
+  </section>
+
   <!-- 建案介紹 -->
   <section class="sec" id="about">
     <div class="wrap">
@@ -313,52 +374,15 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
         <div class="card"><span class="k">案場狀態</span><span class="v">成屋可看</span><p class="small muted">已取得使用執照，實品屋現場直接看屋。</p></div>
       </div>
       <div class="grid g3" style="margin-top:16px">
-        <div class="card"><h3>建築與結構</h3><ul class="small"><li>工二建築（德國 iF 設計獎得獎團隊）</li><li>15cm RC 樓版，混凝土與鋼筋皆送 TAF 認證實驗室檢驗</li><li>泥礦漆外牆：抗菌自潔、零甲醛，可降室內溫度 4–6 度</li></ul></div>
+        <div class="card"><h3>建築與結構</h3><ul class="small"><li>工二建築（德國 iF 設計獎得獎團隊）</li><li>15cm RC 樓版，混凝土與鋼筋皆送 TAF（全國認證基金會）認證的實驗室檢驗，結果有公信力</li><li>泥礦漆外牆：抗菌自潔、零甲醛，可降室內溫度 4–6 度</li></ul></div>
         <div class="card"><h3>安靜與安心</h3><ul class="small"><li>勝群鋁門窗：抗風壓 3600Pa、水密 1000Pa、氣密第一級</li><li>晨均建設的「隔音三明治工法」：法國聖戈班隔音墊（可隔絕 21 分貝）＋ SPC 地板（可隔絕 17 分貝）雙層夾合<small style="display:block;font-size:.85em;opacity:.8;margin-top:.3em">※ 隔音數值為材料規格，實際效果依現場條件而異</small></li><li>中保無限<sup>＋</sup> 數位化物業管理、24 小時監控</li></ul></div>
         <div class="card"><h3>好用的日常</h3><ul class="small"><li>大尺度廚房 2.5–3.3 米，SVAGO 洗碗機與感應爐</li><li>BWT 生飲淨水系統，打開水龍頭就能喝</li><li>全戶開放、上配管規劃，可規劃雙主臥、雙主浴</li><li>中保無限<sup>＋</sup> 智能宅配櫃：24 小時都能收件，包裹安心送達</li><li>社區資源處理區：垃圾、回收自己安排時間，不用再追垃圾車</li></ul></div>
       </div>
     </div>
   </section>
 
-  <!-- 戶型 -->
-  <section class="sec alt" id="units">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">四種戶型</span>
-        <h2>每一種生活，都有一個名字</h2>
-        <p class="lead">2F–4F 標準戶權狀 37–38 坪，全戶開放格局，依家庭需求量身規劃。</p>
-      </div>
-      <div class="grid g4" id="unitCards"></div>
-    </div>
-  </section>
-
-  <!-- 生活機能 -->
-  <section class="sec" id="life">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">生活機能</span>
-        <h2>5 分鐘車程生活圈，10 分鐘到機場與捷運</h2>
-        <p class="lead">基地位於大坪頂特定區東側，第二進安靜基地；超商步行可達，學校、超市、醫院開車約 5–8 分鐘。</p>
-      </div>
-      <div class="grid g3" id="lifeCards"></div>
-      <p class="small muted" style="margin-top:12px">開車時間為路線規劃估算，未計塞車與紅綠燈；資料整理日期 2026/10/18。標示「示意」的照片為同品牌其他分店，非該分店實景。</p>
-    </div>
-  </section>
-
-  <!-- 互動推薦 -->
-  <section class="sec alt" id="quiz">
-    <div class="wrap">
-      <div class="head" style="margin-inline:auto;text-align:center;align-items:center">
-        <span class="eyebrow">找到你的家</span>
-        <h2>回答幾個問題，看看哪一戶最適合你</h2>
-        <p class="lead">約 3 分鐘。完成後會推薦戶型、試算月付，還能直接預約參觀。</p>
-      </div>
-      <div class="quiz" id="quizBox" aria-live="polite"></div>
-    </div>
-  </section>
-
   <!-- 為什麼選晨均建設（內容整理自晨均建設官網 chez-cca.com） -->
-  <section class="sec" id="brand">
+  <section class="sec alt" id="brand">
     <div class="wrap">
       <div class="head">
         <span class="eyebrow">為什麼選擇晨均建設</span>
@@ -383,31 +407,13 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
     </div>
   </section>
 
-  <!-- 為什麼選晨均渼山 -->
-  <section class="sec alt" id="why">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">為什麼選擇晨均渼山</span>
-        <h2>只有渼山有的五個理由</h2>
-      </div>
-      <div class="grid g3">
-        <div class="card"><span class="tag brass">Only One</span><h3>永久綠意</h3><p class="small muted">基地面向綠林，窗外就是長久的綠景。</p></div>
-        <div class="card"><span class="tag brass">Only One</span><h3>3.3 米室內樓高</h3><p class="small muted">標準層 3.3 米，空間開闊、採光充足。</p></div>
-        <div class="card"><span class="tag brass">Only One</span><h3>高坪效</h3><p class="small muted">實際可使用面積約 26 坪；同為 38 坪，室內多出 3.69 坪。</p></div>
-        <div class="card"><span class="tag brass">Only One</span><h3>iF 得獎建築師</h3><p class="small muted">工二建築，德國 iF 設計獎得獎團隊操刀。</p></div>
-        <div class="card"><span class="tag brass">Only One</span><h3>16 戶社區型華廈</h3><p class="small muted">一梯兩戶，優質鄰里關係，單純好管理。</p></div>
-        <div class="card"><span class="tag">Number One</span><h3>建築規劃・貼心設計・全齡住宅</h3><p class="small muted">人車分流、無障礙電梯、戶戶雙面採光，從兩人世界到三代同堂都住得舒服。</p></div>
-      </div>
-    </div>
-  </section>
-
   <!-- 你可以獲得什麼 -->
   <section class="sec" id="gain">
     <div class="wrap">
       <div class="head">
         <span class="eyebrow">你可以獲得什麼</span>
         <h2>負擔得起的好品質</h2>
-        <p class="lead">渼山過去的實價登錄與大坪頂行情相當；現在的優惠價比登錄價更划算。</p>
+        <p class="lead">渼山過去的實價登錄與大坪頂行情相當；現在的優惠價比登錄價更划算。限量 3 戶・簽約送車位，送完為止。</p>
       </div>
       <div class="grid g2">
         <div class="card">
@@ -449,48 +455,12 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
     </div>
   </section>
 
-  <!-- 為什麼是你 -->
-  <section class="sec alt" id="you">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">為什麼是你</span>
-        <h2>給懂得選擇的你</h2>
-        <p class="lead">對設計有感、清楚知道自己要什麼，想把努力工作的日子，換成每天都舒服的家。</p>
-      </div>
-      <div class="grid g3 story">
-        <div class="card"><span class="tag">準備成家</span><blockquote>「想要一個不用和人擠的家。現在兩個人住，以後有小孩再隔一間。」</blockquote><p class="small muted">一梯兩戶進出安靜，全戶開放格局能跟著家庭長大。</p><span class="who">情境示意</span></div>
-        <div class="card"><span class="tag">雙薪家庭</span><blockquote>「上班近一點，孩子各有一間房，空氣好一點。」</blockquote><p class="small muted">同樣 38 坪，室內多 3.69 坪；豐饒之家、日光之間都能規劃三房。</p><span class="who">情境示意</span></div>
-        <div class="card"><span class="tag">生活品味</span><blockquote>「回家只想好好放鬆，看得到綠、空間不壓迫。」</blockquote><p class="small muted">3.3 米樓高、雙面採光、窗外永久綠意。</p><span class="who">情境示意</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 我們如何幫你圓夢 -->
-  <section class="sec" id="dream">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">我們如何幫你圓夢</span>
-        <h2>從看屋到交屋，一路陪你</h2>
-      </div>
-      <div class="steps">
-        <div class="card"><h3>線上探索</h3><p class="small muted">回答問題，找到適合你的戶型與月付試算。</p></div>
-        <div class="card"><h3>預約賞屋</h3><p class="small muted">選好時段，專人與你確認。</p></div>
-        <div class="card"><h3>現場體驗</h3><p class="small muted">專人一對一建築走讀導覽，一起泡杯茶，好好聊生活。</p></div>
-        <div class="card"><h3>專屬報價</h3><p class="small muted">現場試算總價、付款拆款與房貸月付，每月要付多少一清二楚。</p></div>
-        <div class="card"><h3>下訂與簽約</h3><p class="small muted">訂金 2%、簽約 8%，保留你心儀的那一戶。</p></div>
-        <div class="card"><h3>貸款與備證</h3><p class="small muted">協助對接銀行與新青安申辦。</p></div>
-        <div class="card"><h3>驗屋</h3><p class="small muted">陪你逐項確認每個細節。</p></div>
-        <div class="card"><h3>交屋入住</h3><p class="small muted">點交鑰匙，成為渼山的一份子。</p></div>
-      </div>
-    </div>
-  </section>
-
   <!-- 競品比較 -->
   <section class="sec alt" id="compare">
     <div class="wrap">
       <div class="head">
         <span class="eyebrow">比較</span>
-        <h2>和小港熱門新案，一起比比看</h2>
+        <h2>同樣預算，渼山多給你什麼？</h2>
         <p class="lead">資料來源為實價登錄與公開平台，查詢日期 2026/10/19；實際以各建案公告為準。</p>
       </div>
       <div class="table-wrap">
@@ -513,6 +483,43 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
     </div>
   </section>
 
+  <!-- 為什麼是你 -->
+  <section class="sec" id="you">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">為什麼是你</span>
+        <h2>也許，這就是你</h2>
+        <p class="lead">對設計有感、清楚知道自己要什麼，想把努力工作的日子，換成每天都舒服的家。</p>
+      </div>
+      <div class="grid g3 story">
+        <div class="card"><span class="tag">準備成家</span><blockquote>「想要一個不用和人擠的家。現在兩個人住，以後有小孩再隔一間。」</blockquote><p class="small muted">一梯兩戶進出安靜，全戶開放格局能跟著家庭長大。</p><span class="who">情境示意</span></div>
+        <div class="card"><span class="tag">雙薪家庭</span><blockquote>「上班近一點，孩子各有一間房，空氣好一點。」</blockquote><p class="small muted">同樣 38 坪，室內多 3.69 坪；豐饒之家、日光之間都能規劃三房。</p><span class="who">情境示意</span></div>
+        <div class="card"><span class="tag">生活品味</span><blockquote>「回家只想好好放鬆，看得到綠、空間不壓迫。」</blockquote><p class="small muted">3.3 米樓高、雙面採光、窗外永久綠意。</p><span class="who">情境示意</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 我們如何幫你圓夢 -->
+  <section class="sec alt" id="dream">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">我們如何幫你圓夢</span>
+        <h2>從看屋到交屋，一路陪你</h2>
+        <p class="lead">第一步很簡單：預約一次賞屋，專人一對一陪你看。</p>
+      </div>
+      <div class="steps">
+        <div class="card"><h3>線上探索</h3><p class="small muted">回答問題，找到適合你的戶型與月付試算。</p></div>
+        <div class="card"><h3>預約賞屋</h3><p class="small muted">選好時段，專人與你確認。</p></div>
+        <div class="card"><h3>現場體驗</h3><p class="small muted">專人一對一建築走讀導覽，一起泡杯茶，好好聊生活。</p></div>
+        <div class="card"><h3>專屬報價</h3><p class="small muted">現場試算總價、付款拆款與房貸月付，每月要付多少一清二楚。</p></div>
+        <div class="card"><h3>下訂與簽約</h3><p class="small muted">訂金 2%、簽約 8%，保留你心儀的那一戶。</p></div>
+        <div class="card"><h3>貸款與備證</h3><p class="small muted">協助對接銀行與新青安申辦。</p></div>
+        <div class="card"><h3>驗屋</h3><p class="small muted">陪你逐項確認每個細節。</p></div>
+        <div class="card"><h3>交屋入住</h3><p class="small muted">點交鑰匙，成為渼山的一份子。</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- 預約 -->
   <section class="sec" id="book">
     <div class="wrap book">
@@ -520,6 +527,7 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
         <span class="eyebrow">預約賞屋</span>
         <h2>來渼山，喝杯茶，好好聊生活</h2>
         <p class="lead">選一個你方便的時段，我們會在 1 個工作天內與你聯繫確認。</p>
+        <p class="gift">🎁 完成賞屋，送你一份伴手禮</p>
         <div class="card" style="margin-top:8px" id="contactCard">
           <p><b>接待中心</b>　<span id="ctAddr"></span></p>
           <p id="ctPhoneP" hidden>電話　<a id="ctPhone"></a></p>
@@ -565,6 +573,7 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
       </form>
     </div>
   </section>
+
 </main>
 
 <footer>
@@ -851,6 +860,12 @@ const Q = [
   { id: 'when', title: '什麼時候想入住？', type: 'one', opts: ['馬上', '半年內', '一年內', '還在看'] },
 ];
 const A = {}; let step = 0, lastResult = null;
+// 問卷追蹤：每次開頁各記一次「開始」「完成」到試算表「問卷紀錄」
+const qTrack = { start: false, done: false };
+function trackQuiz(kind) {
+  if (qTrack[kind]) return; qTrack[kind] = true;
+  if (window.google && google.script && google.script.run) google.script.run.withFailureHandler(() => {}).logQuiz(kind, SRC);
+}
 
 function visibleQ() { return Q.filter(q => !(q.skipIf && q.skipIf(A))); }
 function renderQuiz() {
@@ -868,6 +883,7 @@ function renderQuiz() {
     '<button type="button" class="btn primary small" id="qNext"' + (canNext ? '' : ' disabled') + '>' + (step === qs.length - 1 ? '看推薦結果' : '下一題') + '</button></div>';
   box.innerHTML = h;
   box.querySelectorAll('.opt').forEach(b => b.addEventListener('click', () => {
+    trackQuiz('start');
     const v = b.dataset.v;
     if (q.type === 'many') { const arr = (A[q.id] || []).slice(), i = arr.indexOf(v);
       if (i >= 0) arr.splice(i, 1); else if (arr.length < q.max) arr.push(v); A[q.id] = arr; renderQuiz(); }
@@ -932,6 +948,7 @@ function renderResult() {
   const loan = C.price ? loanCalc(C.price, 'qa', 30) : null;
   const park = parkAdvice();
   lastResult = { code: u.code, name: u.name, alts: alts.map(a => a.u.code + ' ' + a.u.name) };
+  trackQuiz('done');
   box.innerHTML = '<div class="result">' +
     '<div class="best"><span class="tag">最推薦你</span><h3>' + esc(u.name) + '｜' + u.code + '</h3>' +
     '<p class="muted">權狀 ' + u.size + ' 坪・室內 ' + u.inner + ' 坪・' + esc(u.light || '雙面採光') + (u.rooms ? '・' + esc(u.rooms) : '') + '</p>' +
@@ -1013,7 +1030,7 @@ renderQuiz();
 </script>
 <script>
 /* GitHub Pages 版：網頁放在一般網站空間，資料與預約透過 Apps Script API（臉書、LINE 內建瀏覽器也能開）
-   API 網址＝Apps Script 部署網址；改版只要更新 Apps Script，不用重傳這個檔案。 */
+   由 產生GitHub版.py 自動產生，請勿直接修改；改版請改 Apps Script 的 Index.html 後重新產生。 */
 const API = 'https://script.google.com/macros/s/AKfycbypHgraua4d7UmsFQJSLcsC93ZcVRIhyTh0Fget8Ay1xVohVuhCb_AYLB_BpjTPS7LVrw/exec';
 // google.script.run 相容層：網頁原本的程式不用改
 (function () {
@@ -1028,7 +1045,8 @@ const API = 'https://script.google.com/macros/s/AKfycbypHgraua4d7UmsFQJSLcsC93Zc
       withSuccessHandler: f => runner(f, fail),
       withFailureHandler: f => runner(ok, f),
       submitBooking: data => call({ action: 'book', data: data }, ok, fail),
-      logVisit: src => call({ action: 'visit', src: src }, ok, fail)
+      logVisit: src => call({ action: 'visit', src: src }, ok, fail),
+      logQuiz: (kind, src) => call({ action: 'quiz', kind: kind, src: src }, ok, fail)
     };
   }
   window.google = { script: { get run() { return runner(); } } };
