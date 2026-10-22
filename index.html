@@ -245,6 +245,11 @@ table.cmp tbody th{white-space:nowrap;color:var(--muted);font-weight:500}
 .story .sph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .story .sph span{position:absolute;right:8px;bottom:8px;font-size:.72rem;color:#fff;background:rgba(0,0,0,.4);padding:2px 8px;border-radius:999px}
 .blogo{height:30px;width:auto;max-width:100%;object-fit:contain;object-position:left center;margin:2px 0 4px}
+.blogos{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.blogos .blogo{margin:2px 0}
+.ifmark{display:inline-flex;align-items:center;gap:8px;padding-left:16px;border-left:1px solid var(--line);font-size:.72rem;line-height:1.25;color:var(--muted)}
+.ifmark svg{width:30px;height:30px;flex:none}
+.ifmark b{display:block;color:var(--ink);font-size:.74rem;letter-spacing:.04em}
 
 /* 預約 */
 .book{display:grid;gap:24px;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
@@ -401,7 +406,7 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
       </div>
       <div class="grid g2">
         <div class="card"><span class="tag">團隊</span><img class="blogo" src="https://lh3.googleusercontent.com/d/11FtkVtdfd8xQ95qauJeoV6jeQO2xMvpI=w600" alt="弘力建設股份有限公司" loading="lazy"><h3>弘力建設關係品牌</h3><p class="small muted">工務、業務、企劃、財務多年共事的默契，把豐厚的實務經驗投入每一個作品。</p></div>
-        <div class="card"><span class="tag">建築</span><img class="blogo" src="https://lh3.googleusercontent.com/d/1uOcE8gUKTzbIaTb8ahIj5uGU4SqFUB6N=w600" alt="工二建築 HII ARCHITECTS" loading="lazy"><h3>工二建築事務所</h3><p class="small muted">德國 iF 設計獎得獎團隊，與晨均合作建築外觀、室內空間美學與植栽景觀，讓自然走進家裡。</p></div>
+        <div class="card"><span class="tag">建築</span><div class="blogos"><img class="blogo" src="https://lh3.googleusercontent.com/d/1uOcE8gUKTzbIaTb8ahIj5uGU4SqFUB6N=w600" alt="工二建築 HII ARCHITECTS" loading="lazy"><span class="ifmark"><svg viewBox="0 0 59 59" aria-hidden="true"><path fill="#ED1D26" d="M1 58h57V1H1z"/><path fill="#FFF" d="M37.8 33.97h9.12v-9.12H37.8v9.12zM25.64 46.13h9.12V12.69h-9.12v33.44zM37.8 21.8h9.12v-9.12H37.8v9.12zm-19.76-9.73a5.17 5.17 0 1 0 0 10.34 5.17 5.17 0 0 0 0-10.34zM13.5 46.13h9.12V24.84H13.5v21.27z"/></svg><span><b>iF DESIGN AWARD</b>得獎建築團隊</span></span></div><h3>工二建築事務所</h3><p class="small muted">德國 iF 設計獎得獎團隊，與晨均合作建築外觀、室內空間美學與植栽景觀，讓自然走進家裡。</p></div>
       </div>
       <div class="grid g4" style="margin-top:16px">
         <div class="card"><span class="k">晨均實諾</span><span class="v">保固 15 年</span><p class="small muted">結構體保固 15 年，貼心售後服務。</p></div>
