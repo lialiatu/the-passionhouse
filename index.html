@@ -82,7 +82,10 @@ section.sec.alt{background:var(--surface)}
 @media (max-width:760px){section.sec{margin:0 10px 14px;border-radius:18px;padding-block:52px}}
 .head{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;max-width:720px}
 .eyebrow{font-size:.8rem;letter-spacing:.16em;color:var(--brass);font-weight:700}
-.lead{color:var(--muted)}
+.lead{color:var(--muted);max-width:48em;text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
+br.pc{display:none}
+@media(min-width:900px){br.pc{display:inline}}
 .grid{display:grid;gap:16px}
 .g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
 .g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
@@ -364,7 +367,7 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
       <div class="head">
         <span class="eyebrow">建案介紹</span>
         <h2>一個「最舒服生活的家」</h2>
-        <p class="lead">晨均渼山位於小港大坪頂特定區，地上 5 層、16 戶的社區型華廈。每部電梯只服務兩戶，進出安靜、鄰里單純；戶戶面向綠色坡地，每天回家都看得到綠。</p>
+        <p class="lead">晨均渼山位於小港大坪頂特定區，地上 5 層、16 戶的社區型華廈。<br class="pc">每部電梯只服務兩戶，進出安靜、鄰里單純；戶戶面向綠色坡地，每天回家都看得到綠。</p>
       </div>
       <div class="card life-card fac-card" id="facCard" hidden></div>
       <div class="grid g4">
@@ -387,7 +390,7 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
       <div class="head">
         <span class="eyebrow">為什麼選擇晨均建設</span>
         <h2>均好世代，TO BE WITH YOU</h2>
-        <p class="lead">均好，是居住的每個面向都均衡到位：空間、採光、動線、設備、環境與長期生活感，一起照顧好。晨均把營建品質放在第一位，精緻規模、堅穩切實，守護每一份信賴。</p>
+        <p class="lead">均好，是居住的每個面向都均衡到位：空間、採光、動線、設備、環境與長期生活感，一起照顧好。<br class="pc">晨均把營建品質放在第一位，精緻規模、堅穩切實，守護每一份信賴。</p>
       </div>
       <div class="grid g4">
         <div class="card"><span class="k">晨均實諾</span><span class="v">保固 15 年</span><p class="small muted">結構體保固 15 年，貼心售後服務。</p></div>
@@ -413,7 +416,7 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
       <div class="head">
         <span class="eyebrow">你可以獲得什麼</span>
         <h2>負擔得起的好品質</h2>
-        <p class="lead">渼山過去的實價登錄與大坪頂行情相當；現在的優惠價比登錄價更划算。限量 3 戶・簽約送車位，送完為止。</p>
+        <p class="lead">渼山過去的實價登錄與大坪頂行情相當；現在的優惠價比登錄價更划算。<br class="pc">限量 3 戶・簽約送車位。</p>
       </div>
       <div class="grid g2">
         <div class="card">
