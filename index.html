@@ -238,6 +238,13 @@ table.cmp tbody th{white-space:nowrap;color:var(--muted);font-weight:500}
 /* 故事 */
 .story blockquote{margin:0;font-family:var(--serif);font-size:1.05rem}
 .story .who{font-size:.86rem;color:var(--muted)}
+.story .card{padding:0;overflow:hidden}
+.story .card>*:not(.sph){margin-left:20px;margin-right:20px}
+.story .card>.who{margin-bottom:20px}
+.story .sph{position:relative;height:0;padding-top:72%;background:var(--line);margin-bottom:6px;overflow:hidden}
+.story .sph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.story .sph span{position:absolute;right:8px;bottom:8px;font-size:.72rem;color:#fff;background:rgba(0,0,0,.4);padding:2px 8px;border-radius:999px}
+.blogo{height:30px;width:auto;max-width:100%;object-fit:contain;object-position:left center;margin:2px 0 4px}
 
 /* 預約 */
 .book{display:grid;gap:24px;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
@@ -392,15 +399,15 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
         <h2>均好世代，TO BE WITH YOU</h2>
         <p class="lead">均好，是居住的每個面向都均衡到位：空間、採光、動線、設備、環境與長期生活感，一起照顧好。<br class="pc">晨均把營建品質放在第一位，精緻規模、堅穩切實，守護每一份信賴。</p>
       </div>
-      <div class="grid g4">
+      <div class="grid g2">
+        <div class="card"><span class="tag">團隊</span><img class="blogo" src="https://lh3.googleusercontent.com/d/11FtkVtdfd8xQ95qauJeoV6jeQO2xMvpI=w600" alt="弘力建設股份有限公司" loading="lazy"><h3>弘力建設關係品牌</h3><p class="small muted">工務、業務、企劃、財務多年共事的默契，把豐厚的實務經驗投入每一個作品。</p></div>
+        <div class="card"><span class="tag">建築</span><h3>工二建築事務所</h3><p class="small muted">德國 iF 設計獎得獎團隊，與晨均合作建築外觀、室內空間美學與植栽景觀，讓自然走進家裡。</p></div>
+      </div>
+      <div class="grid g4" style="margin-top:16px">
         <div class="card"><span class="k">晨均實諾</span><span class="v">保固 15 年</span><p class="small muted">結構體保固 15 年，貼心售後服務。</p></div>
         <div class="card"><span class="k">晨均實諾</span><span class="v">按圖施工</span><p class="small muted">保證按圖施工、維持工程品管，良心築造，說到做到。</p></div>
         <div class="card"><span class="k">晨均實諾</span><span class="v">自主審查</span><p class="small muted">強化工地管理，交屋前嚴格自主審查。</p></div>
         <div class="card"><span class="k">晨均實諾</span><span class="v">人本售服</span><p class="small muted">交屋後持續陪伴，和住戶一同成長。</p></div>
-      </div>
-      <div class="grid g2" style="margin-top:16px">
-        <div class="card"><span class="tag">團隊</span><h3>弘力建設關係品牌</h3><p class="small muted">工務、業務、企劃、財務多年共事的默契，把豐厚的實務經驗投入每一個作品。</p></div>
-        <div class="card"><span class="tag">建築</span><h3>工二建築事務所</h3><p class="small muted">德國 iF 設計獎得獎團隊，與晨均合作建築外觀、室內空間美學與植栽景觀，讓自然走進家裡。</p></div>
       </div>
       <div class="card works-card" style="margin-top:16px">
         <span class="k">歷年作品</span>
@@ -495,9 +502,9 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
         <p class="lead">對設計有感、清楚知道自己要什麼，想把努力工作的日子，換成每天都舒服的家。</p>
       </div>
       <div class="grid g3 story">
-        <div class="card"><span class="tag">準備成家</span><blockquote>「想要一個不用和人擠的家。現在兩個人住，以後有小孩再隔一間。」</blockquote><p class="small muted">一梯兩戶進出安靜，全戶開放格局能跟著家庭長大。</p><span class="who">情境示意</span></div>
-        <div class="card"><span class="tag">雙薪家庭</span><blockquote>「上班近一點，孩子各有一間房，空氣好一點。」</blockquote><p class="small muted">同樣 38 坪，室內多 3.69 坪；豐饒之家、日光之間都能規劃三房。</p><span class="who">情境示意</span></div>
-        <div class="card"><span class="tag">生活品味</span><blockquote>「回家只想好好放鬆，看得到綠、空間不壓迫。」</blockquote><p class="small muted">3.3 米樓高、雙面採光、窗外永久綠意。</p><span class="who">情境示意</span></div>
+        <div class="card"><div class="sph"><img src="https://lh3.googleusercontent.com/d/1LjeQlFd99DrgZ7tG4JaraohdkhoSbTRf=w900" alt="一梯兩戶的當層梯間" loading="lazy"><span>渼山實景</span></div><span class="tag">準備成家</span><blockquote>「想要一個不用和人擠的家。現在兩個人住，以後有小孩再隔一間。」</blockquote><p class="small muted">一梯兩戶進出安靜，全戶開放格局能跟著家庭長大。</p><span class="who">情境示意</span></div>
+        <div class="card"><div class="sph"><img src="https://lh3.googleusercontent.com/d/1nny6SaRUJbrd4DMHCbbaHDenMKhyZtzi=w900" alt="在家工作的雙薪家庭情境" loading="lazy"></div><span class="tag">雙薪家庭</span><blockquote>「上班近一點，孩子各有一間房，空氣好一點。」</blockquote><p class="small muted">同樣 38 坪，室內多 3.69 坪；豐饒之家、日光之間都能規劃三房。</p><span class="who">情境示意</span></div>
+        <div class="card"><div class="sph"><img src="https://lh3.googleusercontent.com/d/1YgPHgf_5CtuQ4wveZAQ-zyxhJnzSK1Bm=w900" alt="坐在窗邊看綠景的生活情境" loading="lazy"></div><span class="tag">生活品味</span><blockquote>「回家只想好好放鬆，看得到綠、空間不壓迫。」</blockquote><p class="small muted">3.3 米樓高、雙面採光、窗外永久綠意。</p><span class="who">情境示意</span></div>
       </div>
     </div>
   </section>
