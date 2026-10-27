@@ -650,7 +650,7 @@ try {
 } catch (e) { /* 本機預覽 */ }
 const C = D.cfg;
 const SRC = D.src || ''; // 文宣 QR Code 帶的來源（?src=poster 等）
-if (SRC && window.google && google.script && google.script.run) google.script.run.withFailureHandler(() => {}).logVisit(SRC);
+if (window.google && google.script && google.script.run) google.script.run.withFailureHandler(() => {}).logVisit(SRC); // 每次開頁都記，沒來源＝直接進站
 const $ = id => document.getElementById(id);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const money = n => Number(n).toLocaleString('zh-TW');
