@@ -310,6 +310,10 @@ footer .wrap{display:flex;flex-direction:column;gap:8px}
 .mbar .btn{justify-content:center;text-align:center;padding-inline:8px}
 .mbar.off{transform:translateY(110%)}
 @media (min-width:761px){.mbar{display:none}}
+/* 電腦版右下角的預約按鈕（捲到預約表單時收起） */
+.dfab{position:fixed;right:24px;bottom:24px;z-index:30;box-shadow:0 8px 24px rgba(0,0,0,.2);transition:opacity .25s,transform .25s}
+.dfab.off{opacity:0;transform:translateY(12px);pointer-events:none}
+@media (max-width:760px){.dfab{display:none}}
 @media (max-width:760px){body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}}
 /* 首頁直接開始問卷第一題 */
 .hq{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.4);border-radius:16px;padding:16px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);max-width:36em}
@@ -670,6 +674,7 @@ details.more[open]>summary{margin-bottom:12px}
     <p class="small" style="opacity:.75">本網站圖文、價格與數據僅供參考，實際坪數、價格及付款條件以正式買賣契約為準；各項優惠方案晨均建設保有調整、變更、終止及最終解釋之權利。房貸試算為估算，實際條件以金融機構書面報價為準。</p>
   </div>
 </footer>
+<a class="btn primary dfab" id="dfab" href="#book">預約賞屋</a>
 <nav class="mbar" id="mbar" aria-label="快速動作"><a class="btn ghost" href="#quiz">3 分鐘配對戶型</a><a class="btn primary" href="#book">預約賞屋</a></nav>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="照片">
   <button type="button" class="lb-btn" id="lbClose" aria-label="關閉">×</button>
@@ -1099,8 +1104,8 @@ renderQuiz();
 
 /* 捲到預約表單時收起手機底部按鈕列，避免蓋住送出鈕 */
 (function () {
-  const bar = $('mbar');
-  if (bar && 'IntersectionObserver' in window) new IntersectionObserver(es => { bar.classList.toggle('off', es[0].isIntersecting); }).observe($('book'));
+  const bars = [$('mbar'), $('dfab')];
+  if ('IntersectionObserver' in window) new IntersectionObserver(es => { bars.forEach(b => b.classList.toggle('off', es[0].isIntersecting)); }).observe($('book'));
 })();
 
 /* ───── 預約表單 ───── */
