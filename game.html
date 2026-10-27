@@ -1300,7 +1300,7 @@ renderQuiz();
   // 過關條件
   const view = (i, sec) => { // 看完：段落停留在畫面上 1.5 秒
     const el = $(sec); if (!el || !('IntersectionObserver' in window)) return;
-    let t; new IntersectionObserver(es => { const v = es[0].isIntersecting; clearTimeout(t); if (v) t = setTimeout(() => pass(i), 1500); }, { threshold: [0.35] }).observe(el);
+    let t; new IntersectionObserver(es => { const e = es[0], v = e.isIntersecting && e.intersectionRect.height >= Math.min(e.boundingClientRect.height * 0.35, innerHeight * 0.5); clearTimeout(t); if (v) t = setTimeout(() => pass(i), 1500); }, { threshold: [0, .1, .2, .3, .4, .5, .6, .7, .8, .9, 1] }).observe(el); // 段落很長時，只要佔滿半個畫面就算
   };
   view(0, 'why'); view(4, 'about'); view(5, 'brand');
   $('unitCards').addEventListener('click', e => { if (e.target.closest('.ph.cover,.plan-btn')) pass(1); });
