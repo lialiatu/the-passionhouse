@@ -260,6 +260,17 @@ table.cmp tbody th{white-space:nowrap;color:var(--muted);font-weight:500}
 .steps{counter-reset:s;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
 .steps .card{position:relative;padding-top:44px}
 .steps .card::before{counter-increment:s;content:counter(s);position:absolute;top:14px;left:20px;width:24px;height:24px;border-radius:50%;background:var(--forest);color:var(--forest-ink);font-size:.8rem;font-weight:700;display:grid;place-items:center}
+/* 手機版：購屋步驟改成精簡時間軸（數字圓點＋直線串起，不用卡片） */
+@media (max-width:760px){
+  .steps{gap:0}
+  .steps .card{background:none;border:0;box-shadow:none;border-radius:0;padding:0 0 16px 40px;gap:2px}
+  .steps .card::before{top:0;left:0;width:26px;height:26px}
+  .steps .card::after{content:"";position:absolute;left:12px;top:30px;bottom:4px;width:2px;background:var(--line)}
+  .steps .card:last-child{padding-bottom:0}
+  .steps .card:last-child::after{display:none}
+  .steps .card h3{font-size:1.02rem;line-height:26px}
+  .steps .card p{font-size:.86rem;line-height:1.55}
+}
 
 /* 故事 */
 .story blockquote{margin:0;font-family:var(--serif);font-size:1.05rem}
