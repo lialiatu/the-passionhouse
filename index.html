@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" class="loading">
+<html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
 <!-- Google Analytics（GA4，帳戶：晨均建設／資源：晨均渼山一頁式網站）；文宣 ?src= 轉成 GA 的來源 -->
@@ -126,8 +126,11 @@ sup{font-size:.62em;line-height:0;vertical-align:super}
 .hero-txt{display:flex;flex-direction:column;gap:18px;min-width:0}
 @media (min-width:900px){.hero .wrap{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
 .hero-ph{margin:0;position:relative;border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(30,0,6,.45);aspect-ratio:4/3;background:rgba(255,255,255,.08)}
-.hero-ph img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .5s}
-.hero-ph img.on{opacity:1}
+.hero-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 1.2s}
+.hero-ph img.on{opacity:1;animation:kb 7s ease-out both}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+@media (prefers-reduced-motion:reduce){.hero-ph img.on{animation:none}}
+.hero-ph figcaption{z-index:1}
 .hero-ph figcaption{position:absolute;left:12px;bottom:10px;font-size:.75rem;color:#fff;opacity:.85}
 .fac-card{margin-bottom:16px}
 .fac-card .life-ph{cursor:zoom-in;aspect-ratio:16/10}
@@ -289,17 +292,41 @@ details.privacy ol{margin-top:6px}
 footer{background:rgba(26,0,5,.82);color:#EED7D5;padding-block:40px 96px;font-size:.88rem}
 footer a{color:#fff}
 footer .wrap{display:flex;flex-direction:column;gap:8px}
-.fab{position:fixed;right:16px;bottom:16px;z-index:30;box-shadow:0 6px 20px rgba(0,0,0,.2)}
-@media (min-width:761px){.fab{display:none}}
-.boot{display:none}
-html.loading .boot{display:flex;position:fixed;inset:0;z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#fff;background:linear-gradient(150deg,#4A000C,#9B1B2E 55%,#F28A80)}
-html.loading .boot b{font-family:var(--serif);font-size:2rem;letter-spacing:.12em}
-html.loading .boot span{font-size:.95rem;opacity:.85}
+/* 手機底部固定按鈕列：配對戶型＋預約賞屋（捲到預約表單時隱藏） */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--surface);box-shadow:0 -6px 24px rgba(0,0,0,.14);transition:transform .25s}
+.mbar .btn{justify-content:center;text-align:center;padding-inline:8px}
+.mbar.off{transform:translateY(110%)}
+@media (min-width:761px){.mbar{display:none}}
+@media (max-width:760px){body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}}
+/* 首頁直接開始問卷第一題 */
+.hq{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.4);border-radius:16px;padding:16px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);max-width:36em}
+.hq-t{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.hq-t b{font-family:var(--serif);font-size:1.15rem}
+.hq-t span{font-size:.92rem;opacity:.9}
+.hq-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+@media (min-width:640px){.hq-opts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.hq-opt{background:#fff;color:#7E0016;border:0;border-radius:10px;padding:12px 8px;font:inherit;font-weight:700;cursor:pointer;text-shadow:none;transition:transform .15s}
+.hq-opt:active{transform:scale(.97)}
+.hq-note{font-size:.8rem;opacity:.8;margin-top:8px}
+/* 生活機能：手機改成分頁，一次看一類 */
+.tabs{display:none;gap:8px;margin-bottom:14px;overflow-x:auto;scrollbar-width:none}
+.tabs button{flex:0 0 auto;border:1.5px solid var(--line);background:var(--surface);color:inherit;border-radius:999px;padding:8px 16px;font:inherit;font-weight:700;cursor:pointer}
+.tabs button[aria-selected="true"]{border-color:var(--forest);background:var(--forest-soft);color:var(--forest)}
+@media (max-width:899px){.tabs{display:flex}.life-card.off{display:none}}
+/* 比較表：先看重點，完整表格點開才顯示 */
+.cmp-key{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px;margin-bottom:14px}
+.cmp-key div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.cmp-key b{display:block;font-family:var(--serif);font-size:1.35rem;color:var(--forest)}
+.cmp-key span{font-size:.86rem;color:var(--muted)}
+details.more>summary{cursor:pointer;list-style:none;display:flex;justify-content:center;align-items:center;gap:6px;padding:12px;border:1.5px dashed var(--line);border-radius:12px;font-weight:700;color:var(--forest)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::after{content:"＋";font-weight:400}
+details.more[open]>summary::after{content:"－"}
+details.more[open]>summary{margin-bottom:12px}
 </style>
 </head>
 <body>
-<script type="application/json" id="srv"></script>
-<div class="boot" aria-hidden="true"><b>晨均渼山</b><span>載入中…</span></div>
+<script type="application/json" id="srv">{"cfg":{"name":"晨均渼山","builder":"晨均建設股份有限公司","license":"","address":"高雄市小港區高坪八路32號","phone":"07-216-5218","lineId":"","lineUrl":"","map":"https://maps.app.goo.gl/R5PYJUGw6gsqNzAf9","price":988,"priceNote":"38 坪標準戶","promo":"限量 3 戶・簽約送車位","slots":["10:00","10:30","14:00","15:30"],"days":30,"hero":"","privacy":"","rates":[1.775,1.775,1.775,1.9,2.025,2.15,2.275],"rateDate":"2026/10/9"},"units":[{"code":"2F-A","floor":"2F","type":"A","name":"豐饒之家","size":38.19,"inner":27.6,"terrace":0,"light":"雙面採光","rooms":"可隔 3 房","baths":"","tub":false,"feature":"2–4F 最大的戶型，三房好規劃","status":"實品屋","img":""},{"code":"2F-B","floor":"2F","type":"B","name":"日光之間","size":37.17,"inner":26.2,"terrace":4.55,"light":"三面大採光","rooms":"可隔 3 房","baths":"2","tub":false,"feature":"特色空間集中更顯寬敞，三面大採光，工作陽台較大，兩間衛浴都有開窗","status":"可售","img":""},{"code":"2F-C","floor":"2F","type":"C","name":"返璞歸真","size":37.52,"inner":27,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":true,"feature":"配備 ROCA 鋼板浴缸","status":"可售","img":""},{"code":"2F-D","floor":"2F","type":"D","name":"旅行的記憶","size":37.45,"inner":26.7,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":false,"feature":"","status":"可售","img":""},{"code":"3F-A","floor":"3F","type":"A","name":"豐饒之家","size":38.19,"inner":27.6,"terrace":0,"light":"雙面採光","rooms":"可隔 3 房","baths":"","tub":false,"feature":"2–4F 最大的戶型，三房好規劃","status":"可售","img":""},{"code":"3F-B","floor":"3F","type":"B","name":"日光之間","size":37.17,"inner":26.2,"terrace":0,"light":"三面大採光","rooms":"可隔 3 房","baths":"2","tub":false,"feature":"特色空間集中更顯寬敞，三面大採光，工作陽台較大，兩間衛浴都有開窗","status":"已售","img":""},{"code":"3F-C","floor":"3F","type":"C","name":"返璞歸真","size":37.52,"inner":27,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":true,"feature":"配備 ROCA 鋼板浴缸","status":"實品屋","img":""},{"code":"3F-D","floor":"3F","type":"D","name":"旅行的記憶","size":37.45,"inner":26.7,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":false,"feature":"","status":"實品屋","img":""},{"code":"4F-A","floor":"4F","type":"A","name":"豐饒之家","size":38.19,"inner":27.6,"terrace":0,"light":"雙面採光","rooms":"可隔 3 房","baths":"","tub":false,"feature":"2–4F 最大的戶型，三房好規劃","status":"可售","img":""},{"code":"4F-B","floor":"4F","type":"B","name":"日光之間","size":37.17,"inner":26.2,"terrace":0,"light":"三面大採光","rooms":"可隔 3 房","baths":"2","tub":false,"feature":"特色空間集中更顯寬敞，三面大採光，工作陽台較大，兩間衛浴都有開窗","status":"可售","img":""},{"code":"4F-C","floor":"4F","type":"C","name":"返璞歸真","size":37.52,"inner":27,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":true,"feature":"配備 ROCA 鋼板浴缸","status":"可售","img":""},{"code":"4F-D","floor":"4F","type":"D","name":"旅行的記憶","size":37.45,"inner":26.7,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":false,"feature":"","status":"可售","img":""}],"parks":[{"no":"11","kind":"平面-大","price":150,"status":"可售"},{"no":"12","kind":"平面-標準","price":130,"status":"可售"},{"no":"2","kind":"機上","price":90,"status":"可售"},{"no":"5","kind":"機上","price":90,"status":"可售"},{"no":"10","kind":"機上","price":90,"status":"可售"},{"no":"3-1","kind":"機中","price":110,"status":"可售"},{"no":"9","kind":"機中","price":110,"status":"可售"},{"no":"1","kind":"機下","price":100,"status":"可售"},{"no":"3","kind":"機下","price":100,"status":"可售"},{"no":"6","kind":"機下","price":100,"status":"可售"},{"no":"8","kind":"機下","price":100,"status":"可售"}],"live":true,"photos":{"A":{"cover":"1M9Gra23blOBVemJSIT82STn_0FIB7Kr1","gallery":["146LNaDn_tOlyR0g3lnhOye3tw5f8SL9L","1pljq6hdzxkwFl206nje3ucyASAzyhPwx","13l7JDzO1WPwOIOSzYfhzQIhhtB5IEYrw"],"plan":"1V8-q7zJCbBvUZKPkZnmd0IvOfgk5QIKZ","coverAi":false},"B":{"cover":"1gAFz8BuZ8IREL2oIKhxKbx4HR4LcWX1v","gallery":["1gAFz8BuZ8IREL2oIKhxKbx4HR4LcWX1v"],"plan":"1VqqBYSl3loProunjkwWX1VByGuIk8bSn","coverAi":true},"C":{"cover":"127cOCXwRG3jyKpL9rch9xqKTPiI_Iw17","gallery":["1dp_V2JLZuVb0LkJDgGF3MQcYE71xgJOg","1so4Cx4wJFG28Aq45eUXVM3Te5I5KkioY","1ImrkOYEq29gH7WdWRf_QriRLBuf3Yy0O"],"plan":"1lSOUj73tFvIsqU4AUk66beD8YN1PxFov","coverAi":false},"D":{"cover":"1tAaz3NlvKEJ_wAkZZHZUtJfwZKrlosoa","gallery":["1Gz9rLhDG0dufJ-tTb8KF4omP8AHlD__U","1MqwBQyKD3rF9uTHu07vNj1QNI7kwyfTL","1Z0cPDUiILffgdD_JD7rqc-IcGtDl_qBr"],"plan":"1JBFo1YuvA2ToCo3nAXds3H5miFKWOZKj","coverAi":false}},"facade":{"hero":"1jY3hKPoVj7n1LaSHo9msyibVACIVNuds","list":[{"id":"1jY3hKPoVj7n1LaSHo9msyibVACIVNuds","cap":"飛機航線下的紅色量體"},{"id":"1nEdz9ox0HCQDlIPvjuQWeJj8tC8j7Rp9","cap":"屋突與格柵"},{"id":"14KSBFf_GUuaWkoNErBiuGEvcW64hhs7r","cap":"深遮陽立面"},{"id":"1kyK9OmzSy_7fQmOEPBfuUOjF_Ne13kpx","cap":"大面窗與藍天"},{"id":"1ROOQEafwu4lbKrQ2F2FKYjNRHDv5hEF-","cap":"陽台立面"},{"id":"1CjbleaA4aXTRfer6YSyNQ6Cj9RiZt3mO","cap":"陽台望出去的綠"},{"id":"1tSVzt34aqoubtW3_AW5xrZ0qrpewxbCv","cap":"窗框裡的森林"},{"id":"1OwZqgeVaP8i_jYqSa8QKXEkkmuAQ50dg","cap":"窗外綠坡"}]},"life":[{"cat":"日常採買","name":"萊爾富 小港亞路米","dist":"步行可達","img":"1ZKi7MmqH7QgO9DiLnm8aLjWFqcinp_mm","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"全家 大坪頂店","dist":"車程約 3 分","img":"1bbWb2pNn-kqRGsVchf0QGzo6Sy-HERN7|18WP9PHizLN7M42N3lncsdHyu06IvcYt5","credit":"晨均渼山實拍|晨均渼山實拍"},{"cat":"日常採買","name":"7-ELEVEN 坪高門市","dist":"約 5 分","img":"1X5_xKzRDY01g8Rw9lXFZdGxzrVfBgthE","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"美廉社 小港大坪頂店","dist":"約 5 分","img":"1gmP27t6-1JQNwFn3BO8kc_MLTJ6yOtIW","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"全聯 小港松園店","dist":"約 9 分","img":"1ERH5f_7BM0eP07_lanOtbuTYftFXOdL4","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"家樂福超市（宏平路）","dist":"約 9 分","img":"1CA-mHBjNLkkdr_I2vHGtrYIfjOiu4tp8","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"坪頂國小","dist":"約 5 分","img":"1DZr9vMzc9FDtojMaQrc7uU1JmW20YDnU","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"國立高雄餐旅大學","dist":"約 9 分","img":"1d_C03AdXqOFe0_svY4kTiGzQysLLo63O","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"明義國中","dist":"約 11 分","img":"1-JcuhB1-HGjBacw9WBbepBcELJA2-rKf","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"高雄市立小港醫院","dist":"約 8 分","img":"13uS5xzk7vPaXPvVgdOkiDTHcNInDqSbK","credit":"晨均渼山實拍"},{"cat":"交通與綠地","name":"高雄國際機場","dist":"約 10 分","img":"15ClVkbuIdcarbrjpvZWPKcjSVQSpqL0F|https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Kaohsiung_Airport_Terminal.jpg/960px-Kaohsiung_Airport_Terminal.jpg","credit":"晨均渼山實拍|Alec @ Taiwan／CC BY 2.0／Wikimedia Commons"},{"cat":"交通與綠地","name":"捷運小港站","dist":"約 11 分","img":"1l4nS0pKAX0NiUFWuHhpwpYtSlQbFO7zk|https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/R3_Siaogang_Station_20240814.jpg/960px-R3_Siaogang_Station_20240814.jpg","credit":"晨均渼山實拍|鐵路Railway／CC BY-SA 4.0／Wikimedia Commons"},{"cat":"交通與綠地","name":"大坪頂熱帶植物園","dist":"約 5 分","img":"1lFSdLrXYSPMHhAHS2RY4I86p8iErkUU4","credit":"晨均渼山實拍"},{"cat":"交通與綠地","name":"大坪頂坪鳳公園","dist":"約 6 分","img":"1zRJIaVce8zIgA_X0ZCcthrrlNuxkfZob","credit":"晨均渼山實拍"}]}</script>
 
 <header class="top">
   <div class="bar">
@@ -322,8 +349,12 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
       <p class="sub">晨均渼山，3.3 米室內樓高，最舒服的家，把每天努力的你好好接住；窗外，是永久的綠意。</p>
       <div class="offer" id="offer"></div>
       <p class="offer-note">※ 優惠方案以現場簽約為準，晨均建設保留調整、變更或終止優惠之權利，並保有最終解釋權。</p>
+      <div class="hq" id="heroQuiz">
+        <div class="hq-t"><b>3 分鐘，免費配對你的戶型</b><span>第 1 題：幾個人一起住？</span></div>
+        <div class="hq-opts"></div>
+        <p class="hq-note">點一下就開始，共 8 題，最後推薦最適合你的戶型。</p>
+      </div>
       <div class="ctas">
-        <a class="btn primary" href="#quiz">3 分鐘找到適合你的戶型</a>
         <a class="btn ghost" href="#book">直接預約賞屋</a>
       </div>
       <div class="facts"><span>16 戶社區型華廈</span><span>標準戶 37–38 坪</span><span>公設比 27.3%</span><span>iF 得獎建築團隊</span></div>
@@ -383,6 +414,7 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
         <h2>5 分鐘車程生活圈，10 分鐘到機場與捷運</h2>
         <p class="lead">基地位於大坪頂特定區東側，第二進安靜基地；超商步行可達，學校、超市、醫院開車約 5–8 分鐘。</p>
       </div>
+      <div class="tabs" id="lifeTabs" role="tablist" aria-label="生活機能分類"></div>
       <div class="grid g3" id="lifeCards"></div>
       <p class="small muted" style="margin-top:12px">開車時間為路線規劃估算，未計塞車與紅綠燈；資料整理日期 2026/10/18。標示「示意」的照片為同品牌其他分店，非該分店實景。</p>
     </div>
@@ -493,6 +525,12 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
         <h2>同樣預算，渼山多給你什麼？</h2>
         <p class="lead">資料來源為實價登錄與公開平台，查詢日期 2026/10/19；實際以各建案公告為準。</p>
       </div>
+      <div class="cmp-key">
+        <div><b>27.3%</b><span>公設比，其他建案約 35–36.5%</span></div>
+        <div><b>3.3 米</b><span>室內樓高，其他建案約 3–3.15 米或未公開</span></div>
+        <div><b>一梯兩戶</b><span>16 戶社區型華廈，其他建案 130–590 戶</span></div>
+      </div>
+      <details class="more" id="cmpMore"><summary>展開完整比較表（4 個建案、9 個項目）</summary>
       <div class="table-wrap">
         <table class="cmp">
           <thead><tr><th>項目</th><th class="me">晨均渼山</th><th>清景麟國家公園</th><th>華友聯 POWER CITY</th><th>友友 百達宏邸</th></tr></thead>
@@ -509,6 +547,7 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
           </tbody>
         </table>
       </div>
+      </details>
       <p class="small muted" style="margin-top:10px">來源：591 新建案、樂居、5168 實價登錄比價王、高雄房地王、本案 2024/4 區域調查。單價為實價登錄平台統計，各平台計算方式不同；梯戶比依公開資料整理，以建商資料為準。「—」表示公開資料未載明。</p>
     </div>
   </section>
@@ -614,7 +653,7 @@ html.loading .boot span{font-size:.95rem;opacity:.85}
     <p class="small" style="opacity:.75">本網站圖文、價格與數據僅供參考，實際坪數、價格及付款條件以正式買賣契約為準；各項優惠方案晨均建設保有調整、變更、終止及最終解釋之權利。房貸試算為估算，實際條件以金融機構書面報價為準。</p>
   </div>
 </footer>
-<a class="btn primary fab" href="#book">預約賞屋</a>
+<nav class="mbar" id="mbar" aria-label="快速動作"><a class="btn ghost" href="#quiz">3 分鐘配對戶型</a><a class="btn primary" href="#book">預約賞屋</a></nav>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="照片">
   <button type="button" class="lb-btn" id="lbClose" aria-label="關閉">×</button>
   <button type="button" class="lb-btn" id="lbPrev" aria-label="上一張">‹</button>
@@ -737,6 +776,22 @@ function goUnit(type, code) {
   document.getElementById('unit-' + type).scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+/* 首頁實景輪播：建築外觀之後接三張窗外綠景，慢慢放大、淡入淡出（減少動態設定時不動） */
+function heroShow(F) {
+  const ph = $('heroPh'), cap = ph.querySelector('figcaption'), first = $('heroImg');
+  const pick = F.list.filter(x => /森林|綠坡|望出去/.test(x.cap)).slice(0, 3);
+  if (!pick.length || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  first.dataset.cap = '晨均渼山 建築外觀實景';
+  pick.forEach(x => { const im = document.createElement('img'); im.alt = x.cap; im.dataset.cap = '晨均渼山 ' + x.cap + '（實景）'; im.loading = 'lazy';
+    im.src = 'https://lh3.googleusercontent.com/d/' + encodeURIComponent(x.id) + '=w1200'; ph.insertBefore(im, cap); });
+  const imgs = [...ph.querySelectorAll('img')]; let i = 0;
+  setInterval(() => {
+    if (document.hidden) return;
+    const n = (i + 1) % imgs.length; if (!imgs[n].complete || !imgs[n].naturalWidth) return;
+    imgs[i].classList.remove('on'); imgs[n].classList.add('on'); i = n; cap.textContent = imgs[i].dataset.cap;
+  }, 4500);
+}
+
 /* ───── 建築照片：首頁大圖＋建案介紹的立面相簿（試算表「戶型照片」戶型＝建築） ───── */
 const FAC_DEFAULT = { hero: '1jY3hKPoVj7n1LaSHo9msyibVACIVNuds', list: [["飛機航線下的紅色量體", "1jY3hKPoVj7n1LaSHo9msyibVACIVNuds"], ["屋突與格柵", "1nEdz9ox0HCQDlIPvjuQWeJj8tC8j7Rp9"], ["深遮陽立面", "14KSBFf_GUuaWkoNErBiuGEvcW64hhs7r"], ["大面窗與藍天", "1kyK9OmzSy_7fQmOEPBfuUOjF_Ne13kpx"], ["陽台立面", "1ROOQEafwu4lbKrQ2F2FKYjNRHDv5hEF-"], ["陽台望出去的綠", "1CjbleaA4aXTRfer6YSyNQ6Cj9RiZt3mO"], ["窗框裡的森林", "1tSVzt34aqoubtW3_AW5xrZ0qrpewxbCv"], ["窗外綠坡", "1OwZqgeVaP8i_jYqSa8QKXEkkmuAQ50dg"]].map(r => ({ cap: r[0], id: r[1] })) };
 (function facade() {
@@ -744,7 +799,7 @@ const FAC_DEFAULT = { hero: '1jY3hKPoVj7n1LaSHo9msyibVACIVNuds', list: [["飛機
   const heroId = F.hero || (F.list[0] && F.list[0].id);
   if (heroId && !C.hero) {
     $('heroPh').hidden = false;
-    photo(heroId, 1400).then(src => { $('heroImg').src = src; $('heroImg').classList.add('on'); }).catch(() => { $('heroPh').hidden = true; });
+    photo(heroId, 1400).then(src => { $('heroImg').src = src; $('heroImg').classList.add('on'); heroShow(F); }).catch(() => { $('heroPh').hidden = true; });
   }
   if (!F.list.length) return;
   const ids = F.list.map(x => x.id), card = $('facCard');
@@ -817,6 +872,12 @@ const LIFE_NOTE = { '學校與醫療': '學區以高雄市教育局公告為準�
     card.querySelector('.ln').addEventListener('click', () => go(1));
     tr.addEventListener('scroll', () => { const n = idx(); dots.forEach((d, i) => d.classList.toggle('on', i === n)); }, { passive: true });
   });
+  // 手機版分頁：一次只顯示一類（電腦版三類並排，分頁列隱藏）
+  const cards = [...document.querySelectorAll('#lifeCards .life-card')], tabs = $('lifeTabs');
+  tabs.innerHTML = cards.map((c, i) => '<button type="button" role="tab" aria-selected="' + !i + '">' + esc(c.querySelector('h3').textContent) + '</button>').join('');
+  const show = n => { cards.forEach((c, i) => c.classList.toggle('off', i !== n)); [...tabs.children].forEach((b, i) => b.setAttribute('aria-selected', i === n)); };
+  tabs.addEventListener('click', e => { const b = e.target.closest('button'); if (b) show([...tabs.children].indexOf(b)); });
+  show(0);
 })();
 
 /* ───── 照片燈箱 ───── */
@@ -997,10 +1058,21 @@ function renderResult() {
 }
 renderQuiz();
 
-/* 捲到預約表單時隱藏手機右下角的預約按鈕，避免蓋住送出鈕 */
+/* 首頁的第 1 題：點一下就記下答案、跳到問卷第 2 題 */
+(function heroQuiz() {
+  const q = Q[0], box = document.querySelector('#heroQuiz .hq-opts');
+  box.innerHTML = q.opts.map(o => '<button type="button" class="hq-opt" data-v="' + esc(o) + '">' + esc(o) + '</button>').join('');
+  box.addEventListener('click', e => {
+    const b = e.target.closest('.hq-opt'); if (!b) return;
+    trackQuiz('start'); A[q.id] = b.dataset.v; step = 1; renderQuiz();
+    $('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
+
+/* 捲到預約表單時收起手機底部按鈕列，避免蓋住送出鈕 */
 (function () {
-  const fab = document.querySelector('.fab');
-  if (fab && 'IntersectionObserver' in window) new IntersectionObserver(es => { fab.hidden = es[0].isIntersecting; }).observe($('book'));
+  const bar = $('mbar');
+  if (bar && 'IntersectionObserver' in window) new IntersectionObserver(es => { bar.classList.toggle('off', es[0].isIntersecting); }).observe($('book'));
 })();
 
 /* ───── 預約表單 ───── */
@@ -1078,25 +1150,43 @@ const API = 'https://script.google.com/macros/s/AKfycbypHgraua4d7UmsFQJSLcsC93Zc
       withSuccessHandler: f => runner(f, fail),
       withFailureHandler: f => runner(ok, f),
       submitBooking: data => call({ action: 'book', data: data }, ok, fail),
-      logVisit: src => call({ action: 'visit', src: src }, ok, fail),
+      logVisit: src => { // 背景換新資料而重新整理的那一次不重複記造訪
+        try { if (sessionStorage.getItem('mv_reload')) { sessionStorage.removeItem('mv_reload'); return; } } catch (e) {}
+        call({ action: 'visit', src: src }, ok, fail);
+      },
       logQuiz: (kind, src) => call({ action: 'quiz', kind: kind, src: src }, ok, fail)
     };
   }
   window.google = { script: { get run() { return runner(); } } };
 })();
+// 打開就顯示：用「上次背景抓到的資料」或「產生網頁時的快照」先畫出來，再到背景抓最新資料；
+// 資料有變而且客人還沒開始操作，就悄悄重新整理一次換成最新的（每次瀏覽最多一次）
 (function () {
   const src = (new URLSearchParams(location.search).get('src') || '').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 20);
-  let started = false;
-  function start(d) {
-    if (started) return; started = true;
-    if (d && d.cfg && d.units) { d.src = src; document.getElementById('srv').textContent = JSON.stringify(d); }
-    const s = document.createElement('script');
-    s.textContent = document.getElementById('app').textContent;
-    document.body.appendChild(s);
-    document.documentElement.classList.remove('loading');
-  }
-  fetch(API + '?api=site').then(r => r.json()).then(start).catch(() => start(null));
-  setTimeout(() => start(null), 12000); // 12 秒還沒拿到資料就先用內建資料顯示
+  const KEY = 'mv_site', el = document.getElementById('srv');
+  const ok = d => d && d.cfg && d.units;
+  let d = null;
+  try { const f = sessionStorage.getItem(KEY + '_fresh'); if (f) { d = JSON.parse(f); sessionStorage.removeItem(KEY + '_fresh'); } } catch (e) {}
+  if (!ok(d)) try { const c = JSON.parse(localStorage.getItem(KEY) || 'null'); if (c && Date.now() - c.t < 7 * 864e5) d = c.d; } catch (e) {}
+  if (!ok(d)) try { d = JSON.parse(el.textContent); } catch (e) { d = null; }
+  const shown = ok(d) ? JSON.stringify(d) : '';
+  if (ok(d)) { d.src = src; el.textContent = JSON.stringify(d).replace(/</g, '\u003c'); }
+  const s = document.createElement('script');
+  s.textContent = document.getElementById('app').textContent;
+  document.body.appendChild(s);
+  let touched = false;
+  ['pointerdown', 'keydown', 'touchstart'].forEach(t => addEventListener(t, () => { touched = true; }, { capture: true, once: true, passive: true }));
+  fetch(API + '?api=site').then(r => r.json()).then(f => {
+    if (!ok(f)) return;
+    const txt = JSON.stringify(f);
+    try { localStorage.setItem(KEY, JSON.stringify({ t: Date.now(), d: f })); } catch (e) {}
+    let again = false; try { again = !!sessionStorage.getItem(KEY + '_done'); } catch (e) {}
+    if (txt !== shown && !touched && scrollY < 200 && !again) {
+      try { sessionStorage.setItem(KEY + '_fresh', txt); sessionStorage.setItem(KEY + '_done', '1'); sessionStorage.setItem('mv_reload', '1');
+        if (sessionStorage.getItem(KEY + '_done') !== '1') return; } catch (e) { return; } // 存不進去就不重新整理，避免一直重整
+      location.reload();
+    }
+  }).catch(() => {});
 })();
 </script>
 
