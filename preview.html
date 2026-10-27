@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<!-- Google Analytics（GA4，帳戶：晨均建設／資源：晨均渼山一頁式網站）；文宣 ?src= 轉成 GA 的來源 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X457Q1RYED"></script>
+<script id="ga">
+window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date());
+(function () {
+  var s = (new URLSearchParams(location.search).get('src') || '').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 20);
+  var medium = { poster: 'print', trifold: 'print', booklet: 'print', fb: 'social' };
+  gtag('config', 'G-X457Q1RYED', s ? { campaign_source: s, campaign_medium: medium[s] || 'referral', campaign_name: 'meishan' } : {});
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#5E0010">
+<meta name="description" content="晨均渼山｜小港大坪頂一梯兩戶，3.3 米室內樓高，38 坪標準戶 988 萬起，限量 3 戶・簽約送車位。3 分鐘找到適合你的戶型，線上預約賞屋。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="晨均渼山｜住進見證未來的位置上">
+<meta property="og:description" content="小港大坪頂一梯兩戶，3.3 米室內樓高，988 萬起，限量 3 戶・簽約送車位。線上預約賞屋。">
+<meta property="og:image" content="https://lh3.googleusercontent.com/d/1jY3hKPoVj7n1LaSHo9msyibVACIVNuds=w1200">
+<meta property="og:url" content="https://lialiatu.github.io/the-passionhouse/">
+<meta property="og:locale" content="zh_TW">
+<base target="_top">
+<title>晨均渼山｜小港大坪頂 一梯兩戶綠景住宅</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap">
+<style>
+/* 一頁式長頁：頂部固定導覽＋各區塊直向排列（最寬 1080px）。
+   底背景＝深緋紅＋斜向珊瑚色光帶（依品牌視覺元素用 CSS 重現，固定在畫面後方）；內容區塊浮在光帶上。
+   --forest 等變數名稱沿用舊版，現在代表主色緋紅。 */
+:root{
+  --bg:#FBF6F4; --surface:#FFFFFF; --ink:#2A1A1C; --muted:#6F5B5D; --line:#ECDAD6;
+  --forest:#9B1B2E; --forest-ink:#FFFFFF; --forest-soft:#F9E3E0; --forest-deep:#4D0713;
+  --brass:#9A6B28; --brass-soft:#F6ECDD;
+  --glow:linear-gradient(140deg,#4A000C 0%,#7E0016 14%,#93101F 26%,#9C2232 38%,#A53444 46%,#C9575C 51%,#F28A80 56%,#FFA597 61%,#FF9C8E 66%,#F7887B 70%,#B52A38 73.5%,#5E000F 76%,#330006 88%,#140003 100%);
+  --warn:#B0491B; --warn-soft:#F8E3D8;
+  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --r:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1A1012; --surface:#231518; --ink:#F2E6E6; --muted:#B39FA1; --line:#3A2427;
+  --forest:#F2958B; --forest-ink:#2A0A0F; --forest-soft:#3A1A1F; --forest-deep:#12060A;
+  --brass:#D6A961; --brass-soft:#2E2617; --warn:#F08B5E; --warn-soft:#3A2218; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1A1012; --surface:#231518; --ink:#F2E6E6; --muted:#B39FA1; --line:#3A2427;
+  --forest:#F2958B; --forest-ink:#2A0A0F; --forest-soft:#3A1A1F; --forest-deep:#12060A;
+  --brass:#D6A961; --brass-soft:#2E2617; --warn:#F08B5E; --warn-soft:#3A2218; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+html,body{margin:0}
+body{background:#5E000F;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);text-wrap:balance;line-height:1.3;margin:0}
+h2{font-size:clamp(1.5rem,3.6vw,2rem)}
+h3{font-size:1.12rem}
+p{margin:0}
+ul,ol{margin:0;padding-left:1.3em}
+li+li{margin-top:4px}
+a{color:var(--forest)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:4px}
+
+/* 導覽列 */
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{max-width:1080px;margin:0 auto;padding-inline:16px;display:flex;align-items:center;gap:14px;height:56px}
+.brand{font-family:var(--serif);font-weight:700;white-space:nowrap;text-decoration:none;color:var(--ink);font-size:1.08rem}
+nav.links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1}
+nav.links::-webkit-scrollbar{display:none}
+nav.links a{padding:6px 10px;white-space:nowrap;color:var(--muted);text-decoration:none;font-size:.92rem;border-radius:999px}
+nav.links a:hover{color:var(--ink);background:var(--forest-soft)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;border-radius:999px;padding:10px 20px;font-weight:700;text-decoration:none;white-space:nowrap}
+.btn.primary{background:var(--forest);color:var(--forest-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--forest);box-shadow:inset 0 0 0 1.5px var(--forest)}
+.btn.small{padding:7px 14px;font-size:.9rem}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+@media (max-width:760px){nav.links{display:none}.bar{justify-content:space-between}}
+/* 上方：IG、LINE 圖示（預約改由手機底部按鈕列）＋手機版選單 */
+.hd-act{display:flex;align-items:center;gap:6px;flex:none}
+.ico{width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer;padding:0}
+.ico:hover{border-color:var(--forest);color:var(--forest)}
+.ico svg{width:20px;height:20px}
+.menu-btn{display:none}
+@media (max-width:760px){
+  .menu-btn{display:inline-flex}
+  header.top.open nav.links{display:flex;position:absolute;left:0;right:0;top:56px;flex-direction:column;gap:0;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 14px 30px rgba(0,0,0,.16);padding:4px 16px 12px;max-height:calc(100vh - 56px);overflow-y:auto}
+  header.top.open nav.links a{padding:14px 4px;font-size:1.02rem;color:var(--ink);border-bottom:1px solid var(--line);border-radius:0}
+  header.top.open nav.links a:last-child{border-bottom:0}
+  header.top.open .menu-btn{border-color:var(--forest);color:var(--forest)}
+}
+
+/* 底背景光帶：固定圖層（iOS 不支援 background-attachment:fixed，所以用 ::before） */
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(60% 40% at 88% 22%,rgba(255,190,178,.22),transparent 70%),var(--glow);pointer-events:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) body::before{filter:brightness(.72) saturate(.95)}}
+:root[data-theme="dark"] body::before{filter:brightness(.72) saturate(.95)}
+main{display:block;padding-bottom:28px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:16px}
+section.sec{padding-block:64px;background:var(--bg);max-width:1160px;margin:0 auto 22px;border-radius:24px;box-shadow:0 18px 50px rgba(40,0,8,.28)}
+section.sec.alt{background:var(--surface)}
+@media (max-width:760px){section.sec{margin:0 10px 14px;border-radius:18px;padding-block:52px}}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;max-width:720px}
+.eyebrow{font-size:.8rem;letter-spacing:.16em;color:var(--brass);font-weight:700}
+.lead{color:var(--muted);max-width:48em;text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
+br.pc{display:none}
+@media(min-width:900px){br.pc{display:inline}}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+section.alt .card{background:var(--bg)}
+.card h3{color:var(--ink)}
+.card .k{font-size:.82rem;color:var(--muted)}
+.card .v{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--forest);line-height:1.2}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.tag{display:inline-block;font-size:.78rem;padding:2px 10px;border-radius:999px;background:var(--forest-soft);color:var(--forest);font-weight:700}
+.works{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.works b,.works span{font-size:.9rem;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg)}
+.works b{background:var(--forest);color:var(--forest-ink);border-color:var(--forest)}
+sup{font-size:.62em;line-height:0;vertical-align:super}
+.to-quiz{display:flex;flex-direction:column;gap:2px;align-items:center;text-align:center;margin-top:18px;padding:16px;border:1.5px dashed var(--forest);border-radius:var(--r);text-decoration:none;color:var(--forest);background:var(--forest-soft)}
+.to-quiz b{font-family:var(--serif);font-size:1.1rem}
+.to-quiz span{font-size:.92rem}
+.gift{display:inline-block;margin-top:6px;padding:6px 14px;border-radius:999px;background:var(--brass-soft);color:var(--brass);font-weight:700;width:fit-content}
+.tag.brass{background:var(--brass-soft);color:var(--brass)}
+
+/* 主視覺 */
+.hero{position:relative;color:#fff;background:transparent;overflow:hidden;text-shadow:0 1px 14px rgba(60,0,10,.35);margin-bottom:22px}
+.hero.has-img{background-size:cover;background-position:center}
+.hero.has-img::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,0,8,.25),rgba(40,0,8,.7))}
+.hero .wrap{position:relative;padding-block:88px 72px;display:grid;gap:28px;align-items:center}
+.hero-txt{display:flex;flex-direction:column;gap:18px;min-width:0}
+@media (min-width:900px){.hero .wrap{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+.hero-ph{margin:0;position:relative;border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(30,0,6,.45);aspect-ratio:4/3;background:rgba(255,255,255,.08)}
+.hero-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 1.2s}
+.hero-ph img.on{opacity:1;animation:kb 7s ease-out both}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+@media (prefers-reduced-motion:reduce){.hero-ph img.on{animation:none}}
+.hero-ph figcaption{z-index:1}
+.hero-ph figcaption{position:absolute;left:12px;bottom:10px;font-size:.75rem;color:#fff;opacity:.85}
+.fac-card{margin-bottom:16px}
+.fac-card .life-ph{cursor:zoom-in;aspect-ratio:16/10}
+@media (max-width:760px){.fac-card .life-ph{aspect-ratio:4/3}}
+.hero .eyebrow{color:#E9D3A8}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);font-weight:700}
+.hero p.sub{font-size:clamp(1.02rem,2.4vw,1.2rem);max-width:36em;opacity:.92}
+.offer{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;background:rgba(70,0,14,.32);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.32);border-radius:var(--r);padding:14px 18px;width:fit-content;max-width:100%}
+.offer b{font-family:var(--serif);font-size:2.2rem;line-height:1}
+.offer .br{flex-basis:100%;height:0}
+.qi{font-size:.42em;font-weight:500;margin-left:3px;opacity:.9}
+.offer .promo{background:#E9D3A8;color:#3A2A10;font-weight:700;border-radius:999px;padding:2px 12px;font-size:.9rem}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px}
+.hero .btn.primary{background:#fff;color:#7E0016;text-shadow:none}
+.hero .btn.ghost{background:rgba(70,0,14,.22)}
+.hero .btn.ghost{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.hero .facts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.92rem;opacity:.9}
+
+/* 戶型 */
+.unit-card .ph{aspect-ratio:4/3;border-radius:8px;background:linear-gradient(135deg,var(--forest-soft),var(--brass-soft));display:flex;align-items:flex-end;padding:12px;font-family:var(--serif);font-weight:700;color:var(--forest);overflow:hidden}
+.unit-card .ph.cover{position:relative;border:0;width:100%;background-size:cover;background-position:center;justify-content:space-between;cursor:pointer;color:#fff;text-align:left}
+.unit-card .ph.cover::after{content:"";position:absolute;inset:0;border-radius:8px;background:linear-gradient(180deg,transparent 45%,rgba(10,20,14,.55))}
+.unit-card .ph.cover:not(.loaded){color:var(--forest)}
+.unit-card .ph.cover span.ph-ai{position:absolute;top:8px;left:8px;z-index:2;white-space:nowrap;font-size:.72rem;font-weight:700;line-height:1.5;background:rgba(0,0,0,.55);color:#fff;border-radius:999px;padding:1px 9px}
+.unit-card .ph.cover:not(.loaded)::after{display:none}
+.unit-card .ph.cover span{position:relative;z-index:1}
+.ph-more{font-family:var(--sans);font-size:.8rem;font-weight:500;background:rgba(0,0,0,.35);border-radius:999px;padding:3px 10px}
+.unit-card .ph.cover:not(.loaded) .ph-more{background:var(--surface)}
+.plan-btn{align-self:flex-start;margin-top:4px}
+.life-card{gap:10px}
+.life-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;border-radius:10px}
+.life-track::-webkit-scrollbar{display:none}
+.life-slide{flex:0 0 100%;scroll-snap-align:start;margin:0;min-width:0}
+.life-ph{aspect-ratio:4/3;border-radius:10px;background:linear-gradient(135deg,var(--forest-soft),var(--brass-soft));color:var(--forest);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:1.1rem;line-height:1.6}
+.life-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.life-ph .soon{font-weight:400;font-size:.8rem;opacity:.65}
+.life-ph .demo{position:absolute;top:8px;left:8px;font-size:.72rem;font-weight:700;background:rgba(0,0,0,.55);color:#fff;border-radius:999px;padding:2px 9px}
+.life-ph .credit{position:absolute;left:0;right:0;bottom:0;font-size:.64rem;font-weight:400;line-height:1.4;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:16px 8px 5px;text-align:left}
+.life-cap{display:flex;justify-content:space-between;gap:10px;margin-top:8px;font-size:.95rem}
+.life-cap .muted{white-space:nowrap}
+.life-nav{display:flex;align-items:center;justify-content:space-between}
+.life-nav button{border:1px solid var(--line);background:var(--surface);width:36px;height:36px;border-radius:50%;font-size:1.25rem;line-height:1;cursor:pointer;color:inherit}
+.life-dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.life-dots i{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.life-dots i.on{background:var(--forest)}
+.unit-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.unit-actions .plan-btn{margin-top:0}
+.unit-card{scroll-margin-top:72px;transition:box-shadow .3s}
+.unit-card.picked{box-shadow:0 0 0 3px var(--forest)}
+.pick-note{display:none;font-size:.86rem;font-weight:700;color:var(--forest)}
+.unit-card.picked .pick-note{display:block}
+.alts .card.go{cursor:pointer;text-align:left;font:inherit;color:inherit}
+.alts .card.go:hover{border-color:var(--forest)}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(8,12,10,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 12px 24px}
+.lb img{max-width:min(100%,1200px);max-height:calc(100vh - 140px);border-radius:6px;object-fit:contain}
+.lb.plan img{background:#fff}
+.lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.lb figcaption{color:#E5ECE6;font-size:.92rem;text-align:center}
+.lb .lb-load{color:#E5ECE6}
+.lb-btn{position:absolute;border:0;background:rgba(255,255,255,.14);color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.6rem;line-height:1;display:grid;place-items:center}
+.lb-btn:hover{background:rgba(255,255,255,.26)}
+#lbClose{top:12px;right:12px}
+#lbPrev{left:12px;top:50%}
+#lbNext{right:12px;top:50%}
+.unit-card dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:0;font-size:.92rem}
+.unit-card dt{color:var(--muted)}
+.unit-card dd{margin:0}
+.avail{margin-top:28px;overflow-x:auto}
+.avail table{border-collapse:separate;border-spacing:6px;margin:0 auto}
+.avail th{font-weight:500;color:var(--muted);font-size:.86rem;padding:0 6px}
+.avail td{min-width:76px;text-align:center;border-radius:8px;padding:8px 6px;font-size:.86rem;line-height:1.35}
+.st-可售{background:var(--forest-soft);color:var(--forest);font-weight:700}
+.st-已售{background:var(--line);color:var(--muted)}
+.st-實品屋{background:var(--brass-soft);color:var(--brass);font-weight:700}
+.st-保留{background:var(--warn-soft);color:var(--warn)}
+
+/* 生活機能 */
+.life h3{display:flex;align-items:center;gap:8px}
+.life ul{list-style:none;padding:0}
+.life li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding-block:6px;font-size:.94rem}
+.life li span:last-child{color:var(--muted);white-space:nowrap}
+
+/* 互動推薦 */
+.quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;max-width:760px;margin:0 auto}
+.progress{height:6px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:18px}
+.progress i{display:block;height:100%;background:var(--forest);width:0;transition:width .3s}
+.q-step{font-size:.84rem;color:var(--muted)}
+.q-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;margin:4px 0 16px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px}
+.opt{border:1.5px solid var(--line);background:var(--bg);border-radius:10px;padding:12px 14px;text-align:left;font-weight:500}
+.opt[aria-pressed="true"]{border-color:var(--forest);background:var(--forest-soft);color:var(--forest)}
+.q-nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.q-hint{font-size:.86rem;color:var(--muted);margin-top:8px}
+input.txt,select.txt,textarea.txt{width:100%;border:1.5px solid var(--line);background:var(--bg);border-radius:10px;padding:10px 12px}
+textarea.txt{min-height:84px;resize:vertical}
+.result{display:flex;flex-direction:column;gap:16px}
+.best{border:2px solid var(--forest);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+.best h3{font-size:1.5rem}
+.best .why li{margin-top:2px}
+.alts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px}
+.alts .card{padding:14px}
+.calc-line{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.94rem}
+
+/* 比較表 */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table.cmp{border-collapse:collapse;width:100%;min-width:720px;font-size:.92rem}
+table.cmp th,table.cmp td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.cmp thead th{background:var(--forest);color:var(--forest-ink);font-weight:700;white-space:nowrap}
+table.cmp td.me,table.cmp th.me{background:var(--forest-soft)}
+table.cmp thead th.me{background:var(--forest-deep);color:#fff}
+table.cmp tbody th{white-space:nowrap;color:var(--muted);font-weight:500}
+
+/* 流程 */
+.steps{counter-reset:s;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.steps .card{position:relative;padding-top:44px}
+.steps .card::before{counter-increment:s;content:counter(s);position:absolute;top:14px;left:20px;width:24px;height:24px;border-radius:50%;background:var(--forest);color:var(--forest-ink);font-size:.8rem;font-weight:700;display:grid;place-items:center}
+
+/* 故事 */
+.story blockquote{margin:0;font-family:var(--serif);font-size:1.05rem}
+.story .who{font-size:.86rem;color:var(--muted)}
+.story .card{padding:0;overflow:hidden}
+.story .card>*:not(.sph){margin-left:20px;margin-right:20px}
+.story .card>.who{margin-bottom:20px}
+.story .sph{position:relative;height:0;padding-top:72%;background:var(--line);margin-bottom:6px;overflow:hidden}
+.story .sph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.story .sph span{position:absolute;right:8px;bottom:8px;font-size:.72rem;color:#fff;background:rgba(0,0,0,.4);padding:2px 8px;border-radius:999px}
+.blogo{height:30px;width:auto;max-width:100%;object-fit:contain;object-position:left center;margin:2px 0 4px}
+.blogos{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.blogos .blogo{margin:2px 0}
+.blogos.co{gap:3%;flex-wrap:nowrap;margin:6px 0 2px}
+.blogos.co .x{color:var(--muted);font-size:1.15rem;line-height:1}
+.blogos.co .blogo{height:auto;margin:0}
+.blogos.co .blogo:first-of-type{width:55%;max-width:330px}
+.blogos.co .blogo:last-of-type{width:31%;max-width:190px}
+.ifmark{display:inline-flex;align-items:center;gap:8px;padding-left:16px;border-left:1px solid var(--line);font-size:.72rem;line-height:1.25;color:var(--muted)}
+.ifmark svg{width:30px;height:30px;flex:none}
+.ifmark b{display:block;color:var(--ink);font-size:.74rem;letter-spacing:.04em}
+
+/* 預約 */
+.book{display:grid;gap:24px;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
+@media (max-width:860px){.book{grid-template-columns:1fr}}
+form .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+@media (max-width:520px){form .row{grid-template-columns:1fr}}
+form label{display:flex;flex-direction:column;gap:4px;font-size:.92rem;font-weight:500}
+form label .req{color:var(--warn)}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slots .opt{padding:8px 14px}
+.check{flex-direction:row!important;align-items:flex-start;gap:8px!important;font-weight:400!important}
+.check input{margin-top:6px}
+details.privacy{font-size:.86rem;color:var(--muted);background:var(--bg);border-radius:10px;padding:10px 14px}
+details.privacy summary{cursor:pointer;color:var(--forest);font-weight:500}
+details.privacy ol{margin-top:6px}
+.msg{border-radius:10px;padding:12px 14px;font-size:.94rem}
+.msg.err{background:var(--warn-soft);color:var(--warn)}
+.msg.ok{background:var(--forest-soft);color:var(--forest)}
+.hero .offer-note{font-size:.78rem;opacity:.8;margin-top:-8px;max-width:36em}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+footer{background:rgba(26,0,5,.82);color:#EED7D5;padding-block:40px 96px;font-size:.88rem}
+footer a{color:#fff}
+footer .wrap{display:flex;flex-direction:column;gap:8px}
+/* 手機底部固定按鈕列：配對戶型＋預約賞屋（捲到預約表單時隱藏） */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--surface);box-shadow:0 -6px 24px rgba(0,0,0,.14);transition:transform .25s}
+.mbar .btn{justify-content:center;text-align:center;padding-inline:8px}
+.mbar.off{transform:translateY(110%)}
+@media (min-width:761px){.mbar{display:none}}
+@media (max-width:760px){body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}}
+/* 首頁直接開始問卷第一題 */
+.hq{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.4);border-radius:16px;padding:16px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);max-width:36em}
+.hq-t{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.hq-t b{font-family:var(--serif);font-size:1.15rem}
+.hq-t span{font-size:.92rem;opacity:.9}
+.hq-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+@media (min-width:640px){.hq-opts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.hq-opt{background:#fff;color:#7E0016;border:0;border-radius:10px;padding:12px 8px;font:inherit;font-weight:700;cursor:pointer;text-shadow:none;transition:transform .15s}
+.hq-opt:active{transform:scale(.97)}
+.hq-note{font-size:.8rem;opacity:.8;margin-top:8px}
+/* 生活機能：手機改成分頁，一次看一類 */
+.tabs{display:none;gap:8px;margin-bottom:14px;overflow-x:auto;scrollbar-width:none}
+.tabs button{flex:0 0 auto;border:1.5px solid var(--line);background:var(--surface);color:inherit;border-radius:999px;padding:8px 16px;font:inherit;font-weight:700;cursor:pointer}
+.tabs button[aria-selected="true"]{border-color:var(--forest);background:var(--forest-soft);color:var(--forest)}
+@media (max-width:899px){.tabs{display:flex}.life-card.off{display:none}}
+/* 比較表：先看重點，完整表格點開才顯示 */
+.cmp-key{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px;margin-bottom:14px}
+.cmp-key div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.cmp-key b{display:block;font-family:var(--serif);font-size:1.35rem;color:var(--forest)}
+.cmp-key span{font-size:.86rem;color:var(--muted)}
+details.more>summary{cursor:pointer;list-style:none;display:flex;justify-content:center;align-items:center;gap:6px;padding:12px;border:1.5px dashed var(--line);border-radius:12px;font-weight:700;color:var(--forest)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::after{content:"＋";font-weight:400}
+details.more[open]>summary::after{content:"－"}
+details.more[open]>summary{margin-bottom:12px}
+</style>
+</head>
+<body>
+<script type="application/json" id="srv">{"cfg":{"name":"晨均渼山","builder":"晨均建設股份有限公司","license":"","address":"高雄市小港區高坪八路32號","phone":"07-216-5218","lineId":"","lineUrl":"https://lin.ee/tY3YJkj","ig":"https://www.instagram.com/passionhaus32/","map":"https://maps.app.goo.gl/R5PYJUGw6gsqNzAf9","price":988,"priceNote":"38 坪標準戶","promo":"限量 3 戶・簽約送車位","slots":["10:00","10:30","14:00","15:30"],"days":30,"hero":"","privacy":"","rates":[1.775,1.775,1.775,1.9,2.025,2.15,2.275],"rateDate":"2026/10/9"},"units":[{"code":"2F-A","floor":"2F","type":"A","name":"豐饒之家","size":38.19,"inner":27.6,"terrace":0,"light":"雙面採光","rooms":"可隔 3 房","baths":"","tub":false,"feature":"2–4F 最大的戶型，三房好規劃","status":"實品屋","img":""},{"code":"2F-B","floor":"2F","type":"B","name":"日光之間","size":37.17,"inner":26.2,"terrace":4.55,"light":"三面大採光","rooms":"可隔 3 房","baths":"2","tub":false,"feature":"特色空間集中更顯寬敞，三面大採光，工作陽台較大，兩間衛浴都有開窗","status":"可售","img":""},{"code":"2F-C","floor":"2F","type":"C","name":"返璞歸真","size":37.52,"inner":27,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":true,"feature":"配備 ROCA 鋼板浴缸","status":"可售","img":""},{"code":"2F-D","floor":"2F","type":"D","name":"旅行的記憶","size":37.45,"inner":26.7,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":false,"feature":"","status":"可售","img":""},{"code":"3F-A","floor":"3F","type":"A","name":"豐饒之家","size":38.19,"inner":27.6,"terrace":0,"light":"雙面採光","rooms":"可隔 3 房","baths":"","tub":false,"feature":"2–4F 最大的戶型，三房好規劃","status":"可售","img":""},{"code":"3F-B","floor":"3F","type":"B","name":"日光之間","size":37.17,"inner":26.2,"terrace":0,"light":"三面大採光","rooms":"可隔 3 房","baths":"2","tub":false,"feature":"特色空間集中更顯寬敞，三面大採光，工作陽台較大，兩間衛浴都有開窗","status":"已售","img":""},{"code":"3F-C","floor":"3F","type":"C","name":"返璞歸真","size":37.52,"inner":27,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":true,"feature":"配備 ROCA 鋼板浴缸","status":"實品屋","img":""},{"code":"3F-D","floor":"3F","type":"D","name":"旅行的記憶","size":37.45,"inner":26.7,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":false,"feature":"","status":"實品屋","img":""},{"code":"4F-A","floor":"4F","type":"A","name":"豐饒之家","size":38.19,"inner":27.6,"terrace":0,"light":"雙面採光","rooms":"可隔 3 房","baths":"","tub":false,"feature":"2–4F 最大的戶型，三房好規劃","status":"可售","img":""},{"code":"4F-B","floor":"4F","type":"B","name":"日光之間","size":37.17,"inner":26.2,"terrace":0,"light":"三面大採光","rooms":"可隔 3 房","baths":"2","tub":false,"feature":"特色空間集中更顯寬敞，三面大採光，工作陽台較大，兩間衛浴都有開窗","status":"可售","img":""},{"code":"4F-C","floor":"4F","type":"C","name":"返璞歸真","size":37.52,"inner":27,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":true,"feature":"配備 ROCA 鋼板浴缸","status":"可售","img":""},{"code":"4F-D","floor":"4F","type":"D","name":"旅行的記憶","size":37.45,"inner":26.7,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":false,"feature":"","status":"可售","img":""}],"parks":[{"no":"11","kind":"平面-大","price":150,"status":"可售"},{"no":"12","kind":"平面-標準","price":130,"status":"可售"},{"no":"2","kind":"機上","price":90,"status":"可售"},{"no":"5","kind":"機上","price":90,"status":"可售"},{"no":"10","kind":"機上","price":90,"status":"可售"},{"no":"3-1","kind":"機中","price":110,"status":"可售"},{"no":"9","kind":"機中","price":110,"status":"可售"},{"no":"1","kind":"機下","price":100,"status":"可售"},{"no":"3","kind":"機下","price":100,"status":"可售"},{"no":"6","kind":"機下","price":100,"status":"可售"},{"no":"8","kind":"機下","price":100,"status":"可售"}],"live":true,"photos":{"A":{"cover":"1M9Gra23blOBVemJSIT82STn_0FIB7Kr1","gallery":["146LNaDn_tOlyR0g3lnhOye3tw5f8SL9L","1pljq6hdzxkwFl206nje3ucyASAzyhPwx","13l7JDzO1WPwOIOSzYfhzQIhhtB5IEYrw"],"plan":"1V8-q7zJCbBvUZKPkZnmd0IvOfgk5QIKZ","coverAi":false},"B":{"cover":"1gAFz8BuZ8IREL2oIKhxKbx4HR4LcWX1v","gallery":["1gAFz8BuZ8IREL2oIKhxKbx4HR4LcWX1v"],"plan":"1VqqBYSl3loProunjkwWX1VByGuIk8bSn","coverAi":true},"C":{"cover":"127cOCXwRG3jyKpL9rch9xqKTPiI_Iw17","gallery":["1dp_V2JLZuVb0LkJDgGF3MQcYE71xgJOg","1so4Cx4wJFG28Aq45eUXVM3Te5I5KkioY","1ImrkOYEq29gH7WdWRf_QriRLBuf3Yy0O"],"plan":"1lSOUj73tFvIsqU4AUk66beD8YN1PxFov","coverAi":false},"D":{"cover":"1tAaz3NlvKEJ_wAkZZHZUtJfwZKrlosoa","gallery":["1Gz9rLhDG0dufJ-tTb8KF4omP8AHlD__U","1MqwBQyKD3rF9uTHu07vNj1QNI7kwyfTL","1Z0cPDUiILffgdD_JD7rqc-IcGtDl_qBr"],"plan":"1JBFo1YuvA2ToCo3nAXds3H5miFKWOZKj","coverAi":false}},"facade":{"hero":"1jY3hKPoVj7n1LaSHo9msyibVACIVNuds","list":[{"id":"1jY3hKPoVj7n1LaSHo9msyibVACIVNuds","cap":"飛機航線下的紅色量體"},{"id":"1nEdz9ox0HCQDlIPvjuQWeJj8tC8j7Rp9","cap":"屋突與格柵"},{"id":"14KSBFf_GUuaWkoNErBiuGEvcW64hhs7r","cap":"深遮陽立面"},{"id":"1kyK9OmzSy_7fQmOEPBfuUOjF_Ne13kpx","cap":"大面窗與藍天"},{"id":"1ROOQEafwu4lbKrQ2F2FKYjNRHDv5hEF-","cap":"陽台立面"},{"id":"1CjbleaA4aXTRfer6YSyNQ6Cj9RiZt3mO","cap":"陽台望出去的綠"},{"id":"1tSVzt34aqoubtW3_AW5xrZ0qrpewxbCv","cap":"窗框裡的森林"},{"id":"1OwZqgeVaP8i_jYqSa8QKXEkkmuAQ50dg","cap":"窗外綠坡"}]},"life":[{"cat":"日常採買","name":"萊爾富 小港亞路米","dist":"步行可達","img":"1ZKi7MmqH7QgO9DiLnm8aLjWFqcinp_mm","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"全家 大坪頂店","dist":"車程約 3 分","img":"1bbWb2pNn-kqRGsVchf0QGzo6Sy-HERN7|18WP9PHizLN7M42N3lncsdHyu06IvcYt5","credit":"晨均渼山實拍|晨均渼山實拍"},{"cat":"日常採買","name":"7-ELEVEN 坪高門市","dist":"約 5 分","img":"1X5_xKzRDY01g8Rw9lXFZdGxzrVfBgthE","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"美廉社 小港大坪頂店","dist":"約 5 分","img":"1gmP27t6-1JQNwFn3BO8kc_MLTJ6yOtIW","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"全聯 小港松園店","dist":"約 9 分","img":"1ERH5f_7BM0eP07_lanOtbuTYftFXOdL4","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"家樂福超市（宏平路）","dist":"約 9 分","img":"1CA-mHBjNLkkdr_I2vHGtrYIfjOiu4tp8","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"坪頂國小","dist":"約 5 分","img":"1DZr9vMzc9FDtojMaQrc7uU1JmW20YDnU","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"國立高雄餐旅大學","dist":"約 9 分","img":"1d_C03AdXqOFe0_svY4kTiGzQysLLo63O","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"明義國中","dist":"約 11 分","img":"1-JcuhB1-HGjBacw9WBbepBcELJA2-rKf","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"高雄市立小港醫院","dist":"約 8 分","img":"13uS5xzk7vPaXPvVgdOkiDTHcNInDqSbK","credit":"晨均渼山實拍"},{"cat":"交通與綠地","name":"高雄國際機場","dist":"約 10 分","img":"15ClVkbuIdcarbrjpvZWPKcjSVQSpqL0F|https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Kaohsiung_Airport_Terminal.jpg/960px-Kaohsiung_Airport_Terminal.jpg","credit":"晨均渼山實拍|Alec @ Taiwan／CC BY 2.0／Wikimedia Commons"},{"cat":"交通與綠地","name":"捷運小港站","dist":"約 11 分","img":"1l4nS0pKAX0NiUFWuHhpwpYtSlQbFO7zk|https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/R3_Siaogang_Station_20240814.jpg/960px-R3_Siaogang_Station_20240814.jpg","credit":"晨均渼山實拍|鐵路Railway／CC BY-SA 4.0／Wikimedia Commons"},{"cat":"交通與綠地","name":"大坪頂熱帶植物園","dist":"約 5 分","img":"1lFSdLrXYSPMHhAHS2RY4I86p8iErkUU4","credit":"晨均渼山實拍"},{"cat":"交通與綠地","name":"大坪頂坪鳳公園","dist":"約 6 分","img":"1zRJIaVce8zIgA_X0ZCcthrrlNuxkfZob","credit":"晨均渼山實拍"}]}</script>
+
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="#top">晨均渼山</a>
+    <nav class="links" id="siteNav" aria-label="頁面導覽">
+      <a href="#why">為什麼是渼山</a><a href="#units">戶型</a><a href="#quiz">找到你的家</a><a href="#life">生活機能</a>
+      <a href="#about">建案介紹</a><a href="#brand">晨均建設</a><a href="#gain">你可以獲得</a><a href="#compare">比較</a><a href="#dream">購屋流程</a>
+    </nav>
+    <div class="hd-act">
+      <a class="ico" id="hdIg" href="https://www.instagram.com/passionhaus32/" target="_blank" rel="noopener" aria-label="晨均渼山 Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a>
+      <a class="ico" id="hdLine" href="https://lin.ee/tY3YJkj" target="_blank" rel="noopener" aria-label="加入 LINE 好友"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c-5 0-9 3.2-9 7.2 0 3.6 3.2 6.6 7.5 7.1.3.1.7.2.8.5.1.2.1.6 0 .9l-.1.8c0 .2-.2.9.8.5s5.4-3.2 7.4-5.4c1.4-1.5 2.1-3 2.1-4.4 0-4-4-7.2-9.5-7.2z" fill="currentColor"/><text x="12" y="12.6" text-anchor="middle" font-size="5.2" font-weight="700" font-family="Arial,sans-serif" style="fill:var(--surface)">LINE</text></svg></a>
+      <button type="button" class="ico menu-btn" id="menuBtn" aria-label="開啟選單" aria-expanded="false" aria-controls="siteNav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" fill="none"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- 主視覺 -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-txt">
+      <span class="eyebrow">小港大坪頂｜一梯兩戶綠景住宅</span>
+      <h1>住進見證未來的位置上</h1>
+      <p class="sub">晨均渼山，3.3 米室內樓高，最舒服的家，把每天努力的你好好接住；窗外，是永久的綠意。</p>
+      <div class="offer" id="offer"></div>
+      <p class="offer-note">※ 優惠方案以現場簽約為準，晨均建設保留調整、變更或終止優惠之權利，並保有最終解釋權。</p>
+      <div class="hq" id="heroQuiz">
+        <div class="hq-t"><b>3 分鐘，免費配對你的戶型</b><span>第 1 題：幾個人一起住？</span></div>
+        <div class="hq-opts"></div>
+        <p class="hq-note">點一下就開始，共 8 題，最後推薦最適合你的戶型。</p>
+      </div>
+      <div class="ctas">
+        <a class="btn ghost" href="#book">直接預約賞屋</a>
+      </div>
+      <div class="facts"><span>16 戶社區型華廈</span><span>標準戶 37–38 坪</span><span>公設比 27.3%</span><span>iF 得獎建築團隊</span></div>
+      </div>
+      <figure class="hero-ph" id="heroPh" hidden><img alt="晨均渼山 建築外觀" id="heroImg"><figcaption>晨均渼山 建築外觀實景</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 為什麼選晨均渼山 -->
+  <section class="sec" id="why">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">為什麼選擇晨均渼山</span>
+        <h2>只有渼山有的五個理由</h2>
+      </div>
+      <div class="grid g3">
+        <div class="card"><span class="tag brass">Only One</span><h3>永久綠意</h3><p class="small muted">基地面向綠林，窗外就是長久的綠景。</p></div>
+        <div class="card"><span class="tag brass">Only One</span><h3>3.3 米室內樓高</h3><p class="small muted">標準層 3.3 米，空間開闊、採光充足。</p></div>
+        <div class="card"><span class="tag brass">Only One</span><h3>高坪效</h3><p class="small muted">實際可使用面積約 26 坪；同為 38 坪，室內多出 3.69 坪。</p></div>
+        <div class="card"><span class="tag brass">Only One</span><h3>iF 得獎建築師</h3><p class="small muted">工二建築，德國 iF 設計獎得獎團隊操刀。</p></div>
+        <div class="card"><span class="tag brass">Only One</span><h3>16 戶社區型華廈</h3><p class="small muted">一梯兩戶，優質鄰里關係，單純好管理。</p></div>
+        <div class="card"><span class="tag">Number One</span><h3>建築規劃・貼心設計・全齡住宅</h3><p class="small muted">人車分流、無障礙電梯、戶戶雙面採光，從兩人世界到三代同堂都住得舒服。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 戶型 -->
+  <section class="sec alt" id="units">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">四種戶型</span>
+        <h2>每一種生活，都有一個名字。哪一個是你？</h2>
+        <p class="lead">2F–4F 標準戶權狀 37–38 坪，全戶開放格局，依家庭需求量身規劃。</p>
+      </div>
+      <div class="grid g4" id="unitCards"></div>
+      <a class="to-quiz" href="#quiz"><b>四種都喜歡、不知道選哪個？</b><span>3 分鐘，免費幫你配對最適合的戶型 ↓</span></a>
+    </div>
+  </section>
+
+  <!-- 互動推薦 -->
+  <section class="sec" id="quiz">
+    <div class="wrap">
+      <div class="head" style="margin-inline:auto;text-align:center;align-items:center">
+        <span class="eyebrow">找到你的家</span>
+        <h2>回答幾個問題，看看哪一戶最適合你</h2>
+        <p class="lead">免費、約 3 分鐘。回答 8 題，送你最適合的戶型、月付試算與車位建議，還能直接預約參觀。</p>
+      </div>
+      <div class="quiz" id="quizBox" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- 生活機能 -->
+  <section class="sec alt" id="life">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">生活機能</span>
+        <h2>5 分鐘車程生活圈，10 分鐘到機場與捷運</h2>
+        <p class="lead">基地位於大坪頂特定區東側，第二進安靜基地；超商步行可達，學校、超市、醫院開車約 5–8 分鐘。</p>
+      </div>
+      <div class="tabs" id="lifeTabs" role="tablist" aria-label="生活機能分類"></div>
+      <div class="grid g3" id="lifeCards"></div>
+      <p class="small muted" style="margin-top:12px">開車時間為路線規劃估算，未計塞車與紅綠燈；資料整理日期 2026/10/18。標示「示意」的照片為同品牌其他分店，非該分店實景。</p>
+    </div>
+  </section>
+
+  <!-- 建案介紹 -->
+  <section class="sec" id="about">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">建案介紹</span>
+        <h2>一個「最舒服生活的家」</h2>
+        <p class="lead">晨均渼山位於小港大坪頂特定區，地上 5 層、16 戶的社區型華廈。<br class="pc">每部電梯只服務兩戶，進出安靜、鄰里單純；戶戶面向綠色坡地，每天回家都看得到綠。</p>
+      </div>
+      <div class="card life-card fac-card" id="facCard" hidden></div>
+      <div class="grid g4">
+        <div class="card"><span class="k">室內樓高</span><span class="v">3.3 米</span><p class="small muted">空間開闊、採光充足，回家就覺得空間在呼吸。</p></div>
+        <div class="card"><span class="k">同為 38 坪，室內多出</span><span class="v">3.69 坪</span><p class="small muted">公設比 27.3%，室內約 27.63 坪；以公設比 37% 的產品計算約 23.94 坪。</p></div>
+        <div class="card"><span class="k">梯戶配置</span><span class="v">一梯兩戶</span><p class="small muted">L 型基地分兩棟，等梯時間短，鄰里單純好管理。</p></div>
+        <div class="card"><span class="k">案場狀態</span><span class="v">成屋可看</span><p class="small muted">已取得使用執照，實品屋現場直接看屋。</p></div>
+      </div>
+      <div class="grid g3" style="margin-top:16px">
+        <div class="card"><h3>建築與結構</h3><ul class="small"><li>工二建築（德國 iF 設計獎得獎團隊）</li><li>15cm RC 樓版，混凝土與鋼筋皆送 TAF（全國認證基金會）認證的實驗室檢驗，結果有公信力</li><li>泥礦漆外牆：抗菌自潔、零甲醛，可降室內溫度 4–6 度</li></ul></div>
+        <div class="card"><h3>安靜與安心</h3><ul class="small"><li>勝群鋁門窗：抗風壓 3600Pa、水密 1000Pa、氣密第一級</li><li>晨均建設的「隔音三明治工法」：法國聖戈班隔音墊（可隔絕 21 分貝）＋ SPC 地板（可隔絕 17 分貝）雙層夾合<small style="display:block;font-size:.85em;opacity:.8;margin-top:.3em">※ 隔音數值為材料規格，實際效果依現場條件而異</small></li><li>中保無限<sup>＋</sup> 數位化物業管理、24 小時監控</li></ul></div>
+        <div class="card"><h3>好用的日常</h3><ul class="small"><li>大尺度廚房 2.5–3.3 米，SVAGO 洗碗機與感應爐</li><li>BWT 生飲淨水系統，打開水龍頭就能喝</li><li>全戶開放、上配管規劃，可規劃雙主臥、雙主浴</li><li>中保無限<sup>＋</sup> 智能宅配櫃：24 小時都能收件，包裹安心送達</li><li>社區資源處理區：垃圾、回收自己安排時間，不用再追垃圾車</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 為什麼選晨均建設（內容整理自晨均建設官網 chez-cca.com） -->
+  <section class="sec alt" id="brand">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">為什麼選擇晨均建設</span>
+        <h2>均好世代，TO BE WITH YOU</h2>
+        <p class="lead">均好，是居住的每個面向都均衡到位：空間、採光、動線、設備、環境與長期生活感，一起照顧好。<br class="pc">晨均把營建品質放在第一位，精緻規模、堅穩切實，守護每一份信賴。</p>
+      </div>
+      <div class="grid g2">
+        <div class="card"><span class="tag">團隊</span><div class="blogos co"><img class="blogo" src="https://lh3.googleusercontent.com/d/11FtkVtdfd8xQ95qauJeoV6jeQO2xMvpI=w600" alt="弘力建設股份有限公司" loading="lazy"><span class="x" aria-hidden="true">×</span><img class="blogo" src="https://lh3.googleusercontent.com/d/1gV0Zr4ykMej2f77WLl7NOwOa3GloX8g_=w600" alt="晨均建設股份有限公司" loading="lazy"></div><p class="small muted">工務、業務、企劃、財務多年共事的默契，把豐厚的實務經驗投入每一個作品。</p></div>
+        <div class="card"><span class="tag">建築</span><div class="blogos"><img class="blogo" src="https://lh3.googleusercontent.com/d/1uOcE8gUKTzbIaTb8ahIj5uGU4SqFUB6N=w600" alt="工二建築 HII ARCHITECTS" loading="lazy"><span class="ifmark"><svg viewBox="0 0 59 59" aria-hidden="true"><path fill="#ED1D26" d="M1 58h57V1H1z"/><path fill="#FFF" d="M37.8 33.97h9.12v-9.12H37.8v9.12zM25.64 46.13h9.12V12.69h-9.12v33.44zM37.8 21.8h9.12v-9.12H37.8v9.12zm-19.76-9.73a5.17 5.17 0 1 0 0 10.34 5.17 5.17 0 0 0 0-10.34zM13.5 46.13h9.12V24.84H13.5v21.27z"/></svg><span><b>iF DESIGN AWARD</b>得獎建築團隊</span></span></div><h3>工二建築事務所</h3><p class="small muted">德國 iF 設計獎得獎團隊，與晨均合作建築外觀、室內空間美學與植栽景觀，讓自然走進家裡。</p></div>
+      </div>
+      <div class="grid g4" style="margin-top:16px">
+        <div class="card"><span class="k">晨均實諾</span><span class="v">保固 15 年</span><p class="small muted">結構體保固 15 年，貼心售後服務。</p></div>
+        <div class="card"><span class="k">晨均實諾</span><span class="v">按圖施工</span><p class="small muted">保證按圖施工、維持工程品管，良心築造，說到做到。</p></div>
+        <div class="card"><span class="k">晨均實諾</span><span class="v">自主審查</span><p class="small muted">強化工地管理，交屋前嚴格自主審查。</p></div>
+        <div class="card"><span class="k">晨均實諾</span><span class="v">人本售服</span><p class="small muted">交屋後持續陪伴，和住戶一同成長。</p></div>
+      </div>
+      <div class="card works-card" style="margin-top:16px">
+        <span class="k">歷年作品</span>
+        <div class="works"><b>晨均日渼</b><b>晨均渼山</b><span>弘力真諦</span><span>弘力墅也</span><span>弘力得月</span><span>弘力真湛</span><span>弘力36美境</span><span>弘力新四維</span><span>弘力寬庭</span><span>弘力弘麗</span></div>
+        <a class="btn ghost small" href="https://chez-cca.com/" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:6px">認識晨均建設 ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 你可以獲得什麼 -->
+  <section class="sec" id="gain">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">你可以獲得什麼</span>
+        <h2>負擔得起的好品質</h2>
+        <p class="lead">渼山過去的實價登錄與大坪頂行情相當；現在的優惠價比登錄價更划算。<br class="pc">限量 3 戶・簽約送車位。</p>
+      </div>
+      <div class="grid g2">
+        <div class="card">
+          <span class="k">現在的優惠</span>
+          <span class="v" id="gainPrice"></span>
+          <p id="gainNote" class="muted"></p>
+          <ul class="small">
+            <li>大坪頂電梯華廈近期行情：每坪約 27–27.6 萬</li>
+            <li id="gainUnit"></li>
+          </ul>
+          <p class="small muted">實價登錄資料來源：樂居，查詢日期 2026/10/18。</p>
+          <p class="small muted">※ 優惠方案以現場簽約為準，晨均建設保留調整、變更或終止優惠之權利，並保有最終解釋權。</p>
+        </div>
+        <div class="card">
+          <h3>房貸月付試算</h3>
+          <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <label class="small">總價（萬）<input class="txt" id="cPrice" type="number" min="100" step="1" inputmode="numeric"></label>
+            <label class="small">方案<select class="txt" id="cPlan"><option value="qa">新青安（貸 8 成）</option><option value="second">第二屋（貸 7 成）</option></select></label>
+            <label class="small">年限<select class="txt" id="cYears"><option>20</option><option selected>30</option><option>40</option></select></label>
+            <label class="small">貸款金額<input class="txt" id="cLoan" readonly></label>
+          </div>
+          <div id="cOut" class="calc-line" style="margin-top:6px"></div>
+          <p class="small muted" id="cNote"></p>
+        </div>
+      </div>
+      <div class="grid g2" style="margin-top:16px">
+        <div class="card">
+          <h3>付款方式</h3>
+          <div class="table-wrap" style="border:0"><table class="cmp" style="min-width:0">
+            <thead><tr><th>購屋類型</th><th>訂金</th><th>簽約</th><th>備證款</th><th>銀行貸款</th><th>交屋</th></tr></thead>
+            <tbody><tr><th>首購</th><td>2%</td><td>8%</td><td>5%</td><td>80%</td><td>5%</td></tr>
+            <tr><th>置產</th><td>2%</td><td>8%</td><td>15%</td><td>70%</td><td>5%</td></tr></tbody></table></div>
+        </div>
+        <div class="card">
+          <h3>住進渼山，還有這些</h3>
+          <ul class="small"><li>BWT 生飲淨水、中保無限<sup>＋</sup> 智能宅配櫃、社區冰箱</li><li>公共電動車充電設備、人車分流</li><li id="parkLine"></li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 競品比較 -->
+  <section class="sec alt" id="compare">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">比較</span>
+        <h2>同樣預算，渼山多給你什麼？</h2>
+        <p class="lead">資料來源為實價登錄與公開平台，查詢日期 2026/10/19；實際以各建案公告為準。</p>
+      </div>
+      <div class="cmp-key">
+        <div><b>27.3%</b><span>公設比，其他建案約 35–36.5%</span></div>
+        <div><b>3.3 米</b><span>室內樓高，其他建案約 3–3.15 米或未公開</span></div>
+        <div><b>一梯兩戶</b><span>16 戶社區型華廈，其他建案 130–590 戶</span></div>
+      </div>
+      <details class="more" id="cmpMore"><summary>展開完整比較表（4 個建案、9 個項目）</summary>
+      <div class="table-wrap">
+        <table class="cmp">
+          <thead><tr><th>項目</th><th class="me">晨均渼山</th><th>清景麟國家公園</th><th>華友聯 POWER CITY</th><th>友友 百達宏邸</th></tr></thead>
+          <tbody>
+            <tr><th>地點</th><td class="me">高坪八路（大坪頂）</td><td>松園六路（小港森林公園旁）</td><td>高松路 × 松華路</td><td>宏平路 × 崇愛街</td></tr>
+            <tr><th>規模</th><td class="me">地上 5 層／16 戶</td><td>地上 17 層／住 576 戶＋店 14 戶</td><td>地上 11–13 層／452 戶</td><td>地上 15 層／住 130 戶＋店 1 戶</td></tr>
+            <tr><th>坪數</th><td class="me">37–38 坪（室內約 26.2–27.6 坪）</td><td>2 房 24–31 坪、3 房 32–44 坪</td><td>2 房 22–28 坪、3 房 36–38 坪、4 房 46–47 坪</td><td>2 房約 27 坪、3 房 35–38 坪</td></tr>
+            <tr><th>室內樓高</th><td class="me">3.3 米</td><td>未公開</td><td>2–10F 3 米、11F 以上 3.15 米</td><td>未公開</td></tr>
+            <tr><th>梯戶比</th><td class="me">一梯兩戶</td><td>約 3–4 戶共用 1 部電梯（依棟別）</td><td>—</td><td>—</td></tr>
+            <tr><th>公設比</th><td class="me">27.3%</td><td>約 36%</td><td>35–36%</td><td>36.5%</td></tr>
+            <tr><th>車位</th><td class="me">機械 90／100／110 萬<br>平面 130／150 萬</td><td>平面，實登約 170–210 萬</td><td>平面 140–190 萬</td><td>平面＋機械，價格未公告</td></tr>
+            <tr><th>單價</th><td class="me" id="cmpPrice"></td><td>近一年均價約 32.4 萬/坪</td><td>均價約 28.3 萬/坪</td><td>近一年均價約 34.6 萬/坪</td></tr>
+            <tr><th>屋況</th><td class="me">成屋，實品屋可看</td><td>新成屋</td><td>新成屋（屋齡約 1 年）</td><td>新成屋</td></tr>
+          </tbody>
+        </table>
+      </div>
+      </details>
+      <p class="small muted" style="margin-top:10px">來源：591 新建案、樂居、5168 實價登錄比價王、高雄房地王、本案 2024/4 區域調查。單價為實價登錄平台統計，各平台計算方式不同；梯戶比依公開資料整理，以建商資料為準。「—」表示公開資料未載明。</p>
+    </div>
+  </section>
+
+  <!-- 為什麼是你 -->
+  <section class="sec" id="you">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">為什麼是你</span>
+        <h2>也許，這就是你</h2>
+        <p class="lead">對設計有感、清楚知道自己要什麼，想把努力工作的日子，換成每天都舒服的家。</p>
+      </div>
+      <div class="grid g3 story">
+        <div class="card"><div class="sph"><img src="https://lh3.googleusercontent.com/d/1LjeQlFd99DrgZ7tG4JaraohdkhoSbTRf=w900" alt="一梯兩戶的當層梯間" loading="lazy"><span>渼山實景</span></div><span class="tag">準備成家</span><blockquote>「想要一個不用和人擠的家。現在兩個人住，以後有小孩再隔一間。」</blockquote><p class="small muted">一梯兩戶進出安靜，全戶開放格局能跟著家庭長大。</p><span class="who">情境示意</span></div>
+        <div class="card"><div class="sph"><img src="https://lh3.googleusercontent.com/d/1nny6SaRUJbrd4DMHCbbaHDenMKhyZtzi=w900" alt="在家工作的雙薪家庭情境" loading="lazy"></div><span class="tag">雙薪家庭</span><blockquote>「上班近一點，孩子各有一間房，空氣好一點。」</blockquote><p class="small muted">同樣 38 坪，室內多 3.69 坪；豐饒之家、日光之間都能規劃三房。</p><span class="who">情境示意</span></div>
+        <div class="card"><div class="sph"><img src="https://lh3.googleusercontent.com/d/1YgPHgf_5CtuQ4wveZAQ-zyxhJnzSK1Bm=w900" alt="坐在窗邊看綠景的生活情境" loading="lazy"></div><span class="tag">生活品味</span><blockquote>「回家只想好好放鬆，看得到綠、空間不壓迫。」</blockquote><p class="small muted">3.3 米樓高、雙面採光、窗外永久綠意。</p><span class="who">情境示意</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 我們如何幫你圓夢 -->
+  <section class="sec alt" id="dream">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">我們如何幫你圓夢</span>
+        <h2>從看屋到交屋，一路陪你</h2>
+        <p class="lead">第一步很簡單：預約一次賞屋，專人一對一陪你看。</p>
+      </div>
+      <div class="steps">
+        <div class="card"><h3>線上探索</h3><p class="small muted">回答問題，找到適合你的戶型與月付試算。</p></div>
+        <div class="card"><h3>預約賞屋</h3><p class="small muted">選好時段，專人與你確認。</p></div>
+        <div class="card"><h3>現場體驗</h3><p class="small muted">專人一對一建築走讀導覽，一起泡杯茶，好好聊生活。</p></div>
+        <div class="card"><h3>專屬報價</h3><p class="small muted">現場試算總價、付款拆款與房貸月付，每月要付多少一清二楚。</p></div>
+        <div class="card"><h3>下訂與簽約</h3><p class="small muted">訂金 2%、簽約 8%，保留你心儀的那一戶。</p></div>
+        <div class="card"><h3>貸款與備證</h3><p class="small muted">協助對接銀行與新青安申辦。</p></div>
+        <div class="card"><h3>驗屋</h3><p class="small muted">陪你逐項確認每個細節。</p></div>
+        <div class="card"><h3>交屋入住</h3><p class="small muted">點交鑰匙，成為渼山的一份子。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 預約 -->
+  <section class="sec" id="book">
+    <div class="wrap book">
+      <div class="head" style="margin-bottom:0">
+        <span class="eyebrow">預約賞屋</span>
+        <h2>來渼山，喝杯茶，好好聊生活</h2>
+        <p class="lead">選一個你方便的時段，我們會在 1 個工作天內與你聯繫確認。</p>
+        <p class="gift">🎁 完成賞屋，送你一份伴手禮</p>
+        <div class="card" style="margin-top:8px" id="contactCard">
+          <p><b>接待中心</b>　<span id="ctAddr"></span></p>
+          <p id="ctPhoneP" hidden>電話　<a id="ctPhone"></a></p>
+          <p id="ctLineP" hidden>LINE　<a id="ctLine" target="_blank" rel="noopener"></a></p>
+          <p id="ctMapP" hidden><a id="ctMap" target="_blank" rel="noopener">在 Google 地圖開啟</a></p>
+          <p class="small muted">開放預約：每天 <span id="ctSlots"></span></p>
+        </div>
+      </div>
+      <form id="bookForm" class="card" novalidate>
+        <div class="row">
+          <label>姓名 <span class="req">*</span><input class="txt" name="name" autocomplete="name" maxlength="30" required></label>
+          <label>手機 <span class="req">*</span><input class="txt" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="09xxxxxxxx" maxlength="12" required></label>
+        </div>
+        <div class="row">
+          <label>LINE ID（選填）<input class="txt" name="line" maxlength="40"></label>
+          <label>同行人數<select class="txt" name="people"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option value="6">6 人以上</option></select></label>
+        </div>
+        <div class="row">
+          <label>預約日期 <span class="req">*</span><input class="txt" name="date" type="date" required></label>
+          <label>想看的戶型<select class="txt" name="unit" id="unitSelect"></select></label>
+        </div>
+        <div><span class="small" style="font-weight:500">預約時段 <span class="req">*</span></span><div class="slots" id="slotBtns" role="radiogroup" aria-label="預約時段"></div></div>
+        <label>想先讓我們知道的事（選填）<textarea class="txt" name="note" maxlength="500" placeholder="例如：會帶長輩一起來、想了解貸款"></textarea></label>
+        <label class="hp" aria-hidden="true">網站<input name="website" tabindex="-1" autocomplete="off"></label>
+        <details class="privacy">
+          <summary>個人資料蒐集告知事項</summary>
+          <p style="margin-top:6px"><span class="js-builder">晨均建設股份有限公司</span>（以下稱本公司）依《個人資料保護法》第 8 條規定，向您告知下列事項：</p>
+          <ol>
+            <li>蒐集目的：不動產銷售與行銷、預約賞屋安排、客戶服務與聯繫、購屋資訊提供（法定特定目的代號：040 行銷、069 契約或類似契約關係之管理、090 消費者及客戶管理與服務）。</li>
+            <li>個人資料類別：姓名、手機、LINE ID、預約時間、購屋需求與問卷回答等您所提供的資料。</li>
+            <li>利用期間：自蒐集日起至蒐集目的消失為止，或依相關法令規定保存之期間。</li>
+            <li>利用地區：中華民國境內。</li>
+            <li>利用對象：本公司及本公司委託之銷售、行銷服務人員。</li>
+            <li>利用方式：以電話、簡訊、電子郵件、通訊軟體等方式聯繫，以及書面、電子方式處理與保存。</li>
+            <li>您可依《個人資料保護法》第 3 條規定，向本公司請求查詢、閱覽、製給複製本、補充或更正、停止蒐集處理利用或刪除您的個人資料<span id="pvContact"></span>。</li>
+            <li>您可自由選擇是否提供個人資料；若未提供必填資料，本公司將無法為您安排預約賞屋。</li>
+          </ol>
+        </details>
+        <label class="check"><input type="checkbox" name="consent"> <span>我已閱讀並同意<span class="js-builder">晨均建設股份有限公司</span>依上述告知事項，蒐集、處理及利用我的個人資料。<span class="req">*</span></span></label>
+        <label class="check"><input type="checkbox" name="marketing"> <span>（選填）我同意收到晨均建設的建案資訊與活動通知。</span></label>
+        <div id="bookMsg" class="msg" hidden role="status"></div>
+        <button class="btn primary" type="submit" id="bookBtn">送出預約</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="font-family:var(--serif);font-size:1.1rem;color:#fff">晨均渼山</p>
+    <p><span id="ftBuilder"></span><span id="ftLicense"></span></p>
+    <p id="ftAddr"></p>
+    <p class="small" style="opacity:.75">本網站圖文、價格與數據僅供參考，實際坪數、價格及付款條件以正式買賣契約為準；各項優惠方案晨均建設保有調整、變更、終止及最終解釋之權利。房貸試算為估算，實際條件以金融機構書面報價為準。</p>
+  </div>
+</footer>
+<nav class="mbar" id="mbar" aria-label="快速動作"><a class="btn ghost" href="#quiz">3 分鐘配對戶型</a><a class="btn primary" href="#book">預約賞屋</a></nav>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="照片">
+  <button type="button" class="lb-btn" id="lbClose" aria-label="關閉">×</button>
+  <button type="button" class="lb-btn" id="lbPrev" aria-label="上一張">‹</button>
+  <figure><span class="lb-load" id="lbLoad">照片載入中…</span><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button type="button" class="lb-btn" id="lbNext" aria-label="下一張">›</button>
+</div>
+
+<script type="text/plain" id="app">
+/* ───── 資料：正式網頁由 Code.gs 帶入；本機預覽時用下面的預設值 ───── */
+const DEFAULT = {
+  cfg: { name: '晨均渼山', builder: '晨均建設股份有限公司', license: '', address: '高雄市小港區高坪八路32號', phone: '', lineId: '', lineUrl: 'https://lin.ee/tY3YJkj', ig: 'https://www.instagram.com/passionhaus32/',
+    map: 'https://www.google.com/maps?q=22.54508,120.38376', price: 988, priceNote: '38 坪標準戶', promo: '限量 3 戶・簽約送車位',
+    slots: ['10:00', '10:30', '14:00', '15:30'], days: 30, hero: '', privacy: '',
+    rates: [1.775, 1.775, 1.775, 1.9, 2.025, 2.15, 2.275], rateDate: '2026/10/9' },
+  units: [], parks: [
+    { no: '11', kind: '平面-大', price: 150, status: '可售' }, { no: '12', kind: '平面-標準', price: 130, status: '可售' },
+    { no: '2', kind: '機上', price: 90, status: '可售' }, { no: '5', kind: '機上', price: 90, status: '可售' }, { no: '10', kind: '機上', price: 90, status: '可售' },
+    { no: '3-1', kind: '機中', price: 110, status: '可售' }, { no: '9', kind: '機中', price: 110, status: '可售' },
+    { no: '1', kind: '機下', price: 100, status: '可售' }, { no: '3', kind: '機下', price: 100, status: '可售' }, { no: '6', kind: '機下', price: 100, status: '可售' }, { no: '8', kind: '機下', price: 100, status: '可售' }],
+  live: false,
+};
+(function seedUnits() {
+  const t = { A: ['豐饒之家', 38.19, 27.6, '雙面採光', '可隔 3 房', '', false, '2–4F 最大的戶型，三房好規劃'],
+    B: ['日光之間', 37.17, 26.2, '三面大採光', '可隔 3 房', '2', false, '特色空間集中更顯寬敞，三面大採光，工作陽台較大，兩間衛浴都有開窗'],
+    C: ['返璞歸真', 37.52, 27, '雙面採光', '', '', true, '配備 ROCA 鋼板浴缸'],
+    D: ['旅行的記憶', 37.45, 26.7, '雙面採光', '', '', false, ''] };
+  const st = { '3F-B': '已售', '2F-A': '實品屋', '3F-C': '實品屋', '3F-D': '實品屋' };
+  ['2F', '3F', '4F'].forEach(f => 'ABCD'.split('').forEach(k => { const d = t[k], code = f + '-' + k;
+    DEFAULT.units.push({ code, floor: f, type: k, name: d[0], size: d[1], inner: d[2], terrace: code === '2F-B' ? 4.55 : 0, light: d[3], rooms: d[4], baths: d[5], tub: d[6], feature: d[7], status: st[code] || '可售', img: '' }); }));
+})();
+
+let D = DEFAULT, isLive = false;
+/* Apps Script 網頁在 iframe 裡，頁內錨點（#book）要自己捲動，不能交給瀏覽器導向 */
+document.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('a[href^="#"]');
+  if (!a) return;
+  const id = a.getAttribute('href').slice(1), el = id ? document.getElementById(id) : document.body;
+  if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+});
+try {
+  const raw = document.getElementById('srv').textContent.trim();
+  if (raw && raw[0] === '{') { const s = JSON.parse(raw); if (s && s.cfg && s.units) { D = s; isLive = true; } }
+} catch (e) { /* 本機預覽 */ }
+const C = D.cfg;
+const SRC = D.src || ''; // 文宣 QR Code 帶的來源（?src=poster 等）
+if (window.google && google.script && google.script.run) google.script.run.withFailureHandler(() => {}).logVisit(SRC); // 每次開頁都記，沒來源＝直接進站
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const money = n => Number(n).toLocaleString('zh-TW');
+const TYPES = ['A', 'B', 'C', 'D'];
+const typeInfo = k => D.units.find(u => u.type === k) || {};
+const PARK_NAME = { '平面-大': '平面車位（大）', '平面-標準': '平面車位', '機上': '機械車位（上層）', '機中': '機械車位（中層）', '機下': '機械車位（下層）' };
+const SUV_OK = { '平面-大': 1, '平面-標準': 1, '機中': 1, '機下': 1 };
+
+/* ───── 主視覺／優惠 ───── */
+(function hero() {
+  if (C.hero) { const h = document.querySelector('.hero'); h.classList.add('has-img'); h.style.backgroundImage = 'url("' + encodeURI(C.hero) + '")'; }
+  // 優惠價對應坪數：從「優惠價說明」抓「38 坪」這類數字，抓不到用 38
+  const PING = parseFloat((String(C.priceNote || '').match(/([\d.]+)\s*坪/) || [])[1]) || 38;
+  const QI = '<small class="qi">起</small>';
+  $('offer').innerHTML = C.price ? '<span>優惠價</span><b>' + money(C.price) + ' 萬' + QI + '</b><i class="br"></i><span>' + esc(C.priceNote) + '</span>' + (C.promo ? '<span class="promo">' + esc(C.promo) + '</span>' : '') : '';
+  $('gainPrice').innerHTML = C.price ? money(C.price) + ' 萬' + QI : '';
+  $('gainNote').textContent = [C.priceNote, C.promo].filter(Boolean).join('｜');
+  $('gainUnit').textContent = C.price ? '現在優惠價：' + PING + ' 坪 ' + money(C.price) + ' 萬起，房屋每坪約 ' + (C.price / PING).toFixed(1) + ' 萬' : '';
+  $('cmpPrice').innerHTML = C.price ? '優惠價約 ' + (C.price / PING).toFixed(1) + ' 萬/坪起' : '';
+  const avail = D.parks.filter(p => p.status === '可售');
+  $('parkLine').textContent = avail.length ? '車位：機械 90–110 萬、平面 130–150 萬，平面與機械中下層可停休旅車' + (C.promo ? '（' + C.promo + '）' : '') : '';
+})();
+
+/* ───── 戶型卡片：封面照（點開看空間照）＋平面圖按鈕 ───── */
+const PHOTOS = D.photos || {};
+const photoCache = {};
+/** 照片直接讀雲端硬碟公開連結（資料夾已設為知道連結的任何人可檢視）；同一張只載入一次 */
+function photo(id, w) {
+  const src = 'https://lh3.googleusercontent.com/d/' + encodeURIComponent(id) + '=w' + (w || 1600);
+  if (!photoCache[src]) photoCache[src] = new Promise((res, rej) => { const im = new Image(); im.onload = () => res(src); im.onerror = rej; im.src = src; });
+  return photoCache[src];
+}
+(function units() {
+  $('unitCards').innerHTML = TYPES.map(k => {
+    const u = typeInfo(k), p = PHOTOS[k] || {}, n = (p.gallery || []).length;
+    const model = D.units.filter(x => x.type === k && x.status === '實品屋').map(x => x.code);
+    const cover = p.cover
+      ? '<button type="button" class="ph cover" data-k="' + k + '" aria-label="看' + esc(u.name) + '空間照片"><span class="ph-name">' + esc(u.name) + '</span>' +
+        (n ? '<span class="ph-more">空間照 ' + n + ' 張 ›</span>' : '') + (p.coverAi ? '<span class="ph-ai">AI 示意</span>' : '') + '</button>'
+      : '<div class="ph">' + esc(u.name) + '</div>';
+    return '<article class="card unit-card" id="unit-' + k + '" data-k="' + k + '">' + cover +
+      '<span class="pick-note"></span>' +
+      '<span class="tag">' + k + ' 戶型' + (model.length ? '・實品屋 ' + esc(model.join('、')) : '') + '</span>' +
+      '<h3>' + esc(u.name) + '</h3>' +
+      '<dl><dt>權狀</dt><dd>' + u.size + ' 坪</dd><dt>室內</dt><dd>' + u.inner + ' 坪</dd><dt>採光</dt><dd>' + esc(u.light || '雙面採光') + '</dd>' +
+      (u.rooms ? '<dt>格局</dt><dd>' + esc(u.rooms) + '</dd>' : '') + '</dl>' +
+      '<div class="unit-actions">' + (p.plan ? '<button type="button" class="btn ghost small plan-btn" data-plan="' + k + '">看平面圖</button>' : '') +
+      '<button type="button" class="btn primary small book-btn" data-k="' + k + '">預約看這個戶型</button></div></article>';
+  }).join('');
+  // 封面照載入
+  document.querySelectorAll('.ph.cover').forEach(el => {
+    const id = (PHOTOS[el.dataset.k] || {}).cover;
+    photo(id, 1000).then(src => { el.style.backgroundImage = 'url("' + src + '")'; el.classList.add('loaded'); }).catch(() => {});
+    el.addEventListener('click', () => { const p = PHOTOS[el.dataset.k]; if (p.gallery && p.gallery.length) openLB(p.gallery, typeInfo(el.dataset.k).name + '｜空間照片'); });
+  });
+  document.querySelectorAll('.plan-btn').forEach(b => b.addEventListener('click', () => openLB([PHOTOS[b.dataset.plan].plan], typeInfo(b.dataset.plan).name + '｜平面配置參考圖（家具配置僅供參考，實際以現場為準）', true)));
+  // 預約看這個戶型：有推薦的戶別就帶推薦的那一戶，否則帶該戶型第一個可售戶別
+  document.querySelectorAll('.book-btn').forEach(b => b.addEventListener('click', () => {
+    const k = b.dataset.k, first = D.units.find(x => x.type === k && x.status === '可售');
+    const code = picked && picked.type === k ? picked.code : (first ? first.code : '');
+    const sel = $('unitSelect'); sel.value = code; if (sel.value !== code) sel.value = '';
+    document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+  }));
+})();
+
+/* 測驗結果 → 先帶到該戶型卡片（標示推薦戶別），再從卡片預約 */
+let picked = null;
+function goUnit(type, code) {
+  picked = { type, code };
+  document.querySelectorAll('.unit-card').forEach(c => {
+    const on = c.dataset.k === type; c.classList.toggle('picked', on);
+    c.querySelector('.pick-note').textContent = on ? '★ 推薦給你：' + code : '';
+  });
+  document.getElementById('unit-' + type).scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* 首頁實景輪播：建築外觀之後接三張窗外綠景，慢慢放大、淡入淡出（減少動態設定時不動） */
+function heroShow(F) {
+  const ph = $('heroPh'), cap = ph.querySelector('figcaption'), first = $('heroImg');
+  const pick = F.list.filter(x => /森林|綠坡|望出去/.test(x.cap)).slice(0, 3);
+  if (!pick.length || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  first.dataset.cap = '晨均渼山 建築外觀實景';
+  pick.forEach(x => { const im = document.createElement('img'); im.alt = x.cap; im.dataset.cap = '晨均渼山 ' + x.cap + '（實景）'; im.loading = 'lazy';
+    im.src = 'https://lh3.googleusercontent.com/d/' + encodeURIComponent(x.id) + '=w1200'; ph.insertBefore(im, cap); });
+  const imgs = [...ph.querySelectorAll('img')]; let i = 0;
+  setInterval(() => {
+    if (document.hidden) return;
+    const n = (i + 1) % imgs.length; if (!imgs[n].complete || !imgs[n].naturalWidth) return;
+    imgs[i].classList.remove('on'); imgs[n].classList.add('on'); i = n; cap.textContent = imgs[i].dataset.cap;
+  }, 4500);
+}
+
+/* ───── 建築照片：首頁大圖＋建案介紹的立面相簿（試算表「戶型照片」戶型＝建築） ───── */
+const FAC_DEFAULT = { hero: '1jY3hKPoVj7n1LaSHo9msyibVACIVNuds', list: [["飛機航線下的紅色量體", "1jY3hKPoVj7n1LaSHo9msyibVACIVNuds"], ["屋突與格柵", "1nEdz9ox0HCQDlIPvjuQWeJj8tC8j7Rp9"], ["深遮陽立面", "14KSBFf_GUuaWkoNErBiuGEvcW64hhs7r"], ["大面窗與藍天", "1kyK9OmzSy_7fQmOEPBfuUOjF_Ne13kpx"], ["陽台立面", "1ROOQEafwu4lbKrQ2F2FKYjNRHDv5hEF-"], ["陽台望出去的綠", "1CjbleaA4aXTRfer6YSyNQ6Cj9RiZt3mO"], ["窗框裡的森林", "1tSVzt34aqoubtW3_AW5xrZ0qrpewxbCv"], ["窗外綠坡", "1OwZqgeVaP8i_jYqSa8QKXEkkmuAQ50dg"]].map(r => ({ cap: r[0], id: r[1] })) };
+(function facade() {
+  const F = (D.facade && (D.facade.hero || D.facade.list.length)) ? D.facade : FAC_DEFAULT;
+  const heroId = F.hero || (F.list[0] && F.list[0].id);
+  if (heroId && !C.hero) {
+    $('heroPh').hidden = false;
+    photo(heroId, 1400).then(src => { $('heroImg').src = src; $('heroImg').classList.add('on'); heroShow(F); }).catch(() => { $('heroPh').hidden = true; });
+  }
+  if (!F.list.length) return;
+  const ids = F.list.map(x => x.id), card = $('facCard');
+  card.hidden = false;
+  card.innerHTML = '<h3>建築立面實景</h3><div class="life-track" tabindex="0" aria-label="建築立面照片，可左右滑動">' +
+    F.list.map((x, i) => '<figure class="life-slide"><div class="life-ph" data-i="' + i + '"><img src="https://lh3.googleusercontent.com/d/' + encodeURIComponent(x.id) + '=w1400" alt="' + esc(x.cap || '建築立面') + '" loading="lazy"></div>' +
+      '<figcaption class="life-cap"><b>' + esc(x.cap) + '</b><span class="muted">' + (i + 1) + ' / ' + F.list.length + '</span></figcaption></figure>').join('') +
+    '</div><div class="life-nav"><button type="button" class="lp" aria-label="上一張">‹</button><span class="life-dots">' +
+    F.list.map((_, i) => '<i' + (i ? '' : ' class="on"') + '></i>').join('') + '</span><button type="button" class="ln" aria-label="下一張">›</button></div>' +
+    '<p class="small muted">點照片可放大。晨均渼山實景拍攝。</p>';
+  card.addEventListener('click', e => { const p = e.target.closest('.life-ph'); if (!p) return; openLB(ids, '建築立面實景'); lbIdx = Number(p.dataset.i) || 0; showLB(); });
+})();
+
+/* ───── 生活機能：每個分類一組可左右滑的實景照片 ───── */
+const LIFE_DEFAULT = [
+  ["日常採買", "萊爾富 小港亞路米", "步行可達", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Hi-Life_Songshan_Station_Store_20101218.jpg/960px-Hi-Life_Songshan_Station_Store_20101218.jpg", "示意照片（非該分店）｜玄史生／CC BY-SA 3.0／Wikimedia Commons"],
+  ["日常採買", "全家／7-11 大坪頂一帶", "車程約 3 分", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/FamilyMart_TR_North_Store_20260718.jpg/960px-FamilyMart_TR_North_Store_20260718.jpg", "示意照片（非該分店）｜Bigmorr／CC BY-SA 4.0／Wikimedia Commons"],
+  ["日常採買", "美廉社 小港大坪頂店", "約 5 分", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Simple_Mart_Nangang_Dongming_Store_20191116.jpg/960px-Simple_Mart_Nangang_Dongming_Store_20191116.jpg", "示意照片（非該分店）｜Solomon203／CC BY-SA 4.0／Wikimedia Commons"],
+  ["日常採買", "全聯 小港山明店", "約 7 分", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/PX_Mart_Zhongshan_Jilin_Store_20160723.jpg/960px-PX_Mart_Zhongshan_Jilin_Store_20160723.jpg", "示意照片（非該分店）｜Solomon203／CC BY-SA 4.0／Wikimedia Commons"],
+  ["日常採買", "家樂福超市（宏平路）", "約 9 分", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/20251222_134706_Carrefour_Fongyuan_Store_Entrance.jpg/960px-20251222_134706_Carrefour_Fongyuan_Store_Entrance.jpg", "示意照片（非該分店）｜Saimmx／CC0／Wikimedia Commons"],
+  ["日常採買", "漢民觀光夜市", "約 9 分", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/%E5%B0%8F%E6%B8%AF%E6%BC%A2%E6%B0%91%E8%A7%80%E5%85%89%E5%A4%9C%E5%B8%82.JPG/960px-%E5%B0%8F%E6%B8%AF%E6%BC%A2%E6%B0%91%E8%A7%80%E5%85%89%E5%A4%9C%E5%B8%82.JPG", "雅婕／CC BY-SA 4.0／Wikimedia Commons"],
+  ["學校與醫療", "坪頂國小", "約 5 分", "", ""],
+  ["學校與醫療", "國立高雄餐旅大學", "約 9 分", "", ""],
+  ["學校與醫療", "明義國中", "約 11 分", "", ""],
+  ["學校與醫療", "小港國中", "約 11 分", "", ""],
+  ["學校與醫療", "高雄市立小港醫院", "約 8 分", "", ""],
+  ["交通與綠地", "高雄國際機場", "約 10 分", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Kaohsiung_Airport_Terminal.jpg/960px-Kaohsiung_Airport_Terminal.jpg", "Alec @ Taiwan／CC BY 2.0／Wikimedia Commons"],
+  ["交通與綠地", "捷運小港站", "約 11 分", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/R3_Siaogang_Station_20240814.jpg/960px-R3_Siaogang_Station_20240814.jpg", "鐵路Railway／CC BY-SA 4.0／Wikimedia Commons"],
+  ["交通與綠地", "大坪頂熱帶植物園", "約 5 分", "", ""],
+  ["交通與綠地", "大坪頂公園", "約 6 分", "", ""],
+  ["交通與綠地", "小港分館圖書館", "約 2.2 公里", "", ""]
+].map(r => ({ cat: r[0], name: r[1], dist: r[2], img: r[3], credit: r[4] }));
+const LIFE_NOTE = { '學校與醫療': '學區以高雄市教育局公告為準。', '交通與綠地': '國道 7 號規劃設「大坪頂交流道」（規劃中）。' };
+(function life() {
+  const L = (D.life && D.life.length) ? D.life : LIFE_DEFAULT;
+  const cats = ['日常採買', '學校與醫療', '交通與綠地'];
+  // 照片欄可填多個來源，用「|」分隔：第一個讀不到（例如雲端檔案還沒開放）就換下一個，都失敗才顯示「實景照片準備中」
+  const src = p => /^https?:/.test(p) ? p : 'https://lh3.googleusercontent.com/d/' + encodeURIComponent(p) + '=w1000';
+  const srcs = p => String(p || '').split('|').map(x => x.trim()).filter(Boolean).map(src);
+  const crs = c => String(c || '').split('|').map(x => x.trim()); // 照片說明也可用「|」對應每個來源
+  const crText = c => (c || '').replace(/^示意照片（非該分店）｜/, '');
+  $('lifeCards').innerHTML = cats.map(cat => {
+    const items = L.filter(x => x.cat === cat); if (!items.length) return '';
+    return '<div class="card life-card"><h3>' + esc(cat) + '</h3><div class="life-track" tabindex="0" aria-label="' + esc(cat) + '，可左右滑動">' +
+      items.map(x => '<figure class="life-slide"><div class="life-ph">' +
+        (srcs(x.img).length ? '<img src="' + esc(srcs(x.img)[0]) + '" data-alt="' + esc(srcs(x.img).slice(1).join('|')) + '" data-cr="' + esc(crs(x.credit).slice(1).join('|')) + '" alt="' + esc(x.name) + '" loading="lazy">' +
+          '<span class="demo"' + (/示意/.test(crs(x.credit)[0]) ? '' : ' hidden') + '>示意</span><span class="credit"' + (crs(x.credit)[0] ? '' : ' hidden') + '>' + esc(crText(crs(x.credit)[0])) + '</span>' : '') +
+          '<span class="ph-none"' + (srcs(x.img).length ? ' hidden' : '') + '>' + esc(x.name) + '<br><span class="soon">實景照片準備中</span></span>' +
+        '</div><figcaption class="life-cap"><b>' + esc(x.name) + '</b><span class="muted">' + esc(x.dist) + '</span></figcaption></figure>').join('') +
+      '</div><div class="life-nav"><button type="button" class="lp" aria-label="上一個">‹</button><span class="life-dots">' +
+      items.map((_, i) => '<i' + (i ? '' : ' class="on"') + '></i>').join('') + '</span><button type="button" class="ln" aria-label="下一個">›</button></div>' +
+      (LIFE_NOTE[cat] ? '<p class="small muted">' + esc(LIFE_NOTE[cat]) + '</p>' : '') + '</div>';
+  }).join('');
+  $('lifeCards').addEventListener('error', e => {
+    const im = e.target; if (im.tagName !== 'IMG') return;
+    const rest = (im.dataset.alt || '').split('|').filter(Boolean);
+    if (rest.length) {
+      const cr = (im.dataset.cr || '').split('|'), c = cr[0] || '', ph = im.parentNode;
+      im.dataset.alt = rest.slice(1).join('|'); im.dataset.cr = cr.slice(1).join('|'); im.src = rest[0];
+      ph.querySelector('.demo').hidden = !/示意/.test(c); const ce = ph.querySelector('.credit'); ce.textContent = crText(c); ce.hidden = !c;
+      return;
+    }
+    const ph = im.parentNode; ph.querySelectorAll('img,.demo,.credit').forEach(n => n.remove()); ph.querySelector('.ph-none').hidden = false;
+  }, true);
+  document.querySelectorAll('.life-card').forEach(card => {
+    const tr = card.querySelector('.life-track'), dots = [...card.querySelectorAll('.life-dots i')];
+    const idx = () => Math.round(tr.scrollLeft / tr.clientWidth);
+    const go = d => { const n = Math.max(0, Math.min(dots.length - 1, idx() + d)); tr.scrollTo({ left: n * tr.clientWidth, behavior: 'smooth' }); };
+    card.querySelector('.lp').addEventListener('click', () => go(-1));
+    card.querySelector('.ln').addEventListener('click', () => go(1));
+    tr.addEventListener('scroll', () => { const n = idx(); dots.forEach((d, i) => d.classList.toggle('on', i === n)); }, { passive: true });
+  });
+  // 手機版分頁：一次只顯示一類（電腦版三類並排，分頁列隱藏）
+  const cards = [...document.querySelectorAll('#lifeCards .life-card')], tabs = $('lifeTabs');
+  tabs.innerHTML = cards.map((c, i) => '<button type="button" role="tab" aria-selected="' + !i + '">' + esc(c.querySelector('h3').textContent) + '</button>').join('');
+  const show = n => { cards.forEach((c, i) => c.classList.toggle('off', i !== n)); [...tabs.children].forEach((b, i) => b.setAttribute('aria-selected', i === n)); };
+  tabs.addEventListener('click', e => { const b = e.target.closest('button'); if (b) show([...tabs.children].indexOf(b)); });
+  show(0);
+})();
+
+/* ───── 照片燈箱 ───── */
+let lbList = [], lbIdx = 0, lbTitle = '';
+function openLB(list, title, isPlan) {
+  lbList = list; lbIdx = 0; lbTitle = title;
+  $('lb').classList.toggle('plan', !!isPlan); $('lb').hidden = false; document.body.style.overflow = 'hidden'; showLB();
+}
+function showLB() {
+  const img = $('lbImg'), id = lbList[lbIdx];
+  img.removeAttribute('src'); $('lbLoad').hidden = false;
+  $('lbCap').textContent = lbTitle + (lbList.length > 1 ? '（' + (lbIdx + 1) + ' / ' + lbList.length + '）' : '');
+  $('lbPrev').hidden = $('lbNext').hidden = lbList.length < 2;
+  photo(id).then(src => { if (lbList[lbIdx] === id) { img.src = src; $('lbLoad').hidden = true; } })
+    .catch(() => { $('lbLoad').textContent = '照片載入失敗，請稍後再試'; });
+  lbList.forEach((x, i) => { if (i !== lbIdx) photo(x).catch(() => {}); }); // 預先載入其他張
+}
+function closeLB() { $('lb').hidden = true; document.body.style.overflow = ''; $('lbLoad').textContent = '照片載入中…'; }
+$('lbClose').addEventListener('click', closeLB);
+$('lb').addEventListener('click', e => { if (e.target.id === 'lb') closeLB(); });
+$('lbPrev').addEventListener('click', () => { lbIdx = (lbIdx + lbList.length - 1) % lbList.length; showLB(); });
+$('lbNext').addEventListener('click', () => { lbIdx = (lbIdx + 1) % lbList.length; showLB(); });
+document.addEventListener('keydown', e => {
+  if ($('lb').hidden) return;
+  if (e.key === 'Escape') closeLB(); else if (e.key === 'ArrowLeft') $('lbPrev').click(); else if (e.key === 'ArrowRight') $('lbNext').click();
+});
+
+/* ───── 房貸試算（與報價系統同算法：利率逐年，變動時以剩餘本金、剩餘期數重算） ───── */
+function monthlyByYear(principal, years, rates) {
+  let bal = principal * 10000, out = [];
+  for (let y = 0; y < years; y++) {
+    const r = (rates[Math.min(y, rates.length - 1)] / 100) / 12, n = (years - y) * 12;
+    const pay = r ? bal * r / (1 - Math.pow(1 + r, -n)) : bal / n;
+    out.push({ year: y + 1, rate: rates[Math.min(y, rates.length - 1)], pay: Math.round(pay) });
+    for (let m = 0; m < 12; m++) bal = bal * (1 + r) - pay;
+  }
+  return out;
+}
+function segments(rows) {
+  const g = [];
+  rows.forEach(r => { const last = g[g.length - 1]; if (last && last.rate === r.rate && Math.abs(last.pay - r.pay) < 2) last.to = r.year; else g.push({ from: r.year, to: r.year, rate: r.rate, pay: r.pay }); });
+  return g;
+}
+function loanCalc(total, plan, years) {
+  const pct = plan === 'qa' ? 0.8 : 0.7, amt = Math.floor(total * pct);
+  const rates = plan === 'qa' ? (C.rates && C.rates.length ? C.rates : [1.775]) : [2.9];
+  return { amt, segs: segments(monthlyByYear(amt, years, rates)) };
+}
+function renderCalc() {
+  const total = Math.max(0, Number($('cPrice').value) || 0), plan = $('cPlan').value, years = Number($('cYears').value);
+  const r = loanCalc(total, plan, years);
+  $('cLoan').value = money(r.amt) + ' 萬';
+  const show = r.segs.length > 3 ? [r.segs[0], r.segs[r.segs.length - 1]] : r.segs;
+  $('cOut').innerHTML = show.map(s => '<span>第 ' + (s.from === s.to ? s.from : s.from + '–' + (s.to === years ? years : s.to)) + ' 年（' + s.rate + '%）<b>月付約 ' + money(s.pay) + ' 元</b></span>').join('');
+  $('cNote').textContent = (plan === 'qa' ? '新青安：未滿 50 歲、名下無房等資格限制；利率逐年調整。' : '第二屋：央行信用管制，無寬限期。') +
+    '月付為估算，不使用寬限期。' + (C.rateDate ? '利率資料日期 ' + C.rateDate + '。' : '');
+}
+$('cPrice').value = C.price || 988;
+['cPrice', 'cPlan', 'cYears'].forEach(id => $(id).addEventListener('input', renderCalc));
+renderCalc();
+
+/* ───── 互動問卷與推薦 ───── */
+const Q = [
+  { id: 'people', title: '幾個人一起住？', type: 'one', opts: ['1–2 人', '3–4 人', '5 人以上', '和長輩同住'] },
+  { id: 'layout', title: '理想的格局是？', type: 'one', opts: ['兩房', '三房', '雙主臥', '開放大空間'] },
+  { id: 'focus', title: '你最在意的生活重點？', hint: '最多選 3 個', type: 'many', max: 3, opts: ['窗外綠景', '空間寬敞', '採光通風', '泡澡放鬆', '戶外露台', '樓層高視野好', '總價好入手'] },
+  { id: 'budget', title: '購屋預算（房屋總價，不含車位）', type: 'one', opts: ['1,000 萬以下', '1,000–1,200 萬', '1,200 萬以上', '還不確定'] },
+  { id: 'work', title: '主要在哪裡上班？', type: 'one', opts: ['小港／臨海工業區', '前鎮／亞灣', '鳳山', '其他'] },
+  { id: 'car', title: '家裡有車嗎？', type: 'one', opts: ['沒有', '一般轎車', '休旅車', '兩台以上'] },
+  { id: 'carModel', title: '你的車款是？（選填）', hint: '例如 Toyota RAV4。休旅車尺寸上限以 BMW X5 為準，業務會再幫你確認。', type: 'text', skipIf: a => a.car === '沒有' },
+  { id: 'when', title: '什麼時候想入住？', type: 'one', opts: ['馬上', '半年內', '一年內', '還在看'] },
+];
+const A = {}; let step = 0, lastResult = null;
+// 問卷追蹤：每次開頁各記一次「開始」「完成」到試算表「問卷紀錄」
+const qTrack = { start: false, done: false };
+function ga_(name, params) { if (window.gtag) gtag('event', name, params || {}); } // Google Analytics 事件（不送個資）
+function trackQuiz(kind) {
+  if (qTrack[kind]) return; qTrack[kind] = true;
+  ga_(kind === 'start' ? 'quiz_start' : 'quiz_complete', { site_src: SRC || 'direct' });
+  if (window.google && google.script && google.script.run) google.script.run.withFailureHandler(() => {}).logQuiz(kind, SRC);
+}
+
+function visibleQ() { return Q.filter(q => !(q.skipIf && q.skipIf(A))); }
+function renderQuiz() {
+  const qs = visibleQ(), box = $('quizBox');
+  if (step >= qs.length) return renderResult();
+  const q = qs[step], val = A[q.id];
+  let h = '<div class="progress"><i style="width:' + Math.round(step / qs.length * 100) + '%"></i></div>' +
+    '<div class="q-step">第 ' + (step + 1) + ' / ' + qs.length + ' 題</div><div class="q-title">' + esc(q.title) + '</div>';
+  if (q.type === 'text') h += '<input class="txt" id="qText" maxlength="40" value="' + esc(val || '') + '" placeholder="輸入車款">';
+  else h += '<div class="opts">' + q.opts.map(o => { const on = q.type === 'many' ? (val || []).indexOf(o) >= 0 : val === o;
+    return '<button type="button" class="opt" data-v="' + esc(o) + '" aria-pressed="' + on + '">' + esc(o) + '</button>'; }).join('') + '</div>';
+  if (q.hint) h += '<p class="q-hint">' + esc(q.hint) + '</p>';
+  const canNext = q.type === 'text' || (q.type === 'many' ? (val || []).length > 0 : !!val);
+  h += '<div class="q-nav"><button type="button" class="btn ghost small" id="qPrev"' + (step ? '' : ' disabled') + '>上一題</button>' +
+    '<button type="button" class="btn primary small" id="qNext"' + (canNext ? '' : ' disabled') + '>' + (step === qs.length - 1 ? '看推薦結果' : '下一題') + '</button></div>';
+  box.innerHTML = h;
+  box.querySelectorAll('.opt').forEach(b => b.addEventListener('click', () => {
+    trackQuiz('start');
+    const v = b.dataset.v;
+    if (q.type === 'many') { const arr = (A[q.id] || []).slice(), i = arr.indexOf(v);
+      if (i >= 0) arr.splice(i, 1); else if (arr.length < q.max) arr.push(v); A[q.id] = arr; renderQuiz(); }
+    else { A[q.id] = v; if (q.id === 'car' && v === '沒有') delete A.carModel; step++; renderQuiz(); }
+  }));
+  const t = $('qText'); if (t) t.addEventListener('input', () => { A[q.id] = t.value.trim(); });
+  $('qPrev').addEventListener('click', () => { step = Math.max(0, step - 1); renderQuiz(); });
+  $('qNext').addEventListener('click', () => { step++; renderQuiz(); });
+}
+
+function recommend() {
+  const s = { A: 0, B: 0, C: 0, D: 0 }, why = { A: [], B: [], C: [], D: [] }, add = (k, n, w) => { s[k] += n; if (w && why[k].indexOf(w) < 0) why[k].push(w); };
+  let high = 0, low = 0, terrace = false;
+  const f = A.focus || [];
+  if (A.people === '1–2 人') { add('C', 1); add('D', 1); add('B', 1); }
+  if (A.people === '3–4 人') { add('A', 2, '可隔 3 房，孩子各有一間'); add('B', 2, '可隔 3 房，空間集中更顯寬敞'); }
+  if (A.people === '5 人以上') { add('A', 3, '2–4F 最大的戶型，人多也住得開'); add('B', 1, '可隔 3 房'); }
+  if (A.people === '和長輩同住') { add('A', 2, '最大戶型，三房讓長輩有自己的房間'); add('B', 1, '兩間衛浴都有開窗，長輩使用更舒適'); low += 2; }
+  if (A.layout === '三房') { add('A', 2, '可隔 3 房'); add('B', 2, '可隔 3 房'); }
+  if (A.layout === '兩房') { add('C', 1); add('D', 1); }
+  if (A.layout === '雙主臥') TYPES.forEach(k => add(k, 1, '全戶開放、上配管，可規劃雙主臥雙主浴'));
+  if (A.layout === '開放大空間') { add('B', 1, '特色空間集中，開放感最好'); add('C', 1); add('D', 1); }
+  if (f.indexOf('空間寬敞') >= 0) { add('A', 2, '權狀 38.19 坪，坪數最大'); add('B', 2, '空間集中，感覺更寬敞'); }
+  if (f.indexOf('採光通風') >= 0) add('B', 3, '三面大採光');
+  if (f.indexOf('泡澡放鬆') >= 0) add('C', 3, '配備 ROCA 鋼板浴缸，下班好好泡個澡');
+  if (f.indexOf('戶外露台') >= 0) { add('B', 2); terrace = true; }
+  if (f.indexOf('窗外綠景') >= 0) high += 1;
+  if (f.indexOf('樓層高視野好') >= 0) high += 2;
+  if (f.indexOf('總價好入手') >= 0) low += 1;
+  // 排出可售戶別
+  const avail = D.units.filter(u => u.status === '可售');
+  const scored = avail.map(u => {
+    let sc = s[u.type], w = why[u.type].slice();
+    if (u.floor === '4F') sc += high; if (u.floor === '3F') sc += Math.min(high, 1) + Math.min(low, 1); if (u.floor === '2F') sc += low;
+    if (terrace && u.terrace) { sc += 4; w.unshift('附 ' + u.terrace + ' 坪露台，種花喝咖啡都好'); }
+    if (u.floor === '4F' && high) w.push('高樓層視野較開闊，窗外就是綠色坡地');
+    if (u.floor === '2F' && low && A.people === '和長輩同住') w.push('低樓層進出方便，長輩不怕等電梯');
+    return { u, sc, w };
+  }).sort((a, b) => b.sc - a.sc || (a.u.code < b.u.code ? -1 : 1));
+  const best = scored[0];
+  const alts = []; scored.slice(1).forEach(x => { if (alts.length < 2 && x.u.type !== best.u.type && !alts.some(a => a.u.type === x.u.type)) alts.push(x); });
+  return { best, alts };
+}
+
+function parkAdvice() {
+  if (!A.car || A.car === '沒有') return '';
+  const avail = D.parks.filter(p => p.status === '可售');
+  const pick = kinds => { const p = avail.filter(x => kinds.indexOf(x.kind) >= 0).sort((a, b) => a.price - b.price)[0]; return p ? PARK_NAME[p.kind] + ' ' + p.price + ' 萬' : ''; };
+  let t;
+  if (A.car === '一般轎車') t = pick(['機上']) || pick(['機下', '機中', '平面-標準', '平面-大']);
+  else if (A.car === '休旅車') t = pick(['機下', '機中', '平面-標準', '平面-大']);
+  else t = [pick(['平面-標準', '平面-大']), pick(['機下', '機中', '機上'])].filter(Boolean).join(' ＋ ');
+  if (!t) return '車位目前已全數售出，現場可再為你確認。';
+  return '建議車位：' + t + (A.car === '休旅車' || A.car === '兩台以上' ? '（可停休旅車，尺寸上限以 BMW X5 為準' + (A.carModel ? '；你的 ' + A.carModel + ' 業務會再確認' : '') + '）' : '') + (C.promo ? '。' + C.promo + '！' : '');
+}
+
+function renderResult() {
+  const { best, alts } = recommend(), box = $('quizBox');
+  if (!best) { box.innerHTML = '<p>目前可預約的戶別都已售出，歡迎留下資料，有釋出時第一時間通知你。</p><a class="btn primary" href="#book">留下資料</a>'; return; }
+  const u = best.u, model = D.units.filter(x => x.type === u.type && x.status === '實品屋').map(x => x.code);
+  const why = best.w.length ? best.w : ['雙面採光、窗外永久綠意', '3.3 米樓高，空間開闊'];
+  const loan = C.price ? loanCalc(C.price, 'qa', 30) : null;
+  const park = parkAdvice();
+  lastResult = { code: u.code, name: u.name, alts: alts.map(a => a.u.code + ' ' + a.u.name) };
+  trackQuiz('done');
+  box.innerHTML = '<div class="result">' +
+    '<div class="best"><span class="tag">最推薦你</span><h3>' + esc(u.name) + '｜' + u.code + '</h3>' +
+    '<p class="muted">權狀 ' + u.size + ' 坪・室內 ' + u.inner + ' 坪・' + esc(u.light || '雙面採光') + (u.rooms ? '・' + esc(u.rooms) : '') + '</p>' +
+    '<ul class="why">' + why.slice(0, 4).map(w => '<li>' + esc(w) + '</li>').join('') + '</ul>' +
+    (model.length ? '<p class="small"><span class="tag brass">實品屋可看</span> 同戶型實品屋 ' + esc(model.join('、')) + '，現場直接感受。</p>' : '') +
+    (C.price ? '<p>優惠價 <b>' + money(C.price) + ' 萬起</b>（' + esc(C.priceNote) + '）' + (loan ? '，新青安貸 8 成、30 年，前 3 年月付約 <b>' + money(loan.segs[0].pay) + ' 元</b>' : '') + '</p>' : '') +
+    (park ? '<p class="small">' + esc(park) + '</p>' : '') +
+    '<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px"><button type="button" class="btn primary" id="rBook">看這個戶型的照片與平面圖</button><button type="button" class="btn ghost" id="rAgain">重新測驗</button></div></div>' +
+    (alts.length ? '<div><p class="small muted" style="margin-bottom:8px">也可以看看</p><div class="alts">' + alts.map(a => '<button type="button" class="card go" data-k="' + a.u.type + '" data-c="' + a.u.code + '"><h3>' + esc(a.u.name) + '｜' + a.u.code + '</h3><p class="small muted">' + esc((a.w[0] || a.u.feature || a.u.light || '')) + '</p><span class="small" style="color:var(--forest);font-weight:700">看這個戶型 ›</span></button>').join('') + '</div></div>' : '') +
+    '</div>';
+  $('rAgain').addEventListener('click', () => { Object.keys(A).forEach(k => delete A[k]); step = 0; lastResult = null; renderQuiz(); });
+  $('rBook').addEventListener('click', () => goUnit(u.type, u.code));
+  box.querySelectorAll('.card.go').forEach(b => b.addEventListener('click', () => goUnit(b.dataset.k, b.dataset.c)));
+}
+renderQuiz();
+
+/* 上方 IG／LINE 連結（試算表「設定」有填就用試算表的）＋手機版選單開關 */
+(function header() {
+  if (C.ig) $('hdIg').href = C.ig;
+  if (C.lineUrl) $('hdLine').href = C.lineUrl;
+  const hd = document.querySelector('header.top'), btn = $('menuBtn');
+  const set = o => { hd.classList.toggle('open', o); btn.setAttribute('aria-expanded', o); btn.setAttribute('aria-label', o ? '關閉選單' : '開啟選單'); };
+  btn.addEventListener('click', () => set(!hd.classList.contains('open')));
+  $('siteNav').addEventListener('click', e => { if (e.target.closest('a')) set(false); });
+  document.addEventListener('click', e => { if (hd.classList.contains('open') && !hd.contains(e.target)) set(false); });
+})();
+
+/* 首頁的第 1 題：點一下就記下答案、跳到問卷第 2 題 */
+(function heroQuiz() {
+  const q = Q[0], box = document.querySelector('#heroQuiz .hq-opts');
+  box.innerHTML = q.opts.map(o => '<button type="button" class="hq-opt" data-v="' + esc(o) + '">' + esc(o) + '</button>').join('');
+  box.addEventListener('click', e => {
+    const b = e.target.closest('.hq-opt'); if (!b) return;
+    trackQuiz('start'); A[q.id] = b.dataset.v; step = 1; renderQuiz();
+    $('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
+
+/* 捲到預約表單時收起手機底部按鈕列，避免蓋住送出鈕 */
+(function () {
+  const bar = $('mbar');
+  if (bar && 'IntersectionObserver' in window) new IntersectionObserver(es => { bar.classList.toggle('off', es[0].isIntersecting); }).observe($('book'));
+})();
+
+/* ───── 預約表單 ───── */
+(function booking() {
+  $('ctAddr').textContent = C.address || '';
+  if (C.phone) { $('ctPhoneP').hidden = false; $('ctPhone').textContent = C.phone; $('ctPhone').href = 'tel:' + C.phone.replace(/[^\d+]/g, ''); }
+  if (C.lineId || C.lineUrl) { $('ctLineP').hidden = false; $('ctLine').textContent = C.lineId || '加入好友'; $('ctLine').href = C.lineUrl || '#'; }
+  if (C.map) { $('ctMapP').hidden = false; $('ctMap').href = C.map; }
+  $('ctSlots').textContent = (C.slots || []).join('、');
+  document.querySelectorAll('.js-builder').forEach(e => { e.textContent = C.builder || '晨均建設股份有限公司'; });
+  $('pvContact').textContent = C.privacy ? '，請洽：' + C.privacy : '';
+  $('ftBuilder').textContent = '投資興建：' + (C.builder || '');
+  $('ftLicense').textContent = C.license ? '　使用執照：' + C.license : '';
+  $('ftAddr').textContent = '接待中心：' + (C.address || '') + (C.phone ? '　電話：' + C.phone : '');
+
+  const opts = ['<option value="">不指定，現場再看</option>'];
+  TYPES.forEach(k => { const us = D.units.filter(u => u.type === k && u.status === '可售');
+    opts.push('<optgroup label="' + esc(typeInfo(k).name) + '">' + us.map(u => '<option value="' + u.code + '">' + u.code + ' ' + esc(u.name) + '</option>').join('') + '</optgroup>'); });
+  $('unitSelect').innerHTML = opts.join('');
+
+  const pad = n => ('0' + n).slice(-2), fmt = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  const today = new Date(), maxD = new Date(Date.now() + (C.days || 30) * 864e5);
+  const dateIn = document.querySelector('[name=date]'); dateIn.min = fmt(today); dateIn.max = fmt(maxD);
+  let slot = '';
+  function drawSlots() {
+    const isToday = dateIn.value === fmt(new Date()), now = pad(new Date().getHours()) + ':' + pad(new Date().getMinutes());
+    $('slotBtns').innerHTML = (C.slots || []).map(s => { const past = isToday && s <= now;
+      return '<button type="button" class="opt" role="radio" aria-checked="' + (slot === s) + '" aria-pressed="' + (slot === s) + '" data-s="' + s + '"' + (past ? ' disabled style="opacity:.4"' : '') + '>' + s + '</button>'; }).join('');
+    $('slotBtns').querySelectorAll('.opt').forEach(b => b.addEventListener('click', () => { slot = b.dataset.s; drawSlots(); }));
+  }
+  dateIn.addEventListener('change', () => { slot = ''; drawSlots(); });
+  drawSlots();
+
+  const form = $('bookForm'), msg = $('bookMsg'), btn = $('bookBtn');
+  const show = (t, ok) => { msg.hidden = false; msg.className = 'msg ' + (ok ? 'ok' : 'err'); msg.textContent = t; };
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const v = n => (form.elements[n].value || '').trim();
+    const phone = v('phone').replace(/[\s-]/g, '');
+    if (!v('name')) return show('請填寫姓名');
+    if (!/^09\d{8}$/.test(phone)) return show('請填寫正確的手機號碼（09 開頭共 10 碼）');
+    if (!v('date')) return show('請選擇預約日期');
+    if (!slot) return show('請選擇預約時段');
+    if (!form.elements.consent.checked) return show('請勾選同意個人資料蒐集告知事項');
+    const answers = visibleQ().filter(q => A[q.id] && q.id !== 'carModel').map(q => q.title.replace(/[？?（].*$/, '') + '：' + [].concat(A[q.id]).join('、')).join('；');
+    const payload = { name: v('name'), phone, line: v('line'), date: v('date'), slot, people: v('people'), unit: v('unit'),
+      recommend: lastResult ? lastResult.code + ' ' + lastResult.name + (lastResult.alts.length ? '（備選：' + lastResult.alts.join('、') + '）' : '') : '',
+      answers, car: A.carModel || (A.car && A.car !== '沒有' ? A.car : ''), note: v('note'),
+      consent: true, marketing: form.elements.marketing.checked, website: v('website'), src: SRC };
+    btn.disabled = true; btn.textContent = '送出中…';
+    const done = r => { btn.disabled = false; btn.textContent = '送出預約';
+      ga_('generate_lead', { site_src: SRC || 'direct', unit: payload.unit || '' });
+      show('預約成功！' + (r && r.id ? '預約編號 ' + r.id + '。' : '') + '我們會在 1 個工作天內與你聯繫，期待在渼山見到你。', true);
+      form.reset(); slot = ''; drawSlots(); };
+    const fail = err => { btn.disabled = false; btn.textContent = '送出預約'; show((err && err.message) || '送出失敗，請稍後再試，或直接來電。'); };
+    if (window.google && google.script && google.script.run) google.script.run.withSuccessHandler(done).withFailureHandler(fail).submitBooking(payload);
+    else { console.log('本機預覽：預約資料', payload); setTimeout(() => done({ id: 'PREVIEW' }), 400); }
+  });
+})();
+</script>
+<script>
+/* GitHub Pages 版：網頁放在一般網站空間，資料與預約透過 Apps Script API（臉書、LINE 內建瀏覽器也能開）
+   由 產生GitHub版.py 自動產生，請勿直接修改；改版請改 Apps Script 的 Index.html 後重新產生。 */
+const API = 'https://script.google.com/macros/s/AKfycbypHgraua4d7UmsFQJSLcsC93ZcVRIhyTh0Fget8Ay1xVohVuhCb_AYLB_BpjTPS7LVrw/exec';
+// google.script.run 相容層：網頁原本的程式不用改
+(function () {
+  function call(body, ok, fail) {
+    fetch(API, { method: 'POST', body: JSON.stringify(body) })
+      .then(r => r.json())
+      .then(res => { if (res && res.ok === false) { if (fail) fail(new Error(res.error || '送出失敗')); } else if (ok) ok(res); })
+      .catch(() => { if (fail) fail(new Error('網路連線不穩，請稍後再試，或直接來電 07-216-5218。')); });
+  }
+  function runner(ok, fail) {
+    return {
+      withSuccessHandler: f => runner(f, fail),
+      withFailureHandler: f => runner(ok, f),
+      submitBooking: data => call({ action: 'book', data: data }, ok, fail),
+      logVisit: src => { // 背景換新資料而重新整理的那一次不重複記造訪
+        try { if (sessionStorage.getItem('mv_reload')) { sessionStorage.removeItem('mv_reload'); return; } } catch (e) {}
+        call({ action: 'visit', src: src }, ok, fail);
+      },
+      logQuiz: (kind, src) => call({ action: 'quiz', kind: kind, src: src }, ok, fail)
+    };
+  }
+  window.google = { script: { get run() { return runner(); } } };
+})();
+// 打開就顯示：用「上次背景抓到的資料」或「產生網頁時的快照」先畫出來，再到背景抓最新資料；
+// 資料有變而且客人還沒開始操作，就悄悄重新整理一次換成最新的（每次瀏覽最多一次）
+(function () {
+  const src = (new URLSearchParams(location.search).get('src') || '').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 20);
+  const KEY = 'mv_site', el = document.getElementById('srv');
+  const ok = d => d && d.cfg && d.units;
+  let d = null;
+  try { const f = sessionStorage.getItem(KEY + '_fresh'); if (f) { d = JSON.parse(f); sessionStorage.removeItem(KEY + '_fresh'); } } catch (e) {}
+  if (!ok(d)) try { const c = JSON.parse(localStorage.getItem(KEY) || 'null'); if (c && Date.now() - c.t < 7 * 864e5) d = c.d; } catch (e) {}
+  if (!ok(d)) try { d = JSON.parse(el.textContent); } catch (e) { d = null; }
+  const shown = ok(d) ? JSON.stringify(d) : '';
+  if (ok(d)) { d.src = src; el.textContent = JSON.stringify(d).replace(/</g, '\u003c'); }
+  const s = document.createElement('script');
+  s.textContent = document.getElementById('app').textContent;
+  document.body.appendChild(s);
+  let touched = false;
+  ['pointerdown', 'keydown', 'touchstart'].forEach(t => addEventListener(t, () => { touched = true; }, { capture: true, once: true, passive: true }));
+  fetch(API + '?api=site').then(r => r.json()).then(f => {
+    if (!ok(f)) return;
+    const txt = JSON.stringify(f);
+    try { localStorage.setItem(KEY, JSON.stringify({ t: Date.now(), d: f })); } catch (e) {}
+    let again = false; try { again = !!sessionStorage.getItem(KEY + '_done'); } catch (e) {}
+    if (txt !== shown && !touched && scrollY < 200 && !again) {
+      try { sessionStorage.setItem(KEY + '_fresh', txt); sessionStorage.setItem(KEY + '_done', '1'); sessionStorage.setItem('mv_reload', '1');
+        if (sessionStorage.getItem(KEY + '_done') !== '1') return; } catch (e) { return; } // 存不進去就不重新整理，避免一直重整
+      location.reload();
+    }
+  }).catch(() => {});
+})();
+</script>
+
+</body>
+</html>
