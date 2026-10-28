@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>回家之路｜晨均渼山</title>
-<meta name="description" content="走完回家之路，認識晨均渼山：窗外綠意、5 分鐘生活圈、房租對決。完成闖關並預約賞屋，可獲得價值 $1,000 渼好生活禮。">
+<meta name="description" content="走完回家之路，認識晨均渼山：走進三種家、5 分鐘生活圈、房租對決。完成闖關並預約賞屋，可獲得價值 $1,000 渼好生活禮。">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="回家之路｜晨均渼山闖關">
 <meta property="og:description" content="3 個小關卡、3 把鑰匙，打開渼山的家門。完成並預約賞屋，送價值 $1,000 渼好生活禮。">
@@ -115,14 +115,25 @@ button{cursor:pointer}
 .goal{background:var(--brass-soft);border-radius:14px;padding:12px 14px;font-size:.92rem}
 .goal b{color:var(--brass)}
 
-/* 第 1 關：窗外換景 */
-.win{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:#222}
-.win img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .2s}
-.win .tint{position:absolute;inset:0;mix-blend-mode:multiply;transition:background .2s;pointer-events:none}
-.win .clock{position:absolute;left:12px;top:12px;background:rgba(0,0,0,.55);color:#fff;border-radius:999px;padding:2px 12px;font-weight:700;font-size:.9rem}
-.range{width:100%;accent-color:var(--forest);height:32px}
-.ticks{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;font-size:.82rem;color:var(--muted);margin-top:-6px}
-.ticks span.on{color:var(--forest);font-weight:700}
+/* 第 1 關：走進三種家 */
+.utabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.ut{display:flex;flex-direction:column;align-items:center;gap:0;padding:8px 4px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);line-height:1.35}
+.ut b{font-family:var(--serif);font-size:.95rem}
+.ut small{font-size:.72rem;color:var(--muted)}
+.ut.on{border-color:var(--forest);background:var(--forest-soft)}
+.ut.ok small{color:var(--ok);font-weight:700}
+.gal{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:var(--line)}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.gal .cap,.gal .cnt{position:absolute;bottom:10px;background:rgba(0,0,0,.55);color:#fff;border-radius:999px;padding:1px 10px;font-size:.78rem}
+.gal .cap{left:10px}.gal .cnt{right:10px;font-weight:700}
+.gal .nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:#2A1A1C;font-size:1.5rem;line-height:1;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.gal .prev{left:10px}.gal .next{right:10px}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:-4px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.dots i.seen{background:var(--hill3)}
+.dots i.on{background:var(--forest)}
+.uinfo{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--surface);font-size:.9rem}
+.uinfo b{font-family:var(--serif);font-size:1.08rem}
 .fact{border:1.5px solid var(--forest);background:var(--forest-soft);border-radius:14px;padding:12px 14px;animation:pop .35s ease-out}
 .fact b{display:block;font-family:var(--serif);font-size:1.05rem;color:var(--forest)}
 @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -181,15 +192,12 @@ button{cursor:pointer}
 .door.open .l{transform:rotateY(-80deg)}
 .door.open .r{transform:rotateY(80deg)}
 .door.open .light{opacity:1}
-.door .welcome{position:relative;font:700 1.6rem var(--serif);color:var(--deep);opacity:0;transition:opacity .8s 1s;letter-spacing:.1em}
+.door{text-decoration:none;cursor:pointer}
+.door .welcome{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;font:700 1.6rem var(--serif);color:var(--deep);opacity:0;transition:opacity .8s 1s;letter-spacing:.1em}
+.door .welcome small{font:700 .85rem var(--sans);letter-spacing:0;background:var(--forest);color:var(--forest-ink);border-radius:999px;padding:6px 14px}
+.door:hover .welcome small{filter:brightness(1.1)}
 .door.open .welcome{opacity:1}
 .door .lockmsg{position:relative;z-index:1;background:rgba(0,0,0,.6);color:#fff;border-radius:999px;padding:4px 14px;font-weight:700;font-size:.9rem}
-.more{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;border:1.5px solid var(--forest);background:var(--surface);color:var(--ink);text-decoration:none}
-.more>span:first-child{flex:1;display:flex;flex-direction:column}
-.more b{color:var(--forest);font-size:1.02rem}
-.more small{color:var(--muted);font-size:.82rem;line-height:1.5}
-.more>span:last-child{font-size:1.6rem;color:var(--forest);line-height:1}
-.more:hover{background:var(--forest-soft)}
 .voucher{border:2px dashed var(--brass);background:var(--brass-soft);border-radius:16px;padding:14px;text-align:center}
 .voucher b{display:block;font-family:var(--serif);font-size:1.15rem}
 .voucher code{display:block;font-size:1.6rem;letter-spacing:.18em;font-weight:700;color:var(--brass);margin:4px 0}
@@ -255,18 +263,20 @@ details.privacy ol{padding-left:1.2em;margin:6px 0 0}
     </div>
   </section>
 
-  <!-- 第 1 關：窗外換景 -->
+  <!-- 第 1 關：走進三種家（三個戶型的室內實景） -->
   <section class="scr" id="s1" hidden>
-    <div class="shead"><button type="button" class="x" data-go="map" aria-label="回到地圖">×</button><div><small>第 1 關</small><b>窗外換景</b></div></div>
+    <div class="shead"><button type="button" class="x" data-go="map" aria-label="回到地圖">×</button><div><small>第 1 關</small><b>走進三種家</b></div></div>
     <div class="sbody">
-      <p class="goal"><b>任務：</b>拖動下方時間軸，從清晨轉到夜晚，看看同一扇窗外有什麼。解鎖 4 個時刻。</p>
-      <div class="win"><img id="winImg" alt="渼山窗外的綠景"><div class="tint" id="winTint"></div><span class="clock" id="winClock">06:00</span></div>
-      <div><input class="range" id="winRange" type="range" min="0" max="300" value="0" aria-label="一天的時間"><div class="ticks" id="winTicks"><span>清晨</span><span>中午</span><span>傍晚</span><span>夜晚</span></div></div>
-      <p class="small muted" id="winProg"></p>
-      <div id="winFact"></div>
-      <div id="winQ" hidden>
-        <p style="font-weight:700;margin-bottom:8px">最後一題：渼山的窗外，看出去是什麼？</p>
-        <div class="opts" id="winOpts"></div>
+      <p class="goal"><b>任務：</b>三個戶型都是實景拍攝。點上方切換戶型，用左右鍵把每一戶的照片看完，就能解鎖最後一題。</p>
+      <div class="utabs" id="uTabs" role="tablist"></div>
+      <div class="gal"><img id="uImg" alt=""><span class="cap">晨均渼山實拍</span><span class="cnt" id="uCnt"></span>
+        <button type="button" class="nav prev" id="uPrev" aria-label="上一張">‹</button><button type="button" class="nav next" id="uNext" aria-label="下一張">›</button></div>
+      <div class="dots" id="uDots"></div>
+      <div class="uinfo" id="uInfo"></div>
+      <p class="small muted" id="uProg"></p>
+      <div id="uQ" hidden>
+        <p style="font-weight:700;margin-bottom:8px" id="uQt"></p>
+        <div class="opts" id="uOpts"></div>
       </div>
     </div>
   </section>
@@ -316,9 +326,8 @@ details.privacy ol{padding-left:1.2em;margin:6px 0 0}
   <section class="scr" id="sBook" hidden>
     <div class="shead"><button type="button" class="x" data-go="map" aria-label="回到地圖">×</button><div><small id="bkSub">終點</small><b>打開渼山的家門</b></div><a class="btn small ghost" href="index.html">完整介紹</a></div>
     <div class="sbody">
-      <div class="door" id="door"><div class="light"></div><span class="welcome">歡迎回家</span><div class="leaf l"></div><div class="leaf r"></div><span class="lockmsg" id="doorMsg"></span></div>
+      <a class="door" id="door" href="index.html" aria-label="打開家門，看完整建案介紹"><div class="light"></div><span class="welcome">歡迎回家<small>點門進去・看完整建案介紹 ›</small></span><div class="leaf l"></div><div class="leaf r"></div><span class="lockmsg" id="doorMsg"></span></a>
       <div class="voucher" id="voucher" hidden><b>渼好生活禮兌換券</b><code id="vCode"></code><span class="small">預約後於預約時段完成現場賞屋，出示此編號即可領取價值 $1,000 渼好生活禮。</span></div>
-      <a class="more" href="index.html"><span><b>先看完整建案介紹</b><small>戶型平面圖、實景照片、生活機能、價格與貸款試算</small></span><span aria-hidden="true">›</span></a>
       <form id="bookForm" novalidate>
         <label class="f"><span>姓名 <span class="req">*</span></span><input class="txt" name="name" autocomplete="name" maxlength="30"></label>
         <label class="f"><span>手機 <span class="req">*</span></span><input class="txt" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="09xxxxxxxx" maxlength="12"></label>
@@ -354,7 +363,7 @@ details.privacy ol{padding-left:1.2em;margin:6px 0 0}
 
 <div class="modal" id="modal" hidden role="dialog" aria-modal="true"><div class="card" id="mCard"></div></div>
 
-<script id="snap" type="application/json">{"cfg":{"name":"晨均渼山","builder":"晨均建設股份有限公司","license":"","address":"高雄市小港區高坪八路32號","phone":"07-216-5218","lineId":"","lineUrl":"https://lin.ee/tY3YJkj","ig":"https://www.instagram.com/passionhaus32/","map":"https://maps.app.goo.gl/R5PYJUGw6gsqNzAf9","price":988,"priceNote":"38 坪標準戶","promo":"限量 3 戶・簽約送車位","slots":["10:00","10:30","14:00","15:30"],"days":30,"hero":"","privacy":"","rates":[1.775,1.775,1.775,1.9,2.025,2.15,2.275],"rateDate":"2026/10/9"},"facade":{"hero":"1jY3hKPoVj7n1LaSHo9msyibVACIVNuds","list":[{"id":"1jY3hKPoVj7n1LaSHo9msyibVACIVNuds","cap":"飛機航線下的紅色量體"},{"id":"1nEdz9ox0HCQDlIPvjuQWeJj8tC8j7Rp9","cap":"屋突與格柵"},{"id":"14KSBFf_GUuaWkoNErBiuGEvcW64hhs7r","cap":"深遮陽立面"},{"id":"1kyK9OmzSy_7fQmOEPBfuUOjF_Ne13kpx","cap":"大面窗與藍天"},{"id":"1ROOQEafwu4lbKrQ2F2FKYjNRHDv5hEF-","cap":"陽台立面"},{"id":"1CjbleaA4aXTRfer6YSyNQ6Cj9RiZt3mO","cap":"陽台望出去的綠"},{"id":"1tSVzt34aqoubtW3_AW5xrZ0qrpewxbCv","cap":"窗框裡的森林"},{"id":"1OwZqgeVaP8i_jYqSa8QKXEkkmuAQ50dg","cap":"窗外綠坡"}]},"life":[{"cat":"日常採買","name":"萊爾富 小港亞路米","dist":"步行可達","img":"1ZKi7MmqH7QgO9DiLnm8aLjWFqcinp_mm","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"全家 大坪頂店","dist":"車程約 3 分","img":"1bbWb2pNn-kqRGsVchf0QGzo6Sy-HERN7|18WP9PHizLN7M42N3lncsdHyu06IvcYt5","credit":"晨均渼山實拍|晨均渼山實拍"},{"cat":"日常採買","name":"7-ELEVEN 坪高門市","dist":"約 5 分","img":"1X5_xKzRDY01g8Rw9lXFZdGxzrVfBgthE","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"美廉社 小港大坪頂店","dist":"約 5 分","img":"1gmP27t6-1JQNwFn3BO8kc_MLTJ6yOtIW","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"全聯 小港松園店","dist":"約 9 分","img":"1ERH5f_7BM0eP07_lanOtbuTYftFXOdL4","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"家樂福超市（宏平路）","dist":"約 9 分","img":"1CA-mHBjNLkkdr_I2vHGtrYIfjOiu4tp8","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"坪頂國小","dist":"約 5 分","img":"1DZr9vMzc9FDtojMaQrc7uU1JmW20YDnU","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"國立高雄餐旅大學","dist":"約 9 分","img":"1d_C03AdXqOFe0_svY4kTiGzQysLLo63O","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"明義國中","dist":"約 11 分","img":"1-JcuhB1-HGjBacw9WBbepBcELJA2-rKf","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"高雄市立小港醫院","dist":"約 8 分","img":"13uS5xzk7vPaXPvVgdOkiDTHcNInDqSbK","credit":"晨均渼山實拍"},{"cat":"交通與綠地","name":"高雄國際機場","dist":"約 10 分","img":"15ClVkbuIdcarbrjpvZWPKcjSVQSpqL0F|https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Kaohsiung_Airport_Terminal.jpg/960px-Kaohsiung_Airport_Terminal.jpg","credit":"晨均渼山實拍|Alec @ Taiwan／CC BY 2.0／Wikimedia Commons"},{"cat":"交通與綠地","name":"捷運小港站","dist":"約 11 分","img":"1l4nS0pKAX0NiUFWuHhpwpYtSlQbFO7zk|https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/R3_Siaogang_Station_20240814.jpg/960px-R3_Siaogang_Station_20240814.jpg","credit":"晨均渼山實拍|鐵路Railway／CC BY-SA 4.0／Wikimedia Commons"},{"cat":"交通與綠地","name":"大坪頂熱帶植物園","dist":"約 5 分","img":"1lFSdLrXYSPMHhAHS2RY4I86p8iErkUU4","credit":"晨均渼山實拍"},{"cat":"交通與綠地","name":"大坪頂坪鳳公園","dist":"約 6 分","img":"1zRJIaVce8zIgA_X0ZCcthrrlNuxkfZob","credit":"晨均渼山實拍"}]}</script>
+<script id="snap" type="application/json">{"cfg":{"name":"晨均渼山","builder":"晨均建設股份有限公司","license":"","address":"高雄市小港區高坪八路32號","phone":"07-216-5218","lineId":"","lineUrl":"https://lin.ee/tY3YJkj","ig":"https://www.instagram.com/passionhaus32/","map":"https://maps.app.goo.gl/R5PYJUGw6gsqNzAf9","price":988,"priceNote":"38 坪標準戶","promo":"限量 3 戶・簽約送車位","slots":["10:00","10:30","14:00","15:30"],"days":30,"hero":"","privacy":"","rates":[1.775,1.775,1.775,1.9,2.025,2.15,2.275],"rateDate":"2026/10/9"},"facade":{"hero":"1jY3hKPoVj7n1LaSHo9msyibVACIVNuds","list":[{"id":"1jY3hKPoVj7n1LaSHo9msyibVACIVNuds","cap":"飛機航線下的紅色量體"},{"id":"1nEdz9ox0HCQDlIPvjuQWeJj8tC8j7Rp9","cap":"屋突與格柵"},{"id":"14KSBFf_GUuaWkoNErBiuGEvcW64hhs7r","cap":"深遮陽立面"},{"id":"1kyK9OmzSy_7fQmOEPBfuUOjF_Ne13kpx","cap":"大面窗與藍天"},{"id":"1ROOQEafwu4lbKrQ2F2FKYjNRHDv5hEF-","cap":"陽台立面"},{"id":"1CjbleaA4aXTRfer6YSyNQ6Cj9RiZt3mO","cap":"陽台望出去的綠"},{"id":"1tSVzt34aqoubtW3_AW5xrZ0qrpewxbCv","cap":"窗框裡的森林"},{"id":"1OwZqgeVaP8i_jYqSa8QKXEkkmuAQ50dg","cap":"窗外綠坡"}]},"life":[{"cat":"日常採買","name":"萊爾富 小港亞路米","dist":"步行可達","img":"1ZKi7MmqH7QgO9DiLnm8aLjWFqcinp_mm","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"全家 大坪頂店","dist":"車程約 3 分","img":"1bbWb2pNn-kqRGsVchf0QGzo6Sy-HERN7|18WP9PHizLN7M42N3lncsdHyu06IvcYt5","credit":"晨均渼山實拍|晨均渼山實拍"},{"cat":"日常採買","name":"7-ELEVEN 坪高門市","dist":"約 5 分","img":"1X5_xKzRDY01g8Rw9lXFZdGxzrVfBgthE","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"美廉社 小港大坪頂店","dist":"約 5 分","img":"1gmP27t6-1JQNwFn3BO8kc_MLTJ6yOtIW","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"全聯 小港松園店","dist":"約 9 分","img":"1ERH5f_7BM0eP07_lanOtbuTYftFXOdL4","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"家樂福超市（宏平路）","dist":"約 9 分","img":"1CA-mHBjNLkkdr_I2vHGtrYIfjOiu4tp8","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"坪頂國小","dist":"約 5 分","img":"1DZr9vMzc9FDtojMaQrc7uU1JmW20YDnU","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"國立高雄餐旅大學","dist":"約 9 分","img":"1d_C03AdXqOFe0_svY4kTiGzQysLLo63O","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"明義國中","dist":"約 11 分","img":"1-JcuhB1-HGjBacw9WBbepBcELJA2-rKf","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"高雄市立小港醫院","dist":"約 8 分","img":"13uS5xzk7vPaXPvVgdOkiDTHcNInDqSbK","credit":"晨均渼山實拍"},{"cat":"交通與綠地","name":"高雄國際機場","dist":"約 10 分","img":"15ClVkbuIdcarbrjpvZWPKcjSVQSpqL0F|https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Kaohsiung_Airport_Terminal.jpg/960px-Kaohsiung_Airport_Terminal.jpg","credit":"晨均渼山實拍|Alec @ Taiwan／CC BY 2.0／Wikimedia Commons"},{"cat":"交通與綠地","name":"捷運小港站","dist":"約 11 分","img":"1l4nS0pKAX0NiUFWuHhpwpYtSlQbFO7zk|https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/R3_Siaogang_Station_20240814.jpg/960px-R3_Siaogang_Station_20240814.jpg","credit":"晨均渼山實拍|鐵路Railway／CC BY-SA 4.0／Wikimedia Commons"},{"cat":"交通與綠地","name":"大坪頂熱帶植物園","dist":"約 5 分","img":"1lFSdLrXYSPMHhAHS2RY4I86p8iErkUU4","credit":"晨均渼山實拍"},{"cat":"交通與綠地","name":"大坪頂坪鳳公園","dist":"約 6 分","img":"1zRJIaVce8zIgA_X0ZCcthrrlNuxkfZob","credit":"晨均渼山實拍"}],"photos":{"A":{"cover":"1M9Gra23blOBVemJSIT82STn_0FIB7Kr1","gallery":["146LNaDn_tOlyR0g3lnhOye3tw5f8SL9L","1pljq6hdzxkwFl206nje3ucyASAzyhPwx","13l7JDzO1WPwOIOSzYfhzQIhhtB5IEYrw"],"plan":"1V8-q7zJCbBvUZKPkZnmd0IvOfgk5QIKZ","coverAi":false},"B":{"cover":"1gAFz8BuZ8IREL2oIKhxKbx4HR4LcWX1v","gallery":["1gAFz8BuZ8IREL2oIKhxKbx4HR4LcWX1v"],"plan":"1VqqBYSl3loProunjkwWX1VByGuIk8bSn","coverAi":true},"C":{"cover":"127cOCXwRG3jyKpL9rch9xqKTPiI_Iw17","gallery":["1dp_V2JLZuVb0LkJDgGF3MQcYE71xgJOg","1so4Cx4wJFG28Aq45eUXVM3Te5I5KkioY","1ImrkOYEq29gH7WdWRf_QriRLBuf3Yy0O"],"plan":"1lSOUj73tFvIsqU4AUk66beD8YN1PxFov","coverAi":false},"D":{"cover":"1tAaz3NlvKEJ_wAkZZHZUtJfwZKrlosoa","gallery":["1Gz9rLhDG0dufJ-tTb8KF4omP8AHlD__U","1MqwBQyKD3rF9uTHu07vNj1QNI7kwyfTL","1Z0cPDUiILffgdD_JD7rqc-IcGtDl_qBr"],"plan":"1JBFo1YuvA2ToCo3nAXds3H5miFKWOZKj","coverAi":false}},"units":[{"code":"2F-A","floor":"2F","type":"A","name":"豐饒之家","size":38.19,"inner":27.6,"terrace":0,"light":"雙面採光","rooms":"可隔 3 房","baths":"","tub":false,"feature":"2–4F 最大的戶型，三房好規劃","status":"實品屋","img":""},{"code":"2F-B","floor":"2F","type":"B","name":"日光之間","size":37.17,"inner":26.2,"terrace":4.55,"light":"三面大採光","rooms":"可隔 3 房","baths":"2","tub":false,"feature":"特色空間集中更顯寬敞，三面大採光，工作陽台較大，兩間衛浴都有開窗","status":"可售","img":""},{"code":"2F-C","floor":"2F","type":"C","name":"返璞歸真","size":37.52,"inner":27,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":true,"feature":"配備 ROCA 鋼板浴缸","status":"可售","img":""},{"code":"2F-D","floor":"2F","type":"D","name":"旅行的記憶","size":37.45,"inner":26.7,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":false,"feature":"","status":"可售","img":""},{"code":"3F-A","floor":"3F","type":"A","name":"豐饒之家","size":38.19,"inner":27.6,"terrace":0,"light":"雙面採光","rooms":"可隔 3 房","baths":"","tub":false,"feature":"2–4F 最大的戶型，三房好規劃","status":"可售","img":""},{"code":"3F-B","floor":"3F","type":"B","name":"日光之間","size":37.17,"inner":26.2,"terrace":0,"light":"三面大採光","rooms":"可隔 3 房","baths":"2","tub":false,"feature":"特色空間集中更顯寬敞，三面大採光，工作陽台較大，兩間衛浴都有開窗","status":"已售","img":""},{"code":"3F-C","floor":"3F","type":"C","name":"返璞歸真","size":37.52,"inner":27,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":true,"feature":"配備 ROCA 鋼板浴缸","status":"實品屋","img":""},{"code":"3F-D","floor":"3F","type":"D","name":"旅行的記憶","size":37.45,"inner":26.7,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":false,"feature":"","status":"實品屋","img":""},{"code":"4F-A","floor":"4F","type":"A","name":"豐饒之家","size":38.19,"inner":27.6,"terrace":0,"light":"雙面採光","rooms":"可隔 3 房","baths":"","tub":false,"feature":"2–4F 最大的戶型，三房好規劃","status":"可售","img":""},{"code":"4F-B","floor":"4F","type":"B","name":"日光之間","size":37.17,"inner":26.2,"terrace":0,"light":"三面大採光","rooms":"可隔 3 房","baths":"2","tub":false,"feature":"特色空間集中更顯寬敞，三面大採光，工作陽台較大，兩間衛浴都有開窗","status":"可售","img":""},{"code":"4F-C","floor":"4F","type":"C","name":"返璞歸真","size":37.52,"inner":27,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":true,"feature":"配備 ROCA 鋼板浴缸","status":"可售","img":""},{"code":"4F-D","floor":"4F","type":"D","name":"旅行的記憶","size":37.45,"inner":26.7,"terrace":0,"light":"雙面採光","rooms":"","baths":"","tub":false,"feature":"","status":"可售","img":""}]}</script>
 <script>
 const API = 'https://script.google.com/macros/s/AKfycbypHgraua4d7UmsFQJSLcsC93ZcVRIhyTh0Fget8Ay1xVohVuhCb_AYLB_BpjTPS7LVrw/exec';
 const SRC = ((new URLSearchParams(location.search).get('src') || 'game2').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 20)) || 'game2';
@@ -375,7 +384,7 @@ let st = { role: '', people: 0, stars: {}, code: '' };
 try { st = Object.assign(st, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
 const STAGES = [
-  { n: 1, name: '窗外換景', x: 270, y: 450 },
+  { n: 1, name: '走進三種家', x: 270, y: 450 },
   { n: 2, name: '5 分鐘挑戰', x: 100, y: 340 },
   { n: 3, name: '房租對決', x: 260, y: 220 }
 ];
@@ -458,46 +467,49 @@ function clear(n, stars, line) {
 }
 $('modal').addEventListener('click', e => { const b = e.target.closest('[data-close]'); if (b) { $('modal').hidden = true; go(b.dataset.close); } });
 
-// 第 1 關：窗外換景（同一扇窗，用光線模擬一天）
-const TIMES = [
-  { t: '06:00', tint: 'rgba(255,170,130,.45)', bri: .95, title: '清晨｜雙面、三面採光', text: '每一戶都有雙面以上採光，早晨的光直接走進客廳。' },
-  { t: '12:00', tint: 'rgba(255,255,255,0)', bri: 1.08, title: '中午｜深遮陽立面', text: '外牆深出的遮陽設計，讓正午的光變得柔和。' },
-  { t: '17:30', tint: 'rgba(255,120,60,.5)', bri: .9, title: '傍晚｜3.3 米室內樓高', text: '標準層 3.3 米，空間開闊，夕陽的光拉得更深。' },
-  { t: '21:00', tint: 'rgba(15,20,70,.75)', bri: .55, title: '夜晚｜一梯兩戶', text: 'L 型基地分兩棟，等梯時間短，鄰里單純好管理。' }
-];
-let seen1;
+// 第 1 關：走進三種家（只用實景照片的戶型，AI 示意圖不放）
+let U1 = [], cur1 = 0;
 function stage1() {
-  seen1 = new Set(); $('winFact').innerHTML = ''; $('winQ').hidden = true; $('winRange').value = 0;
-  const f = (D.facade && D.facade.list) || [], pick = f.find(x => /窗框|森林/.test(x.cap)) || f.find(x => /綠/.test(x.cap)) || f[0];
-  $('winImg').src = pick ? img(pick.id, 900) : '';
-  paint1();
+  const P = D.photos || {}, units = D.units || [];
+  U1 = Object.keys(P).filter(k => !P[k].coverAi).map(k => {
+    const u = units.find(x => x.type === k) || {}, ph = P[k];
+    const pics = [ph.cover].concat(ph.gallery || []).filter((x, i, a) => x && a.indexOf(x) === i);
+    return { k, u, pics, at: 0, seen: new Set([0]) };
+  }).filter(x => x.pics.length).slice(0, 3);
+  cur1 = 0; $('uQ').hidden = true; draw1();
 }
-function paint1() {
-  const v = +$('winRange').value / 100, i = Math.min(2, Math.floor(v)), k = v - i, a = TIMES[i], b = TIMES[i + 1];
-  const mix = (p, q) => p + (q - p) * k;
-  const ca = a.tint.match(/[\d.]+/g).map(Number), cb = b.tint.match(/[\d.]+/g).map(Number);
-  $('winTint').style.background = 'rgba(' + ca.map((c, j) => j < 3 ? Math.round(mix(c, cb[j])) : mix(c, cb[j]).toFixed(2)).join(',') + ')';
-  $('winImg').style.filter = 'brightness(' + mix(a.bri, b.bri).toFixed(2) + ')';
-  const near = Math.round(v), mins = [360, 720, 1050, 1260], m = Math.round(mix(mins[i], mins[i + 1]));
-  $('winClock').textContent = String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0');
-  if (Math.abs(v - near) < .12 && !seen1.has(near)) {
-    seen1.add(near);
-    $('winFact').innerHTML = '<div class="fact"><b>' + TIMES[near].title + '</b>' + TIMES[near].text + '</div>';
-    if (seen1.size === 4) showQ1();
-  }
-  [...$('winTicks').children].forEach((s, j) => s.classList.toggle('on', seen1.has(j)));
-  $('winProg').textContent = '已解鎖 ' + seen1.size + ' / 4 個時刻' + (seen1.size < 4 ? '' : '，回答最後一題就過關');
+const done1 = x => x.seen.size >= x.pics.length;
+function draw1() {
+  const x = U1[cur1]; if (!x) return;
+  $('uTabs').innerHTML = U1.map((y, i) => '<button type="button" role="tab" aria-selected="' + (i === cur1) + '" class="ut' + (i === cur1 ? ' on' : '') + (done1(y) ? ' ok' : '') + '" data-i="' + i + '"><b>' + (y.u.name || y.k + ' 戶型') + '</b><small>' + y.k + ' 戶型' + (done1(y) ? '・看完' : '') + '</small></button>').join('');
+  $('uImg').src = img(x.pics[x.at], 900); $('uImg').alt = (x.u.name || x.k) + ' 室內實景 ' + (x.at + 1);
+  $('uCnt').textContent = (x.at + 1) + ' / ' + x.pics.length;
+  $('uDots').innerHTML = x.pics.map((_, i) => '<i class="' + (i === x.at ? 'on' : x.seen.has(i) ? 'seen' : '') + '"></i>').join('');
+  const u = x.u, bits = [u.size ? '權狀 ' + u.size + ' 坪' : '', u.inner ? '室內 ' + u.inner + ' 坪' : '', u.light, u.rooms, u.tub ? '鋼板浴缸' : ''].filter(Boolean);
+  $('uInfo').innerHTML = '<b>' + (u.name || x.k + ' 戶型') + (u.status === '實品屋' ? ' <span class="tag">實品屋</span>' : '') + '</b><span>' + bits.join('・') + '</span>' + (u.feature ? '<span class="muted">' + u.feature + '</span>' : '');
+  const n = U1.filter(done1).length;
+  $('uProg').textContent = '已看完 ' + n + ' / ' + U1.length + ' 個家' + (n === U1.length ? '，回答最後一題就過關' : '');
+  if (n === U1.length && $('uQ').hidden) showQ1();
 }
-$('winRange').addEventListener('input', paint1);
+function move1(d) { const x = U1[cur1]; x.at = (x.at + d + x.pics.length) % x.pics.length; x.seen.add(x.at); draw1(); }
+$('uPrev').addEventListener('click', () => move1(-1));
+$('uNext').addEventListener('click', () => move1(1));
+$('uTabs').addEventListener('click', e => { const b = e.target.closest('.ut'); if (b) { cur1 = +b.dataset.i; draw1(); } });
+let tx = null; // 手機左右滑動換照片
+$('uImg').parentNode.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+$('uImg').parentNode.addEventListener('touchend', e => { if (tx == null) return; const d = e.changedTouches[0].clientX - tx; if (Math.abs(d) > 40) move1(d < 0 ? 1 : -1); tx = null; });
 function showQ1() {
-  const o = [['鄰棟大樓的外牆', false], ['面向綠林的坡地', true], ['工業區的廠房', false]];
-  $('winOpts').innerHTML = o.map((x, i) => '<button type="button" class="opt" data-i="' + i + '">' + x[0] + '</button>').join('');
-  $('winQ').hidden = false;
+  // 題目依試算表資料出：有浴缸的那一戶；沒有就問最大坪數
+  const tub = U1.find(x => x.u.tub), big = U1.slice().sort((a, b) => (b.u.size || 0) - (a.u.size || 0))[0];
+  const ans = tub || big;
+  $('uQt').textContent = tub ? '最後一題：哪一個家配備 ROCA 鋼板浴缸？' : '最後一題：哪一個家的權狀坪數最大？';
+  $('uOpts').innerHTML = U1.map((x, i) => '<button type="button" class="opt" data-i="' + i + '">' + (x.u.name || x.k) + '（' + x.k + ' 戶型）</button>').join('');
+  $('uQ').hidden = false;
   let tries = 0;
-  $('winOpts').onclick = e => {
+  $('uOpts').onclick = e => {
     const b = e.target.closest('.opt'); if (!b || b.disabled) return; tries++;
-    const ok = o[+b.dataset.i][1]; b.classList.add(ok ? 'right' : 'wrong'); b.disabled = true;
-    if (ok) setTimeout(() => clear(1, tries === 1 ? 3 : 2, '基地面向綠林，窗外就是長久的綠景。從清晨到夜晚，這片綠一直都在。'), 600);
+    const ok = U1[+b.dataset.i] === ans; b.classList.add(ok ? 'right' : 'wrong'); b.disabled = true;
+    if (ok) setTimeout(() => clear(1, tries === 1 ? 3 : 2, '三個家都是實景拍攝，每一戶都有雙面以上採光。' + (U1.some(x => x.u.status === '實品屋') ? '實品屋現場就能走進去看。' : '')), 600);
   };
 }
 
@@ -579,7 +591,7 @@ let slot = '', booked = false;
 function drawBook() {
   const open = allDone(), door = $('door');
   door.classList.remove('open');
-  $('doorMsg').textContent = open ? '' : '還差 ' + (3 - keys()) + ' 把鑰匙・也可以直接預約';
+  $('doorMsg').textContent = open ? '' : '還差 ' + (3 - keys()) + ' 把鑰匙・點門看完整建案介紹';
   $('doorMsg').hidden = open;
   if (open) setTimeout(() => door.classList.add('open'), 250);
   $('voucher').hidden = !open; $('vCode').textContent = st.code;
