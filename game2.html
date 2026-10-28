@@ -184,6 +184,12 @@ button{cursor:pointer}
 .door .welcome{position:relative;font:700 1.6rem var(--serif);color:var(--deep);opacity:0;transition:opacity .8s 1s;letter-spacing:.1em}
 .door.open .welcome{opacity:1}
 .door .lockmsg{position:relative;z-index:1;background:rgba(0,0,0,.6);color:#fff;border-radius:999px;padding:4px 14px;font-weight:700;font-size:.9rem}
+.more{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;border:1.5px solid var(--forest);background:var(--surface);color:var(--ink);text-decoration:none}
+.more>span:first-child{flex:1;display:flex;flex-direction:column}
+.more b{color:var(--forest);font-size:1.02rem}
+.more small{color:var(--muted);font-size:.82rem;line-height:1.5}
+.more>span:last-child{font-size:1.6rem;color:var(--forest);line-height:1}
+.more:hover{background:var(--forest-soft)}
 .voucher{border:2px dashed var(--brass);background:var(--brass-soft);border-radius:16px;padding:14px;text-align:center}
 .voucher b{display:block;font-family:var(--serif);font-size:1.15rem}
 .voucher code{display:block;font-size:1.6rem;letter-spacing:.18em;font-weight:700;color:var(--brass);margin:4px 0}
@@ -308,10 +314,11 @@ details.privacy ol{padding-left:1.2em;margin:6px 0 0}
 
   <!-- 家門＋預約 -->
   <section class="scr" id="sBook" hidden>
-    <div class="shead"><button type="button" class="x" data-go="map" aria-label="回到地圖">×</button><div><small id="bkSub">終點</small><b>打開渼山的家門</b></div></div>
+    <div class="shead"><button type="button" class="x" data-go="map" aria-label="回到地圖">×</button><div><small id="bkSub">終點</small><b>打開渼山的家門</b></div><a class="btn small ghost" href="index.html">完整介紹</a></div>
     <div class="sbody">
       <div class="door" id="door"><div class="light"></div><span class="welcome">歡迎回家</span><div class="leaf l"></div><div class="leaf r"></div><span class="lockmsg" id="doorMsg"></span></div>
       <div class="voucher" id="voucher" hidden><b>渼好生活禮兌換券</b><code id="vCode"></code><span class="small">預約後於預約時段完成現場賞屋，出示此編號即可領取價值 $1,000 渼好生活禮。</span></div>
+      <a class="more" href="index.html"><span><b>先看完整建案介紹</b><small>戶型平面圖、實景照片、生活機能、價格與貸款試算</small></span><span aria-hidden="true">›</span></a>
       <form id="bookForm" novalidate>
         <label class="f"><span>姓名 <span class="req">*</span></span><input class="txt" name="name" autocomplete="name" maxlength="30"></label>
         <label class="f"><span>手機 <span class="req">*</span></span><input class="txt" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="09xxxxxxxx" maxlength="12"></label>
@@ -339,7 +346,7 @@ details.privacy ol{padding-left:1.2em;margin:6px 0 0}
         <div class="msg" id="bkMsg" hidden role="status"></div>
         <button type="submit" class="btn block" id="bkBtn">送出預約</button>
         <p class="fine" id="fine2"></p>
-        <p class="fine">晨均渼山｜高雄市小港區高坪八路32號｜07-216-5218｜<a href="index.html" style="color:inherit">看完整建案介紹</a></p>
+        <p class="fine">晨均渼山｜高雄市小港區高坪八路32號｜07-216-5218</p>
       </form>
     </div>
   </section>
