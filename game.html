@@ -1298,16 +1298,18 @@ renderQuiz();
   [map, done].forEach(m => m.addEventListener('click', e => { if (e.target === m || e.target.closest('[data-close]')) close(); }));
 
   // 過關條件
-  const view = (i, sec) => { // 看完：段落停留在畫面上 1.5 秒
+  const view = (i, sec, ok) => { // 看完：段落停留在畫面上 1.5 秒（ok：當下還要符合的條件）
     const el = $(sec); if (!el || !('IntersectionObserver' in window)) return;
-    let t; new IntersectionObserver(es => { const e = es[0], v = e.isIntersecting && e.intersectionRect.height >= Math.min(e.boundingClientRect.height * 0.35, innerHeight * 0.5); clearTimeout(t); if (v) t = setTimeout(() => pass(i), 1500); }, { threshold: [0, .1, .2, .3, .4, .5, .6, .7, .8, .9, 1] }).observe(el); // 段落很長時，只要佔滿半個畫面就算
+    let t; new IntersectionObserver(es => { const e = es[0], v = e.isIntersecting && e.intersectionRect.height >= Math.min(e.boundingClientRect.height * 0.35, innerHeight * 0.5); clearTimeout(t); if (v) t = setTimeout(() => { if (!ok || ok()) pass(i); }, 1500); }, { threshold: [0, .1, .2, .3, .4, .5, .6, .7, .8, .9, 1] }).observe(el); // 段落很長時，只要佔滿半個畫面就算
   };
   view(0, 'why'); view(4, 'about'); view(5, 'brand');
   $('unitCards').addEventListener('click', e => { if (e.target.closest('.ph.cover,.plan-btn')) pass(1); });
   const tq = trackQuiz; trackQuiz = k => { tq(k); if (k === 'done') pass(2); };
   const tabs = $('lifeTabs'), seen = new Set([0]);
   if (tabs) tabs.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; seen.add([...tabs.children].indexOf(b)); if (seen.size >= tabs.children.length) pass(3); });
-  if (tabs && getComputedStyle(tabs).display === 'none') view(3, 'life'); // 電腦版三類並排，看到就算
+  const wide = () => !tabs || getComputedStyle(tabs).display === 'none';
+  view(3, 'life', wide); // 電腦版三類並排，看到就算（依當下版面判斷，視窗縮放後也正確）
+  $('life').addEventListener('click', e => { if (wide() && e.target.closest('button')) pass(3); }); // 電腦版點照片左右鍵也算
   ['cPrice', 'cPlan', 'cYears'].forEach(id => { const el = $(id); if (el) ['input', 'change'].forEach(ev => el.addEventListener(ev, () => pass(6))); });
   const cmp = $('cmpMore'); if (cmp) cmp.addEventListener('toggle', () => { if (cmp.open) pass(7); });
 
