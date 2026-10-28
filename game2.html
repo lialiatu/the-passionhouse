@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>回家之路｜晨均渼山</title>
+<meta name="description" content="走完回家之路，認識晨均渼山：窗外綠意、5 分鐘生活圈、房租對決。完成闖關並預約賞屋，可獲得價值 $1,000 渼好生活禮。">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="回家之路｜晨均渼山闖關">
+<meta property="og:description" content="3 個小關卡、3 把鑰匙，打開渼山的家門。完成並預約賞屋，送價值 $1,000 渼好生活禮。">
+<meta property="og:url" content="https://lialiatu.github.io/the-passionhouse/game2.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X457Q1RYED"></script>
+<script id="ga">
+window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date());
+(function () {
+  var s = (new URLSearchParams(location.search).get('src') || 'game2').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 20);
+  gtag('config', 'G-X457Q1RYED', { campaign_source: s, campaign_medium: s === 'fb' ? 'social' : 'referral', campaign_name: 'meishan_game2' });
+})();
+</script>
+<style>
+:root{
+  --bg:#FBF6F4; --surface:#FFFFFF; --ink:#2A1A1C; --muted:#6F5B5D; --line:#ECDAD6;
+  --forest:#9B1B2E; --forest-ink:#FFFFFF; --forest-soft:#F9E3E0; --deep:#4D0713;
+  --brass:#9A6B28; --brass-soft:#F6ECDD; --ok:#2F6B3A; --ok-soft:#E3F0E2; --bad:#B0491B; --bad-soft:#F8E3D8;
+  --hill1:#E9D3C9; --hill2:#D9B9AC; --hill3:#C99A8C; --sky:#F7ECE6;
+  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1A1012; --surface:#231518; --ink:#F2E6E6; --muted:#B39FA1; --line:#3A2427;
+  --forest:#F2958B; --forest-ink:#2A0A0F; --forest-soft:#3A1A1F; --deep:#12060A;
+  --brass:#D6A961; --brass-soft:#2E2617; --ok:#8FD19A; --ok-soft:#1E3322; --bad:#F08B5E; --bad-soft:#3A2218;
+  --hill1:#3A2226; --hill2:#4A2A2F; --hill3:#5A3238; --sky:#21141A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1A1012; --surface:#231518; --ink:#F2E6E6; --muted:#B39FA1; --line:#3A2427;
+  --forest:#F2958B; --forest-ink:#2A0A0F; --forest-soft:#3A1A1F; --deep:#12060A;
+  --brass:#D6A961; --brass-soft:#2E2617; --ok:#8FD19A; --ok-soft:#1E3322; --bad:#F08B5E; --bad-soft:#3A2218;
+  --hill1:#3A2226; --hill2:#4A2A2F; --hill3:#5A3238; --sky:#21141A; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;height:100%}
+body{background:#5E000F linear-gradient(140deg,#4A000C 0%,#93101F 30%,#C9575C 52%,#F28A80 58%,#B52A38 72%,#330006 100%) fixed;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);line-height:1.3;margin:0;text-wrap:balance}
+p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:6px}
+
+/* 手機外框：電腦版置中成一支手機的寬度 */
+.app{position:relative;max-width:460px;min-height:100%;margin:0 auto;background:var(--bg);display:flex;flex-direction:column;overflow:hidden}
+@media (min-width:700px){.app{min-height:calc(100% - 48px);margin:24px auto;border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.35)}}
+.scr{flex:1;display:flex;flex-direction:column;min-height:0}
+.pad{padding:20px 18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;border-radius:999px;padding:12px 22px;font-weight:700;text-decoration:none;white-space:nowrap;background:var(--forest);color:var(--forest-ink)}
+.btn.ghost{background:transparent;color:var(--forest);box-shadow:inset 0 0 0 1.5px var(--forest)}
+.btn.small{padding:8px 16px;font-size:.92rem}
+.btn.block{width:100%}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.fine{font-size:.74rem;color:var(--muted);line-height:1.55}
+.tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.08em;color:#3A2A10;background:#E9D3A8;border-radius:999px;padding:2px 10px}
+
+/* 開場 */
+.intro{background:linear-gradient(160deg,#4A000C,#93101F 45%,#C9575C 70%,#F28A80);color:#fff;gap:16px;justify-content:flex-end;min-height:100vh}
+@media (min-width:700px){.intro{min-height:0}}
+.intro h1{font-size:2.3rem}
+.intro .lead{font-size:1.02rem;opacity:.95}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.role{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;padding:14px;border-radius:16px;border:1.5px solid rgba(255,255,255,.5);background:rgba(255,255,255,.12);color:#fff}
+.role b{font-family:var(--serif);font-size:1.08rem}
+.role span{font-size:.82rem;opacity:.9}
+.role:hover,.role.on{background:#fff;color:var(--deep)}
+.intro .fine{color:rgba(255,255,255,.8)}
+.skip{color:#fff;text-decoration:underline;background:none;border:0;padding:4px 0;align-self:flex-start;font-size:.92rem}
+
+/* 地圖 */
+.top{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface)}
+.top b{font-family:var(--serif);font-size:1.05rem;flex:1}
+.keys{display:flex;gap:4px;align-items:center;font-weight:700;font-size:.9rem;color:var(--brass)}
+.keys svg{width:20px;height:20px}
+.keys .off{opacity:.25}
+.mapwrap{position:relative;flex:1;background:var(--sky)}
+.mapwrap svg.map{display:block;width:100%;height:auto}
+.node{cursor:pointer}
+.node circle.base{fill:var(--surface);stroke:var(--forest);stroke-width:3}
+.node.done circle.base{fill:var(--forest)}
+.node.lock{cursor:not-allowed}
+.node.lock circle.base{stroke:var(--muted);stroke-dasharray:4 4;fill:var(--bg)}
+.node text.n{font:700 20px var(--serif);text-anchor:middle;dominant-baseline:central;fill:var(--forest)}
+.node.done text.n{fill:var(--forest-ink)}
+.node.lock text.n{fill:var(--muted)}
+.node text.lb{font:700 14px var(--sans);text-anchor:middle;fill:var(--ink)}
+.node text.st{font:14px var(--sans);text-anchor:middle;fill:var(--brass);letter-spacing:2px}
+.node.next circle.ring{fill:none;stroke:var(--forest);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:ring 1.6s ease-out infinite}
+@keyframes ring{from{opacity:.8;transform:scale(1)}to{opacity:0;transform:scale(1.6)}}
+@media (prefers-reduced-motion:reduce){.node.next circle.ring{animation:none}}
+.mapnote{position:absolute;left:12px;right:12px;bottom:12px;display:flex;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px;box-shadow:0 10px 24px rgba(0,0,0,.12)}
+.mapnote p{flex:1;font-size:.9rem;line-height:1.5}
+
+/* 關卡共用 */
+.shead{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface)}
+.shead .x{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--surface);font-size:1.2rem;line-height:1}
+.shead div{flex:1;min-width:0}
+.shead small{display:block;color:var(--muted);font-size:.78rem}
+.shead b{font-family:var(--serif)}
+.sbody{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px}
+.goal{background:var(--brass-soft);border-radius:14px;padding:12px 14px;font-size:.92rem}
+.goal b{color:var(--brass)}
+
+/* 第 1 關：窗外換景 */
+.win{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:#222}
+.win img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .2s}
+.win .tint{position:absolute;inset:0;mix-blend-mode:multiply;transition:background .2s;pointer-events:none}
+.win .clock{position:absolute;left:12px;top:12px;background:rgba(0,0,0,.55);color:#fff;border-radius:999px;padding:2px 12px;font-weight:700;font-size:.9rem}
+.range{width:100%;accent-color:var(--forest);height:32px}
+.ticks{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;font-size:.82rem;color:var(--muted);margin-top:-6px}
+.ticks span.on{color:var(--forest);font-weight:700}
+.fact{border:1.5px solid var(--forest);background:var(--forest-soft);border-radius:14px;padding:12px 14px;animation:pop .35s ease-out}
+.fact b{display:block;font-family:var(--serif);font-size:1.05rem;color:var(--forest)}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{text-align:left;padding:12px 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+
+/* 第 2 關：5 分鐘挑戰 */
+.timer{display:flex;align-items:center;gap:10px;font-weight:700}
+.timer .bar{flex:1;height:8px;border-radius:999px;background:var(--line);overflow:hidden}
+.timer .bar i{display:block;height:100%;background:var(--forest);transition:width 1s linear}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pl{position:relative;display:flex;flex-direction:column;border:2px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);padding:0;text-align:left}
+.pl img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--line)}
+.pl span{font-size:.76rem;line-height:1.35;padding:6px 6px 8px;font-weight:500}
+.pl.sel{border-color:var(--forest);box-shadow:0 0 0 2px var(--forest)}
+.pl.sel::after{content:"✓";position:absolute;right:6px;top:6px;width:24px;height:24px;border-radius:50%;background:var(--forest);color:var(--forest-ink);display:grid;place-items:center;font-weight:700;font-size:.85rem}
+.pl em{position:absolute;left:6px;top:6px;font-style:normal;font-size:.72rem;font-weight:700;border-radius:999px;padding:1px 8px;background:rgba(0,0,0,.6);color:#fff}
+.pl.yes{border-color:var(--ok)}
+.pl.no.sel{border-color:var(--bad);box-shadow:0 0 0 2px var(--bad)}
+.pl.no.sel::after{content:"✕";background:var(--bad)}
+.pl.yes:not(.sel){border-style:dashed}
+.pl:disabled{cursor:default}
+
+/* 第 3 關：房租對決 */
+.big{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--forest);line-height:1.2}
+.vs{display:flex;flex-direction:column;gap:12px}
+.vrow{display:grid;grid-template-columns:5.5em 1fr;gap:10px;align-items:center}
+.vrow .track{height:30px;border-radius:10px;background:var(--line);overflow:hidden}
+.vrow .track i{display:flex;align-items:center;justify-content:flex-end;padding-right:8px;height:100%;color:#fff;font-style:normal;font-weight:700;font-size:.85rem;white-space:nowrap;transition:width .5s}
+.vrow .rent i{background:#8A7A7C}
+.vrow .own i{background:var(--forest);color:var(--forest-ink)}
+.vrow b{font-size:.9rem}
+
+/* 過關視窗 */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(20,5,8,.5);display:flex;align-items:flex-end;justify-content:center;padding:12px}
+@media (min-width:700px){.modal{align-items:center}}
+.card{background:var(--surface);border-radius:22px;padding:24px 20px 20px;width:min(440px,100%);max-height:calc(100vh - 24px);overflow-y:auto;display:flex;flex-direction:column;gap:12px;text-align:center;align-items:center;animation:pop .3s ease-out}
+.card h3{font-size:1.4rem}
+.stars{font-size:2rem;letter-spacing:6px;color:var(--brass)}
+.stars .off{opacity:.2}
+.keyfly{width:56px;height:56px;color:var(--brass);animation:spin 1s ease-out}
+@keyframes spin{from{transform:rotate(-200deg) scale(.3);opacity:0}to{transform:none;opacity:1}}
+
+/* 家門＋預約 */
+.door{position:relative;height:220px;border-radius:18px;overflow:hidden;background:linear-gradient(#F9E3E0,#F2C3BA);display:flex;align-items:center;justify-content:center;perspective:800px}
+.door .light{position:absolute;inset:0;background:radial-gradient(circle at 50% 60%,#FFF4D6,transparent 60%);opacity:0;transition:opacity 1.2s .4s}
+.door .leaf{position:absolute;top:30px;bottom:0;width:80px;background:var(--forest);border:3px solid var(--deep);transition:transform 1.2s cubic-bezier(.6,0,.3,1)}
+.door .l{right:50%;transform-origin:left center;border-radius:10px 0 0 0}
+.door .r{left:50%;transform-origin:right center;border-radius:0 10px 0 0}
+.door .l::after,.door .r::after{content:"";position:absolute;top:50%;width:8px;height:8px;border-radius:50%;background:#E9D3A8}
+.door .l::after{right:8px}.door .r::after{left:8px}
+.door.open .l{transform:rotateY(-80deg)}
+.door.open .r{transform:rotateY(80deg)}
+.door.open .light{opacity:1}
+.door .lockmsg{position:relative;z-index:1;background:rgba(0,0,0,.6);color:#fff;border-radius:999px;padding:4px 14px;font-weight:700;font-size:.9rem}
+.voucher{border:2px dashed var(--brass);background:var(--brass-soft);border-radius:16px;padding:14px;text-align:center}
+.voucher b{display:block;font-family:var(--serif);font-size:1.15rem}
+.voucher code{display:block;font-size:1.6rem;letter-spacing:.18em;font-weight:700;color:var(--brass);margin:4px 0}
+form{display:flex;flex-direction:column;gap:12px}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:.92rem;font-weight:500}
+.txt{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface)}
+.txt:focus{border-color:var(--forest);outline:none}
+.req{color:var(--forest)}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slot{padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-weight:500}
+.slot.on{background:var(--forest);color:var(--forest-ink);border-color:var(--forest)}
+.slot:disabled{opacity:.35;text-decoration:line-through}
+.check{display:flex;gap:8px;align-items:flex-start;font-size:.86rem;line-height:1.5}
+.check input{margin-top:3px;width:18px;height:18px;accent-color:var(--forest);flex:none}
+details.privacy{font-size:.78rem;color:var(--muted);border:1px solid var(--line);border-radius:12px;padding:8px 12px}
+details.privacy summary{cursor:pointer;font-weight:700}
+details.privacy ol{padding-left:1.2em;margin:6px 0 0}
+.hp{position:absolute;left:-9999px}
+.msg{border-radius:12px;padding:10px 12px;font-size:.92rem}
+.msg.ok{background:var(--ok-soft);color:var(--ok)}
+.msg.err{background:var(--bad-soft);color:var(--bad)}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+
+  <!-- 開場：選角色 -->
+  <section class="scr intro pad" id="sIntro">
+    <span class="tag">晨均渼山・闖關活動</span>
+    <h1>回家之路</h1>
+    <p class="lead">從小港市區出發，走上大坪頂。3 個小關卡、3 把鑰匙，打開渼山的家門。完成並預約賞屋，就能獲得<b>價值 $1,000 渼好生活禮</b>。</p>
+    <p style="font-weight:700">先選你的角色：誰要一起回家？</p>
+    <div class="roles" id="roles">
+      <button type="button" class="role" data-p="1" data-n="一個人"><b>一個人</b><span>自在的第一個家</span></button>
+      <button type="button" class="role" data-p="2" data-n="小倆口"><b>小倆口</b><span>兩個人的新生活</span></button>
+      <button type="button" class="role" data-p="3" data-n="小家庭"><b>小家庭</b><span>3–4 人，孩子要長大</span></button>
+      <button type="button" class="role" data-p="5" data-n="三代同堂"><b>三代同堂</b><span>5 人以上，長輩同住</span></button>
+    </div>
+    <button type="button" class="skip" data-go="book">不玩了，直接預約賞屋</button>
+    <p class="fine" id="fine1"></p>
+  </section>
+
+  <!-- 地圖 -->
+  <section class="scr" id="sMap" hidden>
+    <div class="top"><b id="mapTitle">回家之路</b><span class="keys" id="keys"></span></div>
+    <div class="mapwrap">
+      <svg class="map" viewBox="0 0 360 600" role="img" aria-label="回家之路關卡地圖">
+        <rect width="360" height="600" style="fill:var(--sky)"/>
+        <path d="M0 250 Q90 170 180 210 T360 170 V600 H0Z" style="fill:var(--hill1)"/>
+        <path d="M0 380 Q110 300 220 350 T360 320 V600 H0Z" style="fill:var(--hill2)"/>
+        <path d="M0 500 Q120 440 240 480 T360 470 V600 H0Z" style="fill:var(--hill3)"/>
+        <g style="fill:var(--ok);opacity:.55">
+          <circle cx="40" cy="232" r="14"/><circle cx="62" cy="226" r="10"/><circle cx="300" cy="190" r="13"/><circle cx="322" cy="198" r="9"/>
+          <circle cx="24" cy="360" r="12"/><circle cx="336" cy="336" r="14"/><circle cx="314" cy="344" r="9"/>
+        </g>
+        <path id="road" d="M60 560 C200 540 300 500 270 450 S110 400 100 340 S250 270 260 220 S170 150 180 96" fill="none" style="stroke:var(--surface)" stroke-width="14" stroke-linecap="round"/>
+        <path d="M60 560 C200 540 300 500 270 450 S110 400 100 340 S250 270 260 220 S170 150 180 96" fill="none" style="stroke:var(--forest)" stroke-width="2.5" stroke-dasharray="2 9" stroke-linecap="round" opacity=".6"/>
+        <g transform="translate(36 572)"><rect x="-26" y="-14" width="52" height="24" rx="12" style="fill:var(--surface)"/><text x="0" y="3" text-anchor="middle" style="font:700 12px var(--sans);fill:var(--muted)">小港市區</text></g>
+        <g id="nodes"></g>
+      </svg>
+      <div class="mapnote"><p id="mapMsg"></p><button type="button" class="btn small ghost" data-go="book">直接預約</button></div>
+    </div>
+  </section>
+
+  <!-- 第 1 關：窗外換景 -->
+  <section class="scr" id="s1" hidden>
+    <div class="shead"><button type="button" class="x" data-go="map" aria-label="回到地圖">×</button><div><small>第 1 關</small><b>窗外換景</b></div></div>
+    <div class="sbody">
+      <p class="goal"><b>任務：</b>拖動下方時間軸，從清晨轉到夜晚，看看同一扇窗外有什麼。解鎖 4 個時刻。</p>
+      <div class="win"><img id="winImg" alt="渼山窗外的綠景"><div class="tint" id="winTint"></div><span class="clock" id="winClock">06:00</span></div>
+      <div><input class="range" id="winRange" type="range" min="0" max="300" value="0" aria-label="一天的時間"><div class="ticks" id="winTicks"><span>清晨</span><span>中午</span><span>傍晚</span><span>夜晚</span></div></div>
+      <p class="small muted" id="winProg"></p>
+      <div id="winFact"></div>
+      <div id="winQ" hidden>
+        <p style="font-weight:700;margin-bottom:8px">最後一題：渼山的窗外，看出去是什麼？</p>
+        <div class="opts" id="winOpts"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第 2 關：5 分鐘生活圈挑戰 -->
+  <section class="scr" id="s2" hidden>
+    <div class="shead"><button type="button" class="x" data-go="map" aria-label="回到地圖">×</button><div><small>第 2 關</small><b>5 分鐘生活圈挑戰</b></div></div>
+    <div class="sbody">
+      <p class="goal"><b>任務：</b>30 秒內，點出從渼山<b>開車 5 分鐘內</b>到得了的地方。猜對越多，星星越多。</p>
+      <div class="timer" id="lfTimer" hidden><span id="lfSec">30</span><span class="bar"><i id="lfBar" style="width:100%"></i></span><span id="lfCnt">已選 0</span></div>
+      <button type="button" class="btn block" id="lfStart">開始挑戰</button>
+      <div class="grid" id="lfGrid" hidden></div>
+      <button type="button" class="btn block" id="lfDone" hidden>我選好了</button>
+      <div id="lfRes" hidden></div>
+      <p class="fine">開車時間為路線規劃估算，未計塞車與紅綠燈；照片為晨均渼山實拍。</p>
+    </div>
+  </section>
+
+  <!-- 第 3 關：房租對決 -->
+  <section class="scr" id="s3" hidden>
+    <div class="shead"><button type="button" class="x" data-go="map" aria-label="回到地圖">×</button><div><small>第 3 關</small><b>房租對決</b></div></div>
+    <div class="sbody">
+      <div id="rtA">
+        <p class="goal"><b>任務：</b>猜猜看，買一戶 38 坪的渼山標準戶，每個月大概要繳多少房貸？猜得越準，星星越多。</p>
+        <p class="small muted" id="rtCond"></p>
+        <p class="big" id="rtGuessV"></p>
+        <input class="range" id="rtGuess" type="range" min="10000" max="50000" step="500" value="20000" aria-label="猜月付金額">
+        <button type="button" class="btn block" id="rtGo">就猜這個數字</button>
+      </div>
+      <div id="rtB" hidden>
+        <div id="rtReveal"></div>
+        <p style="font-weight:700">那你現在每個月的房租是多少？</p>
+        <p class="big" id="rtRentV"></p>
+        <input class="range" id="rtRent" type="range" min="5000" max="40000" step="500" value="15000" aria-label="現在的月租金">
+        <div class="vs">
+          <div class="vrow"><b>房租</b><span class="track rent"><i id="vRent"></i></span></div>
+          <div class="vrow"><b>渼山月付</b><span class="track own"><i id="vOwn"></i></span></div>
+        </div>
+        <p id="rtSay"></p>
+        <button type="button" class="btn block" id="rtEnd">完成對決</button>
+        <p class="fine" id="rtFine"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 家門＋預約 -->
+  <section class="scr" id="sBook" hidden>
+    <div class="shead"><button type="button" class="x" data-go="map" aria-label="回到地圖">×</button><div><small id="bkSub">終點</small><b>打開渼山的家門</b></div></div>
+    <div class="sbody">
+      <div class="door" id="door"><div class="light"></div><div class="leaf l"></div><div class="leaf r"></div><span class="lockmsg" id="doorMsg"></span></div>
+      <div class="voucher" id="voucher" hidden><b>渼好生活禮兌換券</b><code id="vCode"></code><span class="small">預約後於預約時段完成現場賞屋，出示此編號即可領取價值 $1,000 渼好生活禮。</span></div>
+      <form id="bookForm" novalidate>
+        <label class="f">姓名 <span class="req">*</span><input class="txt" name="name" autocomplete="name" maxlength="30"></label>
+        <label class="f">手機 <span class="req">*</span><input class="txt" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="09xxxxxxxx" maxlength="12"></label>
+        <label class="f">LINE ID（選填）<input class="txt" name="line" maxlength="40"></label>
+        <label class="f">預約日期 <span class="req">*</span><input class="txt" name="date" type="date"></label>
+        <div><span class="small" style="font-weight:500">預約時段 <span class="req">*</span></span><div class="slots" id="slots" role="radiogroup" aria-label="預約時段"></div></div>
+        <label class="f">想先讓我們知道的事（選填）<textarea class="txt" name="note" maxlength="400" rows="2" placeholder="例如：會帶長輩一起來、想了解貸款"></textarea></label>
+        <label class="hp" aria-hidden="true">網站<input name="website" tabindex="-1" autocomplete="off"></label>
+        <details class="privacy">
+          <summary>個人資料蒐集告知事項</summary>
+          <p style="margin-top:6px">晨均建設股份有限公司（以下稱本公司）依《個人資料保護法》第 8 條規定，向您告知下列事項：</p>
+          <ol>
+            <li>蒐集目的：不動產銷售與行銷、預約賞屋安排、客戶服務與聯繫、購屋資訊提供（法定特定目的代號：040 行銷、069 契約或類似契約關係之管理、090 消費者及客戶管理與服務）。</li>
+            <li>個人資料類別：姓名、手機、LINE ID、預約時間、購屋需求與闖關紀錄等您所提供的資料。</li>
+            <li>利用期間：自蒐集日起至蒐集目的消失為止，或依相關法令規定保存之期間。</li>
+            <li>利用地區：中華民國境內。</li>
+            <li>利用對象：本公司及本公司委託之銷售、行銷服務人員。</li>
+            <li>利用方式：以電話、簡訊、電子郵件、通訊軟體等方式聯繫，以及書面、電子方式處理與保存。</li>
+            <li>您可依《個人資料保護法》第 3 條規定，向本公司請求查詢、閱覽、製給複製本、補充或更正、停止蒐集處理利用或刪除您的個人資料（聯絡電話 07-216-5218）。</li>
+            <li>您可自由選擇是否提供個人資料；若未提供必填資料，本公司將無法為您安排預約賞屋。</li>
+          </ol>
+        </details>
+        <label class="check"><input type="checkbox" name="consent"> <span>我已閱讀並同意晨均建設股份有限公司依上述告知事項，蒐集、處理及利用我的個人資料。<span class="req">*</span></span></label>
+        <label class="check"><input type="checkbox" name="marketing"> <span>（選填）我同意收到晨均建設的建案資訊與活動通知。</span></label>
+        <div class="msg" id="bkMsg" hidden role="status"></div>
+        <button type="submit" class="btn block" id="bkBtn">送出預約</button>
+        <p class="fine" id="fine2"></p>
+        <p class="fine">晨均渼山｜高雄市小港區高坪八路32號｜07-216-5218｜<a href="index.html" style="color:inherit">看完整建案介紹</a></p>
+      </form>
+    </div>
+  </section>
+</div>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true"><div class="card" id="mCard"></div></div>
+
+<script id="snap" type="application/json">{"cfg":{"name":"晨均渼山","builder":"晨均建設股份有限公司","license":"","address":"高雄市小港區高坪八路32號","phone":"07-216-5218","lineId":"","lineUrl":"https://lin.ee/tY3YJkj","ig":"https://www.instagram.com/passionhaus32/","map":"https://maps.app.goo.gl/R5PYJUGw6gsqNzAf9","price":988,"priceNote":"38 坪標準戶","promo":"限量 3 戶・簽約送車位","slots":["10:00","10:30","14:00","15:30"],"days":30,"hero":"","privacy":"","rates":[1.775,1.775,1.775,1.9,2.025,2.15,2.275],"rateDate":"2026/10/9"},"facade":{"hero":"1jY3hKPoVj7n1LaSHo9msyibVACIVNuds","list":[{"id":"1jY3hKPoVj7n1LaSHo9msyibVACIVNuds","cap":"飛機航線下的紅色量體"},{"id":"1nEdz9ox0HCQDlIPvjuQWeJj8tC8j7Rp9","cap":"屋突與格柵"},{"id":"14KSBFf_GUuaWkoNErBiuGEvcW64hhs7r","cap":"深遮陽立面"},{"id":"1kyK9OmzSy_7fQmOEPBfuUOjF_Ne13kpx","cap":"大面窗與藍天"},{"id":"1ROOQEafwu4lbKrQ2F2FKYjNRHDv5hEF-","cap":"陽台立面"},{"id":"1CjbleaA4aXTRfer6YSyNQ6Cj9RiZt3mO","cap":"陽台望出去的綠"},{"id":"1tSVzt34aqoubtW3_AW5xrZ0qrpewxbCv","cap":"窗框裡的森林"},{"id":"1OwZqgeVaP8i_jYqSa8QKXEkkmuAQ50dg","cap":"窗外綠坡"}]},"life":[{"cat":"日常採買","name":"萊爾富 小港亞路米","dist":"步行可達","img":"1ZKi7MmqH7QgO9DiLnm8aLjWFqcinp_mm","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"全家 大坪頂店","dist":"車程約 3 分","img":"1bbWb2pNn-kqRGsVchf0QGzo6Sy-HERN7|18WP9PHizLN7M42N3lncsdHyu06IvcYt5","credit":"晨均渼山實拍|晨均渼山實拍"},{"cat":"日常採買","name":"7-ELEVEN 坪高門市","dist":"約 5 分","img":"1X5_xKzRDY01g8Rw9lXFZdGxzrVfBgthE","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"美廉社 小港大坪頂店","dist":"約 5 分","img":"1gmP27t6-1JQNwFn3BO8kc_MLTJ6yOtIW","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"全聯 小港松園店","dist":"約 9 分","img":"1ERH5f_7BM0eP07_lanOtbuTYftFXOdL4","credit":"晨均渼山實拍"},{"cat":"日常採買","name":"家樂福超市（宏平路）","dist":"約 9 分","img":"1CA-mHBjNLkkdr_I2vHGtrYIfjOiu4tp8","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"坪頂國小","dist":"約 5 分","img":"1DZr9vMzc9FDtojMaQrc7uU1JmW20YDnU","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"國立高雄餐旅大學","dist":"約 9 分","img":"1d_C03AdXqOFe0_svY4kTiGzQysLLo63O","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"明義國中","dist":"約 11 分","img":"1-JcuhB1-HGjBacw9WBbepBcELJA2-rKf","credit":"晨均渼山實拍"},{"cat":"學校與醫療","name":"高雄市立小港醫院","dist":"約 8 分","img":"13uS5xzk7vPaXPvVgdOkiDTHcNInDqSbK","credit":"晨均渼山實拍"},{"cat":"交通與綠地","name":"高雄國際機場","dist":"約 10 分","img":"15ClVkbuIdcarbrjpvZWPKcjSVQSpqL0F|https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Kaohsiung_Airport_Terminal.jpg/960px-Kaohsiung_Airport_Terminal.jpg","credit":"晨均渼山實拍|Alec @ Taiwan／CC BY 2.0／Wikimedia Commons"},{"cat":"交通與綠地","name":"捷運小港站","dist":"約 11 分","img":"1l4nS0pKAX0NiUFWuHhpwpYtSlQbFO7zk|https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/R3_Siaogang_Station_20240814.jpg/960px-R3_Siaogang_Station_20240814.jpg","credit":"晨均渼山實拍|鐵路Railway／CC BY-SA 4.0／Wikimedia Commons"},{"cat":"交通與綠地","name":"大坪頂熱帶植物園","dist":"約 5 分","img":"1lFSdLrXYSPMHhAHS2RY4I86p8iErkUU4","credit":"晨均渼山實拍"},{"cat":"交通與綠地","name":"大坪頂坪鳳公園","dist":"約 6 分","img":"1zRJIaVce8zIgA_X0ZCcthrrlNuxkfZob","credit":"晨均渼山實拍"}]}</script>
+<script>
+const API = 'https://script.google.com/macros/s/AKfycbypHgraua4d7UmsFQJSLcsC93ZcVRIhyTh0Fget8Ay1xVohVuhCb_AYLB_BpjTPS7LVrw/exec';
+const SRC = ((new URLSearchParams(location.search).get('src') || 'game2').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 20)) || 'game2';
+const REWARD = '價值 $1,000 渼好生活禮';
+const FINE = '※ 每組客戶限領一份，須完成線上闖關並於預約時段完成現場賞屋；禮品內容以現場為準，晨均建設保留調整、變更或終止活動之權利。';
+const KEY = 'mv_game2_v1';
+const $ = id => document.getElementById(id);
+const ga_ = (n, p) => { if (window.gtag) gtag('event', n, p || {}); };
+const img = (id, w) => id ? 'https://lh3.googleusercontent.com/d/' + id + '=w' + (w || 600) : '';
+const money = n => n.toLocaleString('zh-TW');
+let D = JSON.parse($('snap').textContent || '{}');
+fetch(API + '?api=site').then(r => r.json()).then(f => { if (f && f.cfg) { D = f; if (!$('sBook').hidden) drawSlots(); } }).catch(() => {});
+const post = body => fetch(API, { method: 'POST', body: JSON.stringify(body) }).then(r => r.json());
+try { if (!sessionStorage.getItem('mv_g2_v')) { sessionStorage.setItem('mv_g2_v', '1'); post({ action: 'visit', src: SRC }).catch(() => {}); } } catch (e) {}
+
+// 進度存在客人自己的瀏覽器
+let st = { role: '', people: 0, stars: {}, code: '' };
+try { st = Object.assign(st, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
+const STAGES = [
+  { n: 1, name: '窗外換景', x: 270, y: 450 },
+  { n: 2, name: '5 分鐘挑戰', x: 100, y: 340 },
+  { n: 3, name: '房租對決', x: 260, y: 220 }
+];
+const keys = () => STAGES.filter(s => st.stars[s.n]).length;
+const allDone = () => keys() === STAGES.length;
+$('fine1').textContent = FINE; $('fine2').textContent = FINE;
+
+const KEYSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="7.5" cy="12" r="4"/><path d="M11.5 12H21M17 12v3.5M20 12v2.5"/></svg>';
+
+// 畫面切換
+function go(name) {
+  if (lf && !lf.over) { clearInterval(lf.tm); lf = null; } // 挑戰中途離開就停掉倒數
+  ['sIntro', 'sMap', 's1', 's2', 's3', 'sBook'].forEach(id => { $(id).hidden = true; });
+  const id = { intro: 'sIntro', map: 'sMap', 1: 's1', 2: 's2', 3: 's3', book: 'sBook' }[name];
+  $(id).hidden = false; window.scrollTo(0, 0);
+  if (name === 'map') drawMap();
+  if (name == 1) stage1(); if (name == 2) stage2(); if (name == 3) stage3();
+  if (name === 'book') drawBook();
+}
+document.addEventListener('click', e => { const g = e.target.closest('[data-go]'); if (g) { e.preventDefault(); go(g.dataset.go); } });
+
+// 開場選角色
+$('roles').addEventListener('click', e => {
+  const b = e.target.closest('.role'); if (!b) return;
+  st.role = b.dataset.n; st.people = +b.dataset.p; save();
+  ga_('game2_start', { role: st.role, site_src: SRC });
+  go('map');
+});
+
+// 地圖
+function drawMap() {
+  $('mapTitle').textContent = (st.role ? st.role + '的' : '') + '回家之路';
+  $('keys').innerHTML = STAGES.map(s => '<span class="' + (st.stars[s.n] ? '' : 'off') + '">' + KEYSVG + '</span>').join('') + ' ' + keys() + ' / 3';
+  const next = STAGES.find(s => !st.stars[s.n]);
+  let h = '';
+  STAGES.forEach((s, i) => {
+    const done = !!st.stars[s.n], lock = !done && i > 0 && !st.stars[STAGES[i - 1].n], isNext = next && next.n === s.n;
+    h += '<g class="node' + (done ? ' done' : '') + (lock ? ' lock' : '') + (isNext ? ' next' : '') + '" data-n="' + s.n + '" tabindex="0" role="button" aria-label="第 ' + s.n + ' 關 ' + s.name + (done ? '，已完成' : lock ? '，尚未解鎖' : '') + '">' +
+      (isNext ? '<circle class="ring" cx="' + s.x + '" cy="' + s.y + '" r="28"/>' : '') +
+      '<circle class="base" cx="' + s.x + '" cy="' + s.y + '" r="28"/><text class="n" x="' + s.x + '" y="' + s.y + '">' + (done ? '✓' : s.n) + '</text>' +
+      '<text class="lb" x="' + s.x + '" y="' + (s.y + 48) + '">' + s.name + '</text>' +
+      (done ? '<text class="st" x="' + s.x + '" y="' + (s.y + 66) + '">' + '★'.repeat(st.stars[s.n]) + '☆'.repeat(3 - st.stars[s.n]) + '</text>' : '') + '</g>';
+  });
+  // 終點：家門
+  const open = allDone();
+  h += '<g class="node' + (open ? ' next' : ' lock') + '" data-n="door" tabindex="0" role="button" aria-label="終點 渼山的家">' +
+    (open ? '<circle class="ring" cx="180" cy="70" r="34"/>' : '') +
+    '<rect x="146" y="34" width="68" height="62" rx="8" style="fill:var(--forest)"/><path d="M140 40 L180 8 L220 40Z" style="fill:var(--deep)"/>' +
+    '<rect x="168" y="62" width="24" height="34" rx="3" style="fill:' + (open ? '#FFE9B0' : 'var(--deep)') + '"/>' +
+    '<text class="lb" x="180" y="122">渼山・家</text></g>';
+  $('nodes').innerHTML = h;
+  $('mapMsg').innerHTML = open ? '<b>3 把鑰匙到手！</b>點上方的家門，預約賞屋領取' + REWARD + '。'
+    : next ? '下一關：<b>第 ' + next.n + ' 關 ' + next.name + '</b>。點地圖上的圓圈開始。' : '';
+}
+function openNode(n) {
+  if (n === 'door') return go('book');
+  const i = STAGES.findIndex(s => s.n == n);
+  if (i > 0 && !st.stars[STAGES[i - 1].n] && !st.stars[n]) { $('mapMsg').innerHTML = '要先完成<b>第 ' + STAGES[i - 1].n + ' 關</b>，才能走到這裡喔。'; return; }
+  go(n);
+}
+$('nodes').addEventListener('click', e => { const g = e.target.closest('.node'); if (g) openNode(g.dataset.n); });
+$('nodes').addEventListener('keydown', e => { const g = e.target.closest('.node'); if (g && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openNode(g.dataset.n); } });
+
+// 過關
+function clear(n, stars, line) {
+  const first = !st.stars[n];
+  st.stars[n] = Math.max(st.stars[n] || 0, stars); save();
+  ga_('game2_stage', { stage: n, stars: stars, site_src: SRC });
+  if (allDone() && !st.code) {
+    const a = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; st.code = 'MV-' + Array.from({ length: 4 }, () => a[Math.floor(Math.random() * a.length)]).join(''); save();
+    ga_('game2_complete', { site_src: SRC });
+  }
+  $('mCard').innerHTML = (first ? '<span class="keyfly">' + KEYSVG + '</span>' : '') +
+    '<div class="stars">' + [1, 2, 3].map(i => '<span class="' + (i <= stars ? '' : 'off') + '">★</span>').join('') + '</div>' +
+    '<h3>第 ' + n + ' 關完成' + (first ? '，獲得第 ' + keys() + ' 把鑰匙' : '') + '</h3><p>' + line + '</p>' +
+    (stars < 3 ? '<p class="small muted">想拿滿 3 顆星？可以從地圖再玩一次。</p>' : '') +
+    (allDone() ? '<button type="button" class="btn block" data-close="book">3 把鑰匙到齊，去打開家門</button>' : '<button type="button" class="btn block" data-close="map">回到地圖，前往下一關</button>');
+  $('modal').hidden = false;
+}
+$('modal').addEventListener('click', e => { const b = e.target.closest('[data-close]'); if (b) { $('modal').hidden = true; go(b.dataset.close); } });
+
+// 第 1 關：窗外換景（同一扇窗，用光線模擬一天）
+const TIMES = [
+  { t: '06:00', tint: 'rgba(255,170,130,.45)', bri: .95, title: '清晨｜雙面、三面採光', text: '每一戶都有雙面以上採光，早晨的光直接走進客廳。' },
+  { t: '12:00', tint: 'rgba(255,255,255,0)', bri: 1.08, title: '中午｜深遮陽立面', text: '外牆深出的遮陽設計，讓正午的光變得柔和。' },
+  { t: '17:30', tint: 'rgba(255,120,60,.5)', bri: .9, title: '傍晚｜3.3 米室內樓高', text: '標準層 3.3 米，空間開闊，夕陽的光拉得更深。' },
+  { t: '21:00', tint: 'rgba(15,20,70,.75)', bri: .55, title: '夜晚｜一梯兩戶', text: 'L 型基地分兩棟，等梯時間短，鄰里單純好管理。' }
+];
+let seen1;
+function stage1() {
+  seen1 = new Set(); $('winFact').innerHTML = ''; $('winQ').hidden = true; $('winRange').value = 0;
+  const f = (D.facade && D.facade.list) || [], pick = f.find(x => /窗框|森林/.test(x.cap)) || f.find(x => /綠/.test(x.cap)) || f[0];
+  $('winImg').src = pick ? img(pick.id, 900) : '';
+  paint1();
+}
+function paint1() {
+  const v = +$('winRange').value / 100, i = Math.min(2, Math.floor(v)), k = v - i, a = TIMES[i], b = TIMES[i + 1];
+  const mix = (p, q) => p + (q - p) * k;
+  const ca = a.tint.match(/[\d.]+/g).map(Number), cb = b.tint.match(/[\d.]+/g).map(Number);
+  $('winTint').style.background = 'rgba(' + ca.map((c, j) => j < 3 ? Math.round(mix(c, cb[j])) : mix(c, cb[j]).toFixed(2)).join(',') + ')';
+  $('winImg').style.filter = 'brightness(' + mix(a.bri, b.bri).toFixed(2) + ')';
+  const near = Math.round(v), mins = [360, 720, 1050, 1260], m = Math.round(mix(mins[i], mins[i + 1]));
+  $('winClock').textContent = String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0');
+  if (Math.abs(v - near) < .12 && !seen1.has(near)) {
+    seen1.add(near);
+    $('winFact').innerHTML = '<div class="fact"><b>' + TIMES[near].title + '</b>' + TIMES[near].text + '</div>';
+    if (seen1.size === 4) showQ1();
+  }
+  [...$('winTicks').children].forEach((s, j) => s.classList.toggle('on', seen1.has(j)));
+  $('winProg').textContent = '已解鎖 ' + seen1.size + ' / 4 個時刻' + (seen1.size < 4 ? '' : '，回答最後一題就過關');
+}
+$('winRange').addEventListener('input', paint1);
+function showQ1() {
+  const o = [['鄰棟大樓的外牆', false], ['面向綠林的坡地', true], ['工業區的廠房', false]];
+  $('winOpts').innerHTML = o.map((x, i) => '<button type="button" class="opt" data-i="' + i + '">' + x[0] + '</button>').join('');
+  $('winQ').hidden = false;
+  let tries = 0;
+  $('winOpts').onclick = e => {
+    const b = e.target.closest('.opt'); if (!b || b.disabled) return; tries++;
+    const ok = o[+b.dataset.i][1]; b.classList.add(ok ? 'right' : 'wrong'); b.disabled = true;
+    if (ok) setTimeout(() => clear(1, tries === 1 ? 3 : 2, '基地面向綠林，窗外就是長久的綠景。從清晨到夜晚，這片綠一直都在。'), 600);
+  };
+}
+
+// 第 2 關：5 分鐘生活圈挑戰
+const mins = d => /步行/.test(d) ? 0 : +((String(d).match(/\d+/) || [99])[0]);
+let lf = null;
+function stage2() {
+  clearInterval(lf && lf.tm); lf = null;
+  $('lfStart').hidden = false; $('lfGrid').hidden = true; $('lfDone').hidden = true; $('lfTimer').hidden = true; $('lfRes').hidden = true;
+}
+$('lfStart').addEventListener('click', () => {
+  const all = (D.life || []).map(x => ({ name: x.name, dist: x.dist, m: mins(x.dist), img: String(x.img || '').split('|').find(s => s && !/^http/.test(s)) || '' }));
+  const yes = all.filter(x => x.m <= 5), no = all.filter(x => x.m > 5);
+  const list = yes.slice(0, 6).concat(no.slice(0, 6)).sort(() => Math.random() - .5);
+  lf = { list, sel: new Set(), left: 30, t0: Date.now() };
+  $('lfGrid').innerHTML = list.map((x, i) => '<button type="button" class="pl" data-i="' + i + '"><img loading="lazy" alt="" src="' + img(x.img, 300) + '"><span>' + x.name + '</span></button>').join('');
+  $('lfStart').hidden = true; $('lfGrid').hidden = false; $('lfDone').hidden = false; $('lfTimer').hidden = false;
+  tick2(); lf.tm = setInterval(() => { lf.left--; tick2(); if (lf.left <= 0) end2(); }, 1000);
+});
+function tick2() { $('lfSec').textContent = lf.left + ' 秒'; $('lfBar').style.width = (lf.left / 30 * 100) + '%'; $('lfCnt').textContent = '已選 ' + lf.sel.size; }
+$('lfGrid').addEventListener('click', e => {
+  const b = e.target.closest('.pl'); if (!b || !lf || lf.over) return;
+  const i = +b.dataset.i; lf.sel.has(i) ? lf.sel.delete(i) : lf.sel.add(i); b.classList.toggle('sel'); tick2();
+});
+$('lfDone').addEventListener('click', end2);
+function end2() {
+  if (!lf || lf.over) return; lf.over = true; clearInterval(lf.tm);
+  const used = Math.min(30, Math.round((Date.now() - lf.t0) / 1000));
+  let right = 0, wrong = 0, total = 0;
+  [...$('lfGrid').children].forEach((b, i) => {
+    const x = lf.list[i], y = x.m <= 5; if (y) total++;
+    if (lf.sel.has(i)) y ? right++ : wrong++;
+    b.classList.add(y ? 'yes' : 'no'); b.disabled = true;
+    b.insertAdjacentHTML('beforeend', '<em>' + x.dist + '</em>');
+  });
+  const stars = right === total && wrong === 0 ? 3 : right >= total - 2 && wrong <= 1 ? 2 : 1;
+  $('lfDone').hidden = true;
+  $('lfRes').hidden = false;
+  $('lfRes').innerHTML = '<p class="goal">答對 <b>' + right + ' / ' + total + '</b>，選錯 ' + wrong + ' 個，用了 ' + used + ' 秒。<br>實線框＝5 分鐘內到得了；虛線框＝你漏掉的。</p><button type="button" class="btn block" id="lfNext">領取鑰匙</button>';
+  $('lfNext').onclick = () => clear(2, stars, '超商步行可達，國小、超商、植物園開車約 5 分鐘；機場、捷運小港站約 10 分鐘。');
+}
+
+// 第 3 關：房租對決（與網站房貸試算同算法：新青安 8 成、30 年、利率逐年）
+function firstPay() {
+  const c = D.cfg || {}, price = +c.price || 988, rates = (c.rates && c.rates.length ? c.rates : [1.775]).map(Number);
+  const bal = price * 0.8 * 10000, r = rates[0] / 100 / 12, n = 360;
+  return { price, pay: Math.round(bal * r / (1 - Math.pow(1 + r, -n))), down: Math.round(price * 0.2 * 10) / 10, rate: rates[0], date: c.rateDate || '' };
+}
+function stage3() {
+  $('rtA').hidden = false; $('rtB').hidden = true;
+  const f = firstPay();
+  $('rtCond').textContent = '條件：總價 ' + f.price + ' 萬（38 坪標準戶）、新青安貸款 8 成、30 年。';
+  $('rtGuessV').textContent = money(+$('rtGuess').value) + ' 元／月';
+}
+$('rtGuess').addEventListener('input', () => { $('rtGuessV').textContent = money(+$('rtGuess').value) + ' 元／月'; });
+let s3stars = 1;
+$('rtGo').addEventListener('click', () => {
+  const f = firstPay(), g = +$('rtGuess').value, d = Math.abs(g - f.pay);
+  s3stars = d <= 2000 ? 3 : d <= 5000 ? 2 : 1;
+  $('rtReveal').innerHTML = '<div class="fact"><b>答案：前幾年每月約 ' + money(f.pay) + ' 元</b>你猜 ' + money(g) + ' 元，' + (d <= 2000 ? '超準！' : '差了 ' + money(d) + ' 元。') + '</div>';
+  $('rtA').hidden = true; $('rtB').hidden = false;
+  $('rtFine').textContent = '※ 試算僅供參考：貸款 8 成、30 年、首年利率 ' + f.rate + '%' + (f.date ? '（' + f.date + ' 公告）' : '') + '，頭期款約 ' + f.down + ' 萬元；實際金額、利率與成數以銀行核貸為準。';
+  paint3();
+});
+function paint3() {
+  const f = firstPay(), rent = +$('rtRent').value, max = Math.max(rent, f.pay) * 1.1;
+  $('rtRentV').textContent = money(rent) + ' 元／月';
+  $('vRent').style.width = (rent / max * 100) + '%'; $('vRent').textContent = money(rent);
+  $('vOwn').style.width = (f.pay / max * 100) + '%'; $('vOwn').textContent = money(f.pay);
+  const diff = f.pay - rent;
+  $('rtSay').innerHTML = diff <= 0 ? '你現在的房租，已經比渼山的月付還多 <b>' + money(-diff) + '</b> 元。房租繳完就沒了，房貸繳的是自己的家。'
+    : '每月多 <b>' + money(diff) + '</b> 元，從付房租變成繳自己的家；' + (st.role ? st.role + '的' : '') + '窗外，是永久的綠意。';
+}
+$('rtRent').addEventListener('input', paint3);
+$('rtEnd').addEventListener('click', () => clear(3, s3stars, '同樣是每個月的支出，一個留給房東，一個留給自己。'));
+
+// 家門＋預約
+let slot = '', booked = false;
+function drawBook() {
+  const open = allDone(), door = $('door');
+  door.classList.remove('open');
+  $('doorMsg').textContent = open ? '' : '還差 ' + (3 - keys()) + ' 把鑰匙・也可以直接預約';
+  $('doorMsg').hidden = open;
+  if (open) setTimeout(() => door.classList.add('open'), 250);
+  $('voucher').hidden = !open; $('vCode').textContent = st.code;
+  $('bkSub').textContent = open ? '終點・3 把鑰匙到齊' : '預約賞屋';
+  const di = $('bookForm').elements.date, c = D.cfg || {}, today = new Date(), fmt = d => d.toISOString().slice(0, 10);
+  const local = d => new Date(d.getTime() - d.getTimezoneOffset() * 6e4);
+  di.min = fmt(local(today)); di.max = fmt(local(new Date(today.getTime() + (+c.days || 30) * 864e5)));
+  drawSlots();
+}
+function drawSlots() {
+  const c = D.cfg || {}, list = c.slots && c.slots.length ? c.slots : ['10:00', '14:00'], date = $('bookForm').elements.date.value;
+  const now = new Date(), today = new Date(now.getTime() - now.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+  const hm = String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
+  $('slots').innerHTML = list.map(s => { const past = date === today && s <= hm; if (past && slot === s) slot = '';
+    return '<button type="button" class="slot' + (slot === s ? ' on' : '') + '" data-s="' + s + '" role="radio" aria-checked="' + (slot === s) + '"' + (past ? ' disabled' : '') + '>' + s + '</button>'; }).join('');
+}
+$('slots').addEventListener('click', e => { const b = e.target.closest('.slot'); if (!b || b.disabled) return; slot = b.dataset.s; drawSlots(); });
+$('bookForm').elements.date.addEventListener('change', drawSlots);
+$('bookForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const fm = $('bookForm'), v = n => (fm.elements[n].value || '').trim(), msg = $('bkMsg'), btn = $('bkBtn');
+  const show = (t, ok) => { msg.hidden = false; msg.className = 'msg ' + (ok ? 'ok' : 'err'); msg.textContent = t; };
+  const phone = v('phone').replace(/[\s-]/g, '');
+  if (!v('name')) return show('請填寫姓名');
+  if (!/^09\d{8}$/.test(phone)) return show('請填寫正確的手機號碼（09 開頭共 10 碼）');
+  if (!v('date')) return show('請選擇預約日期');
+  if (!slot) return show('請選擇預約時段');
+  if (!fm.elements.consent.checked) return show('請勾選同意個人資料蒐集告知事項');
+  const tot = STAGES.reduce((a, s) => a + (st.stars[s.n] || 0), 0);
+  const tagNote = allDone() ? '【地圖闖關版 3/3・兌換券 ' + st.code + '・可領渼好生活禮】' : '【地圖闖關版 ' + keys() + '/3】';
+  const payload = { name: v('name'), phone, line: v('line'), date: v('date'), slot, people: st.people || 1, unit: '', recommend: '',
+    answers: (st.role ? '角色：' + st.role + '；' : '') + '闖關星數 ' + tot + ' / 9', car: '', note: tagNote + ' ' + v('note'),
+    consent: true, marketing: fm.elements.marketing.checked, website: v('website'), src: SRC };
+  btn.disabled = true; btn.textContent = '送出中…';
+  post({ action: 'book', data: payload }).then(r => {
+    if (r && r.ok === false) throw new Error(r.error || '送出失敗');
+    ga_('generate_lead', { site_src: SRC, game: 'game2' });
+    booked = true; fm.reset(); slot = ''; drawSlots();
+    show('預約成功！' + (r && r.id ? '預約編號 ' + r.id + '。' : '') + (allDone() ? '渼好生活禮已為你保留，賞屋當天出示兌換券 ' + st.code + ' 即可領取。' : '') + '我們會在 1 個工作天內與你聯繫。', true);
+    btn.textContent = '已送出';
+  }).catch(err => { btn.disabled = false; btn.textContent = '送出預約'; show((err && err.message && !/fetch/i.test(err.message)) ? err.message : '網路連線不穩，請稍後再試，或直接來電 07-216-5218。'); });
+});
+
+// 開始：選過角色就直接進地圖
+go(st.role ? 'map' : 'intro');
+</script>
+</body>
+</html>
