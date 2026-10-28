@@ -51,7 +51,7 @@ button{cursor:pointer}
 :focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:6px}
 
 /* 手機外框：電腦版置中成一支手機的寬度 */
-.app{position:relative;max-width:460px;min-height:100%;margin:0 auto;background:var(--bg);display:flex;flex-direction:column;overflow:hidden}
+.app{position:relative;max-width:460px;min-height:100%;margin:0 auto;background:var(--bg);display:flex;flex-direction:column;overflow:clip}
 @media (min-width:700px){.app{min-height:calc(100% - 48px);margin:24px auto;border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.35)}}
 .scr{flex:1;display:flex;flex-direction:column;min-height:0}
 .pad{padding:20px 18px}
@@ -66,8 +66,10 @@ button{cursor:pointer}
 .tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.08em;color:#3A2A10;background:#E9D3A8;border-radius:999px;padding:2px 10px}
 
 /* 開場 */
-.intro{background:linear-gradient(160deg,#4A000C,#93101F 45%,#C9575C 70%,#F28A80);color:#fff;gap:16px;justify-content:flex-end;min-height:100vh}
-@media (min-width:700px){.intro{min-height:0}}
+.intro{position:relative;background:linear-gradient(160deg,#4A000C,#93101F 45%,#C9575C 70%,#F28A80);color:#fff;gap:16px;justify-content:flex-end;min-height:100vh;padding-top:46vh}
+.intro .hero{position:absolute;left:0;right:0;top:0;height:52vh;background-size:cover;background-position:center;-webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent)}
+.intro>*:not(.hero){position:relative}
+@media (min-width:700px){.intro{min-height:0;padding-top:300px}.intro .hero{height:340px}}
 .intro h1{font-size:2.3rem}
 .intro .lead{font-size:1.02rem;opacity:.95}
 .roles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -108,7 +110,8 @@ button{cursor:pointer}
 .shead div{flex:1;min-width:0}
 .shead small{display:block;color:var(--muted);font-size:.78rem}
 .shead b{font-family:var(--serif)}
-.sbody{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px}
+.sbody{flex:1;padding:18px;display:flex;flex-direction:column;gap:14px}
+#rtA,#rtB{display:flex;flex-direction:column;gap:14px}
 .goal{background:var(--brass-soft);border-radius:14px;padding:12px 14px;font-size:.92rem}
 .goal b{color:var(--brass)}
 
@@ -129,7 +132,7 @@ button{cursor:pointer}
 .opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
 
 /* 第 2 關：5 分鐘挑戰 */
-.timer{display:flex;align-items:center;gap:10px;font-weight:700}
+.timer{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;font-weight:700;background:var(--bg);margin:-6px -18px 0;padding:10px 18px;border-bottom:1px solid var(--line)}
 .timer .bar{flex:1;height:8px;border-radius:999px;background:var(--line);overflow:hidden}
 .timer .bar i{display:block;height:100%;background:var(--forest);transition:width 1s linear}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
@@ -140,6 +143,8 @@ button{cursor:pointer}
 .pl.sel::after{content:"✓";position:absolute;right:6px;top:6px;width:24px;height:24px;border-radius:50%;background:var(--forest);color:var(--forest-ink);display:grid;place-items:center;font-weight:700;font-size:.85rem}
 .pl em{position:absolute;left:6px;top:6px;font-style:normal;font-size:.72rem;font-weight:700;border-radius:999px;padding:1px 8px;background:rgba(0,0,0,.6);color:#fff}
 .pl.yes{border-color:var(--ok)}
+.pl.yes.sel{box-shadow:0 0 0 2px var(--ok)}
+.pl.yes.sel::after{background:var(--ok)}
 .pl.no.sel{border-color:var(--bad);box-shadow:0 0 0 2px var(--bad)}
 .pl.no.sel::after{content:"✕";background:var(--bad)}
 .pl.yes:not(.sel){border-style:dashed}
@@ -176,6 +181,8 @@ button{cursor:pointer}
 .door.open .l{transform:rotateY(-80deg)}
 .door.open .r{transform:rotateY(80deg)}
 .door.open .light{opacity:1}
+.door .welcome{position:relative;font:700 1.6rem var(--serif);color:var(--deep);opacity:0;transition:opacity .8s 1s;letter-spacing:.1em}
+.door.open .welcome{opacity:1}
 .door .lockmsg{position:relative;z-index:1;background:rgba(0,0,0,.6);color:#fff;border-radius:999px;padding:4px 14px;font-weight:700;font-size:.9rem}
 .voucher{border:2px dashed var(--brass);background:var(--brass-soft);border-radius:16px;padding:14px;text-align:center}
 .voucher b{display:block;font-family:var(--serif);font-size:1.15rem}
@@ -205,6 +212,7 @@ details.privacy ol{padding-left:1.2em;margin:6px 0 0}
 
   <!-- 開場：選角色 -->
   <section class="scr intro pad" id="sIntro">
+    <div class="hero" id="hero" role="img" aria-label="晨均渼山建築外觀"></div>
     <span class="tag">晨均渼山・闖關活動</span>
     <h1>回家之路</h1>
     <p class="lead">從小港市區出發，走上大坪頂。3 個小關卡、3 把鑰匙，打開渼山的家門。完成並預約賞屋，就能獲得<b>價值 $1,000 渼好生活禮</b>。</p>
@@ -302,13 +310,13 @@ details.privacy ol{padding-left:1.2em;margin:6px 0 0}
   <section class="scr" id="sBook" hidden>
     <div class="shead"><button type="button" class="x" data-go="map" aria-label="回到地圖">×</button><div><small id="bkSub">終點</small><b>打開渼山的家門</b></div></div>
     <div class="sbody">
-      <div class="door" id="door"><div class="light"></div><div class="leaf l"></div><div class="leaf r"></div><span class="lockmsg" id="doorMsg"></span></div>
+      <div class="door" id="door"><div class="light"></div><span class="welcome">歡迎回家</span><div class="leaf l"></div><div class="leaf r"></div><span class="lockmsg" id="doorMsg"></span></div>
       <div class="voucher" id="voucher" hidden><b>渼好生活禮兌換券</b><code id="vCode"></code><span class="small">預約後於預約時段完成現場賞屋，出示此編號即可領取價值 $1,000 渼好生活禮。</span></div>
       <form id="bookForm" novalidate>
-        <label class="f">姓名 <span class="req">*</span><input class="txt" name="name" autocomplete="name" maxlength="30"></label>
-        <label class="f">手機 <span class="req">*</span><input class="txt" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="09xxxxxxxx" maxlength="12"></label>
+        <label class="f"><span>姓名 <span class="req">*</span></span><input class="txt" name="name" autocomplete="name" maxlength="30"></label>
+        <label class="f"><span>手機 <span class="req">*</span></span><input class="txt" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="09xxxxxxxx" maxlength="12"></label>
         <label class="f">LINE ID（選填）<input class="txt" name="line" maxlength="40"></label>
-        <label class="f">預約日期 <span class="req">*</span><input class="txt" name="date" type="date"></label>
+        <label class="f"><span>預約日期 <span class="req">*</span></span><input class="txt" name="date" type="date"></label>
         <div><span class="small" style="font-weight:500">預約時段 <span class="req">*</span></span><div class="slots" id="slots" role="radiogroup" aria-label="預約時段"></div></div>
         <label class="f">想先讓我們知道的事（選填）<textarea class="txt" name="note" maxlength="400" rows="2" placeholder="例如：會帶長輩一起來、想了解貸款"></textarea></label>
         <label class="hp" aria-hidden="true">網站<input name="website" tabindex="-1" autocomplete="off"></label>
@@ -367,6 +375,7 @@ const STAGES = [
 const keys = () => STAGES.filter(s => st.stars[s.n]).length;
 const allDone = () => keys() === STAGES.length;
 $('fine1').textContent = FINE; $('fine2').textContent = FINE;
+if (D.facade && D.facade.hero) $('hero').style.backgroundImage = 'url(' + img(D.facade.hero, 900) + ')';
 
 const KEYSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="7.5" cy="12" r="4"/><path d="M11.5 12H21M17 12v3.5M20 12v2.5"/></svg>';
 
@@ -520,7 +529,7 @@ function end2() {
   const stars = right === total && wrong === 0 ? 3 : right >= total - 2 && wrong <= 1 ? 2 : 1;
   $('lfDone').hidden = true;
   $('lfRes').hidden = false;
-  $('lfRes').innerHTML = '<p class="goal">答對 <b>' + right + ' / ' + total + '</b>，選錯 ' + wrong + ' 個，用了 ' + used + ' 秒。<br>實線框＝5 分鐘內到得了；虛線框＝你漏掉的。</p><button type="button" class="btn block" id="lfNext">領取鑰匙</button>';
+  $('lfRes').innerHTML = '<p class="goal">答對 <b>' + right + ' / ' + total + '</b>，選錯 ' + wrong + ' 個，用了 ' + used + ' 秒。<br>綠框＝5 分鐘內到得了（虛線＝你漏掉的）；紅框＝選錯的。</p><button type="button" class="btn block" id="lfNext">領取鑰匙</button>';
   $('lfNext').onclick = () => clear(2, stars, '超商步行可達，國小、超商、植物園開車約 5 分鐘；機場、捷運小港站約 10 分鐘。');
 }
 
