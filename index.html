@@ -154,6 +154,8 @@ sup{font-size:.62em;line-height:0;vertical-align:super}
 .offer{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;background:rgba(70,0,14,.32);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.32);border-radius:var(--r);padding:14px 18px;width:fit-content;max-width:100%}
 .offer b{font-family:var(--serif);font-size:2.2rem;line-height:1}
 .offer .br{flex-basis:100%;height:0}
+.offer .olab{font-size:.82rem;letter-spacing:.12em;opacity:.85;margin-bottom:-2px}
+.offer b{white-space:nowrap}
 .qi{font-size:.42em;font-weight:500;margin-left:3px;opacity:.9}
 .offer .promo{background:#E9D3A8;color:#3A2A10;font-weight:700;border-radius:999px;padding:2px 12px;font-size:.9rem}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:10px}
@@ -353,6 +355,54 @@ details.more>summary::-webkit-details-marker{display:none}
 details.more>summary::after{content:"＋";font-weight:400}
 details.more[open]>summary::after{content:"－"}
 details.more[open]>summary{margin-bottom:12px}
+/* ───── 闖關測試版「回家之路」（只有 game.html 會出現這些元件） ───── */
+.gbar{position:sticky;top:56px;z-index:19;background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.gbar-in{max-width:1080px;margin:0 auto;width:100%;display:flex;align-items:center;gap:12px;padding:8px 16px;background:none;border:0;font:inherit;color:inherit;cursor:pointer;text-align:left}
+.gbar-in b{font-family:var(--serif);font-size:.95rem;white-space:nowrap;color:var(--forest)}
+.gdots{display:flex;gap:6px;flex:1;align-items:center}
+.gdots i{flex:1;max-width:44px;height:6px;border-radius:999px;background:var(--line);transition:background .4s}
+.gdots i.on{background:var(--forest)}
+.gcount{font-size:.85rem;font-weight:700;white-space:nowrap}
+.gmore{font-size:.8rem;color:var(--muted);white-space:nowrap}
+.gbanner{display:flex;flex-direction:column;gap:4px;background:rgba(255,255,255,.14);border:1px solid rgba(233,211,168,.7);border-radius:16px;padding:14px 16px;max-width:36em}
+.gbanner .gtag{align-self:flex-start;font-size:.75rem;font-weight:700;letter-spacing:.08em;color:#3A2A10;background:#E9D3A8;border-radius:999px;padding:2px 10px;text-shadow:none}
+.gbanner b{font-family:var(--serif);font-size:1.12rem}
+.gbanner span{font-size:.95rem}
+.gbanner-act{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.gbanner .gstart{background:#E9D3A8;color:#3A2A10;text-shadow:none}
+.gbanner .btn.ghost{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7);background:transparent}
+.glv{color:var(--muted);font-weight:700}
+.glv.ok{color:var(--forest)}
+.glv.ok::before{content:"✓ "}
+.gmap{position:fixed;inset:0;z-index:60;background:rgba(20,5,8,.45);display:flex;align-items:flex-end;justify-content:center;padding:12px}
+.gmap[hidden]{display:none}
+@media (min-width:761px){.gmap{align-items:center}}
+.gcard{position:relative;background:var(--surface);color:var(--ink);border-radius:20px;padding:22px 18px 18px;width:min(520px,100%);max-height:calc(100vh - 24px);overflow-y:auto;display:flex;flex-direction:column;gap:10px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.gcard h3{font-family:var(--serif);font-size:1.35rem}
+.gsub{font-size:.9rem;color:var(--muted)}
+.gx{position:absolute;right:12px;top:10px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--surface);font-size:1.2rem;line-height:1;cursor:pointer;color:inherit}
+.glist{list-style:none;display:flex;flex-direction:column;gap:6px;margin:4px 0}
+.glist a{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit}
+.glist li.ok a{border-color:var(--forest);background:var(--forest-soft)}
+.gn{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:.85rem;background:var(--line);color:var(--ink)}
+.glist li.ok .gn{background:var(--forest);color:var(--forest-ink)}
+.gt{flex:1;display:flex;flex-direction:column;min-width:0}
+.gt small{color:var(--muted);font-size:.8rem}
+.gb{font-size:.78rem;color:var(--forest);font-weight:700;white-space:nowrap}
+.gfine{font-size:.74rem;color:var(--muted);line-height:1.5}
+.gdone .gcard{text-align:center;align-items:center}
+.gdone .btn{width:100%;justify-content:center}
+.gstar{font-size:2rem;color:#B08A4A}
+.gtoast{position:fixed;left:50%;bottom:96px;z-index:55;transform:translate(-50%,20px);opacity:0;pointer-events:none;display:flex;align-items:center;gap:10px;background:var(--surface);color:var(--ink);border:1px solid var(--forest);border-radius:14px;padding:10px 16px;box-shadow:0 12px 30px rgba(0,0,0,.18);transition:opacity .35s,transform .35s;width:max-content;max-width:calc(100vw - 32px)}
+.gtoast.on{opacity:1;transform:translate(-50%,0)}
+.gtoast b{display:block;font-size:.95rem}
+.gtoast small{color:var(--muted);font-size:.8rem}
+.gok{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:var(--forest-ink);font-weight:700}
+@media (min-width:761px){.gtoast{bottom:90px;left:auto;right:24px;transform:translateY(20px)}.gtoast.on{transform:none}}
+.gbook{display:flex;flex-direction:column;gap:4px;margin-top:12px;padding:12px 14px;border:1.5px dashed var(--forest);border-radius:12px;background:var(--forest-soft);color:var(--forest)}
+.gbook span{font-size:.9rem;color:var(--ink)}
+.gbook .btn{align-self:flex-start;margin-top:4px}
+
 </style>
 </head>
 <body>
@@ -742,7 +792,10 @@ const SUV_OK = { '平面-大': 1, '平面-標準': 1, '機中': 1, '機下': 1 }
   // 優惠價對應坪數：從「優惠價說明」抓「38 坪」這類數字，抓不到用 38
   const PING = parseFloat((String(C.priceNote || '').match(/([\d.]+)\s*坪/) || [])[1]) || 38;
   const QI = '<small class="qi">起</small>';
-  $('offer').innerHTML = C.price ? '<span>優惠價</span><b>' + money(C.price) + ' 萬' + QI + '</b><i class="br"></i><span>' + esc(C.priceNote) + '</span>' + (C.promo ? '<span class="promo">' + esc(C.promo) + '</span>' : '') : '';
+  // 首頁價格：「38 坪 988 萬起」同一行、同樣大小（坪數取自試算表「優惠價說明」），優惠活動放下一行
+  const sz = String(C.priceNote || '').match(/(\d+(?:\.\d+)?)\s*坪/);
+  $('offer').innerHTML = C.price ? '<span class="olab">優惠價</span><i class="br"></i><b>' + (sz ? sz[1] + ' 坪 ' : '') + money(C.price) + ' 萬' + QI + '</b>' +
+    (C.promo ? '<i class="br"></i><span class="promo">' + esc(C.promo) + '</span>' : '') : '';
   $('gainPrice').innerHTML = C.price ? money(C.price) + ' 萬' + QI : '';
   $('gainNote').textContent = [C.priceNote, C.promo].filter(Boolean).join('｜');
   $('gainUnit').textContent = C.price ? '現在優惠價：' + PING + ' 坪 ' + money(C.price) + ' 萬起，房屋每坪約 ' + (C.price / PING).toFixed(1) + ' 萬' : '';
@@ -1159,17 +1212,115 @@ renderQuiz();
     const answers = visibleQ().filter(q => A[q.id] && q.id !== 'carModel').map(q => q.title.replace(/[？?（].*$/, '') + '：' + [].concat(A[q.id]).join('、')).join('；');
     const payload = { name: v('name'), phone, line: v('line'), date: v('date'), slot, people: v('people'), unit: v('unit'),
       recommend: lastResult ? lastResult.code + ' ' + lastResult.name + (lastResult.alts.length ? '（備選：' + lastResult.alts.join('、') + '）' : '') : '',
-      answers, car: A.carModel || (A.car && A.car !== '沒有' ? A.car : ''), note: v('note'),
+      answers, car: A.carModel || (A.car && A.car !== '沒有' ? A.car : ''), note: (window.MV_GAME_NOTE ? window.MV_GAME_NOTE() + ' ' : '') + v('note'),
       consent: true, marketing: form.elements.marketing.checked, website: v('website'), src: SRC };
     btn.disabled = true; btn.textContent = '送出中…';
     const done = r => { btn.disabled = false; btn.textContent = '送出預約';
       ga_('generate_lead', { site_src: SRC || 'direct', unit: payload.unit || '' });
       show('預約成功！' + (r && r.id ? '預約編號 ' + r.id + '。' : '') + '我們會在 1 個工作天內與你聯繫，期待在渼山見到你。', true);
-      form.reset(); slot = ''; drawSlots(); };
+      form.reset(); slot = ''; drawSlots(); if (window.MV_GAME_DONE) window.MV_GAME_DONE(); };
     const fail = err => { btn.disabled = false; btn.textContent = '送出預約'; show((err && err.message) || '送出失敗，請稍後再試，或直接來電。'); };
     if (window.google && google.script && google.script.run) google.script.run.withSuccessHandler(done).withFailureHandler(fail).submitBooking(payload);
     else { console.log('本機預覽：預約資料', payload); setTimeout(() => done({ id: 'PREVIEW' }), 400); }
   });
+})();
+/* ───── 闖關測試版「回家之路」：只有 window.MV_GAME 為 true（GitHub 的 game.html）才啟動，正式網站不受影響 ───── */
+(function game() {
+  if (!window.MV_GAME) return;
+  const KEY = 'mv_game_v1';
+  const L = [
+    { id: 'why', name: '遇見渼山', task: '看完「只有渼山有的理由」', badge: '綠意' },
+    { id: 'units', name: '空間提案', task: '點開任一戶型的照片或平面圖', badge: '空間' },
+    { id: 'quiz', name: '理想生活測驗', task: '完成 8 題，找到你的戶型', badge: '理想' },
+    { id: 'life', name: '日常風景', task: '看完三類生活機能', badge: '日常' },
+    { id: 'about', name: '渼山細節', task: '看完建築實景', badge: '細節' },
+    { id: 'brand', name: '關於晨均', task: '認識晨均建設', badge: '信任' },
+    { id: 'gain', name: '渼好成家', task: '試算一次房貸月付', badge: '成家' },
+    { id: 'compare', name: '渼山優勢', task: '展開完整比較表', badge: '優勢' }
+  ];
+  const REWARD = '價值 $1,000 渼好生活禮';
+  const FINE = '※ 每組客戶限領一份，須完成線上 8 關並於預約時段完成現場賞屋；禮品內容以現場為準，晨均建設保留調整、變更或終止活動之權利。';
+  let st = { done: [] };
+  try { st = JSON.parse(localStorage.getItem(KEY) || 'null') || st; } catch (e) {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
+  const isDone = i => st.done.indexOf(i) >= 0;
+  const all = () => L.every((_, i) => isDone(i));
+
+  // 畫面元件：進度條、關卡地圖、過關提示、完成視窗
+  const bar = document.createElement('div'); bar.className = 'gbar'; bar.innerHTML =
+    '<button type="button" class="gbar-in" aria-label="打開關卡地圖"><b>回家之路</b><span class="gdots">' +
+    L.map((_, i) => '<i data-i="' + i + '"></i>').join('') + '</span><span class="gcount"></span><span class="gmore">關卡 ›</span></button>';
+  document.querySelector('header.top').insertAdjacentElement('afterend', bar);
+  const map = document.createElement('div'); map.className = 'gmap'; map.hidden = true; map.setAttribute('role', 'dialog'); map.setAttribute('aria-label', '關卡地圖');
+  document.body.appendChild(map);
+  const toast = document.createElement('div'); toast.className = 'gtoast'; toast.setAttribute('aria-live', 'polite'); document.body.appendChild(toast);
+  const done = document.createElement('div'); done.className = 'gmap gdone'; done.hidden = true; done.setAttribute('role', 'dialog');
+  done.innerHTML = '<div class="gcard"><span class="gstar">✦</span><h3>你走完了回家之路</h3><p>八個關卡全部完成。現在預約賞屋，並於預約時段完成現場賞屋，就能獲得<b>' + REWARD + '</b>。</p>' +
+    '<a class="btn primary" href="#book" data-close>預約賞屋，領取渼好生活禮</a><button type="button" class="btn ghost small" data-close>先繼續逛逛</button><p class="gfine">' + FINE + '</p></div>';
+  document.body.appendChild(done);
+
+  // 首頁活動說明
+  const hq = $('heroQuiz');
+  if (hq) hq.insertAdjacentHTML('beforebegin', '<div class="gbanner"><span class="gtag">闖關活動</span><b>走完「回家之路」8 關＋預約並完成賞屋</b><span>即可獲得' + REWARD + '</span>' +
+    '<div class="gbanner-act"><a class="btn small gstart" href="#why">開始闖關</a><button type="button" class="btn ghost small gopen">查看關卡</button></div></div>');
+  // 每段小標前面加上關卡編號
+  L.forEach((l, i) => { const e = document.querySelector('#' + l.id + ' .eyebrow'); if (e) e.insertAdjacentHTML('afterbegin', '<span class="glv">第 ' + (i + 1) + ' 關｜</span>'); });
+  // 預約區的闖關狀態
+  const bookHead = document.querySelector('#book .head');
+  if (bookHead) bookHead.insertAdjacentHTML('beforeend', '<div class="gbook" id="gBook"></div>');
+
+  function drawMap() {
+    map.innerHTML = '<div class="gcard"><button type="button" class="gx" data-close aria-label="關閉">×</button><h3>回家之路</h3><p class="gsub">完成 8 關並預約完成賞屋，獲得' + REWARD + '</p><ol class="glist">' +
+      L.map((l, i) => '<li class="' + (isDone(i) ? 'ok' : '') + '"><a href="#' + l.id + '" data-close><span class="gn">' + (isDone(i) ? '✓' : i + 1) + '</span><span class="gt"><b>' + l.name + '</b><small>' + l.task + '</small></span>' +
+        '<span class="gb">' + (isDone(i) ? l.badge + '徽章' : '前往') + '</span></a></li>').join('') + '</ol>' +
+      (all() ? '<a class="btn primary" href="#book" data-close>預約賞屋，領取渼好生活禮</a>' : '<p class="gsub">還差 ' + (L.length - st.done.length) + ' 關</p>') + '<p class="gfine">' + FINE + '</p></div>';
+  }
+  function draw() {
+    bar.querySelectorAll('.gdots i').forEach(d => d.classList.toggle('on', isDone(+d.dataset.i)));
+    bar.querySelector('.gcount').textContent = st.done.length + ' / ' + L.length;
+    L.forEach((l, i) => { const e = document.querySelector('#' + l.id + ' .glv'); if (e) e.classList.toggle('ok', isDone(i)); });
+    const gb = $('gBook');
+    if (gb) gb.innerHTML = all()
+      ? '<b>✓ 已完成回家之路 8 關</b><span>預約並於預約時段完成現場賞屋，即可領取' + REWARD + '。</span>'
+      : '<b>回家之路 ' + st.done.length + ' / ' + L.length + '</b><span>再完成 ' + (L.length - st.done.length) + ' 關，預約並完成賞屋即可獲得' + REWARD + '。</span><button type="button" class="btn ghost small gopen">看還差哪幾關</button>';
+    if (!map.hidden) drawMap();
+  }
+  let tt;
+  function pass(i) {
+    if (isDone(i)) return;
+    st.done.push(i); save(); draw();
+    ga_('game_level', { level: i + 1, level_name: L[i].name, site_src: SRC || 'direct' });
+    toast.innerHTML = '<span class="gok">✓</span><span><b>第 ' + (i + 1) + ' 關完成｜' + L[i].name + '</b><small>獲得「' + L[i].badge + '」徽章・' + st.done.length + ' / ' + L.length + '</small></span>';
+    toast.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => toast.classList.remove('on'), 3200);
+    if (all()) { st.at = st.at || new Date().toISOString(); save(); ga_('game_complete', { site_src: SRC || 'direct' }); setTimeout(() => { done.hidden = false; }, 1400); }
+  }
+  const open = () => { drawMap(); map.hidden = false; };
+  const close = () => { map.hidden = true; done.hidden = true; };
+  bar.querySelector('.gbar-in').addEventListener('click', open);
+  document.addEventListener('click', e => { if (e.target.closest('.gopen')) open(); });
+  [map, done].forEach(m => m.addEventListener('click', e => { if (e.target === m || e.target.closest('[data-close]')) close(); }));
+
+  // 過關條件
+  const view = (i, sec, ok) => { // 看完：段落停留在畫面上 1.5 秒（ok：當下還要符合的條件）
+    const el = $(sec); if (!el || !('IntersectionObserver' in window)) return;
+    let t; new IntersectionObserver(es => { const e = es[0], v = e.isIntersecting && e.intersectionRect.height >= Math.min(e.boundingClientRect.height * 0.35, innerHeight * 0.5); clearTimeout(t); if (v) t = setTimeout(() => { if (!ok || ok()) pass(i); }, 1500); }, { threshold: [0, .1, .2, .3, .4, .5, .6, .7, .8, .9, 1] }).observe(el); // 段落很長時，只要佔滿半個畫面就算
+  };
+  view(0, 'why'); view(4, 'about'); view(5, 'brand');
+  $('unitCards').addEventListener('click', e => { if (e.target.closest('.ph.cover,.plan-btn')) pass(1); });
+  const tq = trackQuiz; trackQuiz = k => { tq(k); if (k === 'done') pass(2); };
+  const tabs = $('lifeTabs'), seen = new Set([0]);
+  if (tabs) tabs.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; seen.add([...tabs.children].indexOf(b)); if (seen.size >= tabs.children.length) pass(3); });
+  const wide = () => !tabs || getComputedStyle(tabs).display === 'none';
+  view(3, 'life', wide); // 電腦版三類並排，看到就算（依當下版面判斷，視窗縮放後也正確）
+  $('life').addEventListener('click', e => { if (wide() && e.target.closest('button')) pass(3); }); // 電腦版點照片左右鍵也算
+  ['cPrice', 'cPlan', 'cYears'].forEach(id => { const el = $(id); if (el) ['input', 'change'].forEach(ev => el.addEventListener(ev, () => pass(6))); });
+  const cmp = $('cmpMore'); if (cmp) cmp.addEventListener('toggle', () => { if (cmp.open) pass(7); });
+
+  // 預約時把闖關紀錄寫進備註，業務在試算表與通知信都看得到
+  window.MV_GAME_NOTE = () => '【闖關 ' + st.done.length + '/' + L.length + (all() ? '・已完成，可領渼好生活禮' : '') + '】';
+  window.MV_GAME_DONE = () => { if (all()) { toast.innerHTML = '<span class="gok">✦</span><span><b>預約成功，渼好生活禮已為你保留</b><small>完成現場賞屋即可領取</small></span>'; toast.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => toast.classList.remove('on'), 5000); } };
+  document.documentElement.style.scrollPaddingTop = '100px'; // 跳段落時不被上方兩條遮住
+  draw();
 })();
 </script>
 <script>
