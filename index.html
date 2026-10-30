@@ -134,6 +134,12 @@ sup{font-size:.62em;line-height:0;vertical-align:super}
 .rbtns .btn{flex:1 1 220px;white-space:normal;text-align:center}
 .rbtns.sub{margin-top:0}
 .rbtns.sub .btn{flex:0 1 auto}
+/* 推薦結果直接放該戶型的空間照與平面圖，不用再跳到戶型卡片 */
+.rmedia{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rmedia .ph.cover{aspect-ratio:4/3}
+.rmedia .ph.plan{background-color:#fff;background-size:contain;background-repeat:no-repeat;background-position:center;border:1px solid var(--line);color:var(--forest)}
+.rmedia .ph.plan::after{background:linear-gradient(180deg,transparent 60%,rgba(10,20,14,.35))}
+@media (max-width:420px){.rmedia{grid-template-columns:1fr}}
 form .pick{padding:10px 14px;border-radius:12px;background:var(--forest-soft,#EEF3EC);color:var(--forest);font-weight:500}
 form details.more{border:1px dashed var(--line,#ddd);border-radius:12px;padding:10px 14px}
 form details.more summary{cursor:pointer;font-weight:500;color:var(--muted)}
@@ -864,13 +870,13 @@ function photo(id, w) {
 
 /* 測驗結果 → 先帶到該戶型卡片（標示推薦戶別），再從卡片預約 */
 let picked = null;
-function goUnit(type, code) {
+function goUnit(type, code, scroll) {
   picked = { type, code };
-  document.querySelectorAll('.unit-card').forEach(c => {
+  document.querySelectorAll('#unitCards .unit-card').forEach(c => {
     const on = c.dataset.k === type; c.classList.toggle('picked', on);
     c.querySelector('.pick-note').textContent = on ? '★ 推薦給你：' + code : '';
   });
-  document.getElementById('unit-' + type).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (scroll !== false) document.getElementById('unit-' + type).scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 /* 首頁實景輪播：建築外觀之後接三張窗外綠景，慢慢放大、淡入淡出（減少動態設定時不動） */
@@ -1141,20 +1147,30 @@ function renderResult() {
   lastResult = { code: u.code, name: u.name, alts: alts.map(a => a.u.code + ' ' + a.u.name) };
   trackQuiz('done', { rec: u.code + ' ' + u.name, alts: lastResult.alts.join('、'), people: A.people || '', focus: (A.focus || []).join('、'), budget: A.budget || '', car: A.car || '', when: A.when || '' });
   const lineBtn = C.lineUrl ? '<a class="btn line" id="rLine" href="' + esc(C.lineUrl) + '" target="_blank" rel="noopener">用 LINE 問這戶</a>' : '';
+  // 該戶型的空間照與平面圖直接放在結果裡（點開看大圖）
+  const P = PHOTOS[u.type] || {}, nG = (P.gallery || []).length;
+  const media = (P.cover || P.plan) ? '<div class="rmedia unit-card">' +
+    (P.cover ? '<button type="button" class="ph cover" id="rCover" aria-label="看' + esc(u.name) + '空間照片"><span class="ph-name">空間照</span>' + (nG ? '<span class="ph-more">' + nG + ' 張 ›</span>' : '') + (P.coverAi ? '<span class="ph-ai">AI 示意</span>' : '') + '</button>' : '') +
+    (P.plan ? '<button type="button" class="ph cover plan" id="rPlan" aria-label="看' + esc(u.name) + '平面圖"><span class="ph-name">平面圖</span><span class="ph-more">點開放大 ›</span></button>' : '') + '</div>' : '';
   box.innerHTML = '<div class="result">' +
     '<div class="best"><span class="tag">最推薦你</span><h3>' + esc(u.name) + '｜' + u.code + '</h3>' +
     '<p class="muted">權狀 ' + u.size + ' 坪・室內 ' + u.inner + ' 坪・' + esc(u.light || '雙面採光') + (u.rooms ? '・' + esc(u.rooms) : '') + '</p>' +
+    media +
     '<ul class="why">' + why.slice(0, 4).map(w => '<li>' + esc(w) + '</li>').join('') + '</ul>' +
     (model.length ? '<p class="small"><span class="tag brass">實品屋可看</span> 同戶型實品屋 ' + esc(model.join('、')) + '，現場直接感受。</p>' : '') +
     (C.price ? '<p>優惠價 <b>' + money(C.price) + ' 萬起</b>（' + esc(C.priceNote) + '）' + (loan ? '，新青安貸 8 成、30 年，前 3 年月付約 <b>' + money(loan.segs[0].pay) + ' 元</b>' : '') + '</p>' : '') +
     (park ? '<p class="small">' + esc(park) + '</p>' : '') +
     (C.gift ? '<p class="gift">🎁 ' + esc(C.gift) + '</p>' : '') +
     '<div class="rbtns"><button type="button" class="btn primary" id="rBookNow">預約看 ' + u.code + '，只要留姓名和手機</button>' + lineBtn + '</div>' +
-    '<div class="rbtns sub"><button type="button" class="btn ghost small" id="rBook">看這個戶型的照片與平面圖</button><button type="button" class="btn ghost small" id="rAgain">重新測驗</button></div></div>' +
+    '<div class="rbtns sub"><button type="button" class="btn ghost small" id="rAgain">重新測驗</button></div></div>' +
     (alts.length ? '<div><p class="small muted" style="margin-bottom:8px">也可以看看</p><div class="alts">' + alts.map(a => '<button type="button" class="card go" data-k="' + a.u.type + '" data-c="' + a.u.code + '"><h3>' + esc(a.u.name) + '｜' + a.u.code + '</h3><p class="small muted">' + esc((a.w[0] || a.u.feature || a.u.light || '')) + '</p><span class="small" style="color:var(--forest);font-weight:700">看這個戶型 ›</span></button>').join('') + '</div></div>' : '') +
     '</div>';
   $('rAgain').addEventListener('click', () => { Object.keys(A).forEach(k => delete A[k]); step = 0; lastResult = null; renderQuiz(); });
-  $('rBook').addEventListener('click', () => goUnit(u.type, u.code));
+  goUnit(u.type, u.code, false); // 戶型卡片也標上推薦戶別，從卡片預約會帶同一戶
+  const rc = $('rCover'); if (rc) { photo(P.cover, 1000).then(src => { rc.style.backgroundImage = 'url("' + src + '")'; rc.classList.add('loaded'); }).catch(() => {});
+    rc.addEventListener('click', () => { if (nG) openLB(P.gallery, u.name + '｜空間照片'); }); }
+  const rp = $('rPlan'); if (rp) { photo(P.plan, 800).then(src => { rp.style.backgroundImage = 'url("' + src + '")'; rp.classList.add('loaded'); }).catch(() => {});
+    rp.addEventListener('click', () => openLB([P.plan], u.name + '｜平面配置參考圖（家具配置僅供參考，實際以現場為準）', true)); }
   // 推薦結果直接接預約：幫客人選好戶別、捲到預約表，表單只要姓名和手機
   $('rBookNow').addEventListener('click', () => { trackClick('book_intent', 'result', { unit: u.code }); window.prefillBook && window.prefillBook(u.code, u.name); });
   const rl = $('rLine'); if (rl) rl.addEventListener('click', () => trackClick('line_click', 'result', { unit: u.code }));
