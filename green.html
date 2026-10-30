@@ -13,7 +13,7 @@ window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(argu
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#2C3830">
+<meta name="theme-color" content="#E3EFE6">
 <meta name="description" content="晨均渼山｜小港大坪頂一梯兩戶，3.3 米室內樓高，38 坪標準戶 988 萬起，限量 3 戶・簽約送車位。3 分鐘找到適合你的戶型，線上預約賞屋。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="晨均渼山｜住進見證未來的位置上">
@@ -406,37 +406,48 @@ details.more[open]>summary{margin-bottom:12px}
 
 </style>
 <style id="green">
-/* 自然綠意款：低彩度森林綠、米白、苔灰，拿掉紅色光帶與高飽和色塊 */
+/* 自然綠意款：清爽的薄荷綠～米綠淺色底、深綠字，拿掉紅色光帶與高飽和色塊 */
 :root{
-  --bg:#F5F4EE; --surface:#FFFFFF; --ink:#1F2621; --muted:#5E675F; --line:#E0E3D8;
-  --forest:#3E5A47; --forest-ink:#FFFFFF; --forest-soft:#E6ECE3; --forest-deep:#25352B;
-  --brass:#7D7150; --brass-soft:#EFEBDD; --warn:#8A5A2B; --warn-soft:#F2E9DC;
-  --glow:linear-gradient(165deg,#1E2922 0%,#2C3A31 30%,#3A4A3E 55%,#2F3C33 78%,#1B241E 100%);
+  --bg:#F7FAF5; --surface:#FFFFFF; --ink:#22332A; --muted:#5F7166; --line:#DCE8DF;
+  --forest:#4E8569; --forest-ink:#FFFFFF; --forest-soft:#E3F1E8; --forest-deep:#33604A;
+  --brass:#7E8A5A; --brass-soft:#EEF2E0; --warn:#9A6A33; --warn-soft:#F5EDDF;
+  --glow:linear-gradient(160deg,#DDEFE6 0%,#E6F3EC 28%,#EDF1DF 58%,#E3ECD8 80%,#D7E7DC 100%);
+  --hero-ink:#22332A; --glass:rgba(255,255,255,.62); --glass-line:rgba(78,133,105,.22); --deep-ink:#33604A;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#141A16; --surface:#1B231E; --ink:#E6EBE4; --muted:#A3AEA4; --line:#2C3830;
-  --forest:#9DBBA3; --forest-ink:#13201A; --forest-soft:#24312A; --forest-deep:#0E1511;
-  --brass:#C9BB8E; --brass-soft:#2A2A20; --warn:#D9A46E; --warn-soft:#2F261B}}
+  --bg:#18201C; --surface:#1E2823; --ink:#E4EEE7; --muted:#A5B6AB; --line:#2D3B33;
+  --forest:#8CC7A7; --forest-ink:#10221A; --forest-soft:#243229; --forest-deep:#13201A;
+  --brass:#C3CC9A; --brass-soft:#2A2E22; --warn:#DDAA70; --warn-soft:#30281C;
+  --glow:linear-gradient(160deg,#16211C 0%,#1C2A23 40%,#222B20 70%,#151D18 100%);
+  --hero-ink:#E4EEE7; --glass:rgba(255,255,255,.06); --glass-line:rgba(140,199,167,.25); --deep-ink:#A8D9BD}}
 :root[data-theme="dark"]{
-  --bg:#141A16; --surface:#1B231E; --ink:#E6EBE4; --muted:#A3AEA4; --line:#2C3830;
-  --forest:#9DBBA3; --forest-ink:#13201A; --forest-soft:#24312A; --forest-deep:#0E1511;
-  --brass:#C9BB8E; --brass-soft:#2A2A20; --warn:#D9A46E; --warn-soft:#2F261B}
-body{background:#2C3830}
-body::before{background:radial-gradient(55% 40% at 85% 18%,rgba(214,226,206,.10),transparent 70%),var(--glow)}
-section.sec{box-shadow:0 18px 50px rgba(10,20,14,.22)}
-.hero{text-shadow:0 1px 14px rgba(10,20,14,.35)}
-.hero.has-img::before{background:linear-gradient(180deg,rgba(16,26,20,.25),rgba(16,26,20,.7))}
-.hero-ph{box-shadow:0 24px 60px rgba(8,16,11,.4)}
-.hero .eyebrow{color:#D5D9C4}
-.offer{background:rgba(20,32,24,.34);border-color:rgba(255,255,255,.26)}
-.offer .promo,.gbanner .gstart{background:#E3E0CF;color:#2A3026}
-.hero .btn.primary,.hq-opt{color:#2F4A3A}
-.hero .btn.ghost{background:rgba(20,32,24,.22)}
-.hq{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.3)}
-.gbanner{border-color:rgba(227,224,207,.6)}
-.gstar{color:#8C8460}
-.gmap{background:rgba(10,18,13,.45)}
-footer{background:rgba(14,22,17,.86);color:#D3DBD1}
+  --bg:#18201C; --surface:#1E2823; --ink:#E4EEE7; --muted:#A5B6AB; --line:#2D3B33;
+  --forest:#8CC7A7; --forest-ink:#10221A; --forest-soft:#243229; --forest-deep:#13201A;
+  --brass:#C3CC9A; --brass-soft:#2A2E22; --warn:#DDAA70; --warn-soft:#30281C;
+  --glow:linear-gradient(160deg,#16211C 0%,#1C2A23 40%,#222B20 70%,#151D18 100%);
+  --hero-ink:#E4EEE7; --glass:rgba(255,255,255,.06); --glass-line:rgba(140,199,167,.25); --deep-ink:#A8D9BD}
+body{background:#E3EFE6}
+body::before{background:radial-gradient(55% 40% at 85% 18%,rgba(255,255,255,.55),transparent 70%),var(--glow);filter:none!important}
+section.sec{box-shadow:0 14px 40px rgba(60,100,80,.10)}
+.hero{color:var(--hero-ink);text-shadow:none}
+.hero.has-img::before{background:linear-gradient(180deg,rgba(247,250,245,.35),rgba(247,250,245,.85))}
+.hero-ph{box-shadow:0 20px 50px rgba(60,100,80,.22)}
+.hero .eyebrow{color:var(--forest)}
+.offer{background:var(--glass);border-color:var(--glass-line)}
+.offer .promo,.gbanner .gstart{background:var(--forest-soft);color:var(--deep-ink)}
+.hero .btn.primary{background:var(--forest);color:var(--forest-ink)}
+.hero .btn.ghost{background:transparent;color:var(--forest);box-shadow:inset 0 0 0 1.5px var(--forest)}
+.hq{background:var(--glass);border-color:var(--glass-line)}
+.hq-opt{background:var(--surface);color:var(--deep-ink);box-shadow:inset 0 0 0 1px var(--glass-line)}
+.gbanner{border-color:var(--glass-line);background:var(--glass)}
+.gbanner .btn.ghost{color:var(--forest);box-shadow:inset 0 0 0 1.5px var(--forest)}
+.gstar{color:#9AA36A}
+.gmap{background:rgba(30,50,40,.35)}
+footer{background:#D5E6DA;color:#33463B}
+footer a{color:var(--deep-ink)}
+footer p[style]{color:var(--ink)!important}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) footer{background:#121A16;color:#B9C9BE}}
+:root[data-theme="dark"] footer{background:#121A16;color:#B9C9BE}
 </style>
 </head>
 <body>
