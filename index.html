@@ -85,6 +85,7 @@ nav.links a:hover{color:var(--ink);background:var(--forest-soft)}
 .ico{width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer;padding:0}
 .ico:hover{border-color:var(--forest);color:var(--forest)}
 .ico svg{width:20px;height:20px}
+@media (max-width:420px){.hd-act{gap:4px}.ico{width:34px;height:34px}.ico svg{width:18px;height:18px}}
 .menu-btn{display:none}
 @media (max-width:760px){
   .menu-btn{display:inline-flex}
@@ -444,12 +445,14 @@ details.more[open]>summary{margin-bottom:12px}
     <a class="brand" href="#top">晨均渼山</a>
     <nav class="links" id="siteNav" aria-label="頁面導覽">
       <a href="#about">渼山細節</a><a href="#life">日常風景</a><a href="#units">空間提案</a><a href="#quiz">理想生活測驗</a>
-      <a href="#book">預約賞屋</a><a href="#gain">房貸試算</a>
+      <a href="#book">預約賞屋</a>
     </nav>
     <div class="hd-act">
       <a class="ico" id="hdIg" href="https://www.instagram.com/passionhaus32/" target="_blank" rel="noopener" aria-label="晨均渼山 Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a>
       <a class="ico" id="hdLine" href="https://lin.ee/tY3YJkj" target="_blank" rel="noopener" aria-label="加入 LINE 好友"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c-5 0-9 3.2-9 7.2 0 3.6 3.2 6.6 7.5 7.1.3.1.7.2.8.5.1.2.1.6 0 .9l-.1.8c0 .2-.2.9.8.5s5.4-3.2 7.4-5.4c1.4-1.5 2.1-3 2.1-4.4 0-4-4-7.2-9.5-7.2z" fill="currentColor"/><text x="12" y="12.6" text-anchor="middle" font-size="5.2" font-weight="700" font-family="Arial,sans-serif" style="fill:var(--surface)">LINE</text></svg></a>
       <a class="ico" id="hdMap" href="https://maps.app.goo.gl/R5PYJUGw6gsqNzAf9" target="_blank" rel="noopener" aria-label="在 Google 地圖開啟晨均渼山"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0c0 5-6.5 11.2-6.5 11.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10.2" r="2.4" fill="currentColor"/></svg></a>
+      <a class="ico" id="hdTel" href="tel:072165218" aria-label="打電話給接待中心" title="打電話給接待中心"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h2.6l1.4 4.1-2 1.5a12 12 0 0 0 6.3 6.3l1.5-2 4.1 1.4v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7a2 2 0 0 1 2.1-2.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+      <a class="ico" id="hdCca" href="https://chez-cca.com/" target="_blank" rel="noopener" aria-label="認識晨均建設（官網）" title="認識晨均建設"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5V9.5L12 4l8 5.5v11M9 20.5v-6h6v6M3 20.5h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg></a>
       <button type="button" class="ico menu-btn" id="menuBtn" aria-label="開啟選單" aria-expanded="false" aria-controls="siteNav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" fill="none"/></svg></button>
     </div>
   </div>
@@ -605,29 +608,6 @@ details.more[open]>summary{margin-bottom:12px}
             <p id="ctMapP" hidden><a id="ctMap" target="_blank" rel="noopener">在 Google 地圖開啟</a></p>
             <p class="small muted">開放預約：每天 <span id="ctSlots"></span></p>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 房貸試算 -->
-  <section class="sec" id="gain">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">房貸試算</span>
-        <h2>每個月要付多少？</h2>
-      </div>
-      <div class="calc-box">
-        <div class="card">
-          <h3>房貸月付試算</h3>
-          <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-            <label class="small">總價（萬）<input class="txt" id="cPrice" type="number" min="100" step="1" inputmode="numeric"></label>
-            <label class="small">方案<select class="txt" id="cPlan"><option value="qa">新青安（貸 8 成）</option><option value="second">第二屋（貸 7 成）</option></select></label>
-            <label class="small">年限<select class="txt" id="cYears"><option>20</option><option selected>30</option><option>40</option></select></label>
-            <label class="small">貸款金額<input class="txt" id="cLoan" readonly></label>
-          </div>
-          <div id="cOut" class="calc-line" style="margin-top:6px"></div>
-          <p class="small muted" id="cNote"></p>
         </div>
       </div>
     </div>
@@ -918,18 +898,6 @@ function loanCalc(total, plan, years) {
   const rates = plan === 'qa' ? (C.rates && C.rates.length ? C.rates : [1.775]) : [2.9];
   return { amt, segs: segments(monthlyByYear(amt, years, rates)) };
 }
-function renderCalc() {
-  const total = Math.max(0, Number($('cPrice').value) || 0), plan = $('cPlan').value, years = Number($('cYears').value);
-  const r = loanCalc(total, plan, years);
-  $('cLoan').value = money(r.amt) + ' 萬';
-  const show = r.segs.length > 3 ? [r.segs[0], r.segs[r.segs.length - 1]] : r.segs;
-  $('cOut').innerHTML = show.map(s => '<span>第 ' + (s.from === s.to ? s.from : s.from + '–' + (s.to === years ? years : s.to)) + ' 年（' + s.rate + '%）<b>月付約 ' + money(s.pay) + ' 元</b></span>').join('');
-  $('cNote').textContent = (plan === 'qa' ? '新青安：未滿 50 歲、名下無房等資格限制；利率逐年調整。' : '第二屋：央行信用管制，無寬限期。') +
-    '月付為估算，不使用寬限期。' + (C.rateDate ? '利率資料日期 ' + C.rateDate + '。' : '');
-}
-$('cPrice').value = C.price || 988;
-['cPrice', 'cPlan', 'cYears'].forEach(id => $(id).addEventListener('input', renderCalc));
-renderCalc();
 
 /* ───── 互動問卷與推薦 ───── */
 /* 3 題（2026/10/30 由 7 題精簡為 5 題；2026/11/2 再拿掉「家裡有車嗎」「什麼時候想入住」） */
@@ -1071,6 +1039,9 @@ renderQuiz();
   if (C.ig) $('hdIg').href = C.ig;
   if (C.lineUrl) $('hdLine').href = C.lineUrl;
   if (C.map) $('hdMap').href = C.map;
+  if (C.phone) $('hdTel').href = 'tel:' + C.phone.replace(/[^\d+]/g, '');
+  $('hdTel').addEventListener('click', () => trackClick('tel_click', 'header'));
+  $('hdCca').addEventListener('click', () => trackClick('cca_click', 'header'));
   $('hdMap').addEventListener('click', () => trackClick('map_click', 'header'));
   $('hdIg').addEventListener('click', () => trackClick('ig_click', 'header'));
   $('hdLine').addEventListener('click', () => trackClick('line_click', 'header'));
