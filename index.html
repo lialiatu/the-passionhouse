@@ -537,7 +537,7 @@ details.more[open]>summary{margin-bottom:12px}
         <p class="lead">2F–4F 標準戶權狀 37–38 坪，全戶開放格局，依家庭需求量身規劃。</p>
       </div>
       <div class="grid g4" id="unitCards"></div>
-      <a class="to-quiz" href="#quiz"><b>四種都喜歡、不知道選哪個？</b><span>1 分鐘、5 題，免費幫你配對最適合的戶型 ↓</span></a>
+      <a class="to-quiz" href="#quiz"><b>四種都喜歡、不知道選哪個？</b><span>1 分鐘、3 題，免費幫你配對最適合的戶型 ↓</span></a>
     </div>
   </section>
 
@@ -546,7 +546,7 @@ details.more[open]>summary{margin-bottom:12px}
     <div class="wrap">
       <div class="head" style="margin-inline:auto;text-align:center;align-items:center">
         <span class="eyebrow">理想生活測驗</span>
-        <h2>回答 5 題，找到最適合你的那一戶</h2>
+        <h2>回答 3 題，找到最適合你的那一戶</h2>
         <p class="lead">免費、約 1 分鐘。看完推薦，留姓名和手機就完成預約賞屋。</p>
       </div>
       <div class="quiz" id="quizBox" aria-live="polite"></div>
@@ -932,13 +932,11 @@ $('cPrice').value = C.price || 988;
 renderCalc();
 
 /* ───── 互動問卷與推薦 ───── */
-/* 5 題（2026/10/30 由 7 題精簡：拿掉「理想格局」「上班地點」「車款」，手機上 30 秒內答完） */
+/* 3 題（2026/10/30 由 7 題精簡為 5 題；2026/11/2 再拿掉「家裡有車嗎」「什麼時候想入住」） */
 const Q = [
   { id: 'people', title: '幾個人一起住？', type: 'one', opts: ['1–2 人', '3–4 人', '5 人以上', '和長輩同住'] },
   { id: 'focus', title: '你最在意的生活重點？', hint: '最多選 3 個，選好按下一題', type: 'many', max: 3, opts: ['窗外綠景', '空間寬敞', '採光通風', '泡澡放鬆', '戶外露台', '樓層高視野好', '總價好入手'] },
   { id: 'budget', title: '購屋預算（房屋總價，不含車位）', type: 'one', opts: ['1,000 萬以下', '1,000–1,200 萬', '1,200 萬以上', '還不確定'] },
-  { id: 'car', title: '家裡有車嗎？', hint: '休旅車尺寸上限以 BMW X5 為準，業務會再幫你確認。', type: 'one', opts: ['沒有', '一般轎車', '休旅車', '兩台以上'] },
-  { id: 'when', title: '什麼時候想入住？', type: 'one', opts: ['馬上', '半年內', '一年內', '還在看'] },
 ];
 const A = {}; let step = 0, lastResult = null;
 // 問卷追蹤：每次開頁各記一次「開始」「完成」到試算表「問卷紀錄」
