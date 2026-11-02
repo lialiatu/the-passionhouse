@@ -315,6 +315,15 @@ table.cmp tbody th{white-space:nowrap;color:var(--muted);font-weight:500}
 
 /* 預約 */
 .book{display:grid;gap:24px;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
+.book-box{max-width:640px;margin:20px auto 0}
+.book-box .book-t{margin:0 0 4px}
+.skip-q{text-align:center;margin-top:14px;font-size:.92rem;color:var(--muted)}
+.skip-q a{font-weight:700;color:var(--forest)}
+.done-card .contact{border-top:1px solid var(--line);margin-top:12px;padding-top:12px}
+.done-card h3{color:var(--forest)}
+.hii-card .blogos{margin-bottom:6px}
+.calc-box{max-width:640px}
+footer .ft-cca{color:#fff;text-decoration:underline;text-underline-offset:3px}
 @media (max-width:860px){.book{grid-template-columns:1fr}}
 form .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
 @media (max-width:520px){form .row{grid-template-columns:1fr}}
@@ -428,12 +437,13 @@ details.more[open]>summary{margin-bottom:12px}
   <div class="bar">
     <a class="brand" href="#top">晨均渼山</a>
     <nav class="links" id="siteNav" aria-label="頁面導覽">
-      <a href="#why">遇見渼山</a><a href="#units">空間提案</a><a href="#quiz">理想生活測驗</a><a href="#life">日常風景</a>
-      <a href="#about">渼山細節</a><a href="#brand">關於晨均</a><a href="#gain">渼好成家</a><a href="#compare">渼山優勢</a>
+      <a href="#about">渼山細節</a><a href="#life">日常風景</a><a href="#units">空間提案</a><a href="#quiz">理想生活測驗</a>
+      <a href="#book">預約賞屋</a><a href="#gain">房貸試算</a>
     </nav>
     <div class="hd-act">
       <a class="ico" id="hdIg" href="https://www.instagram.com/passionhaus32/" target="_blank" rel="noopener" aria-label="晨均渼山 Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a>
       <a class="ico" id="hdLine" href="https://lin.ee/tY3YJkj" target="_blank" rel="noopener" aria-label="加入 LINE 好友"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c-5 0-9 3.2-9 7.2 0 3.6 3.2 6.6 7.5 7.1.3.1.7.2.8.5.1.2.1.6 0 .9l-.1.8c0 .2-.2.9.8.5s5.4-3.2 7.4-5.4c1.4-1.5 2.1-3 2.1-4.4 0-4-4-7.2-9.5-7.2z" fill="currentColor"/><text x="12" y="12.6" text-anchor="middle" font-size="5.2" font-weight="700" font-family="Arial,sans-serif" style="fill:var(--surface)">LINE</text></svg></a>
+      <a class="ico" id="hdMap" href="https://maps.app.goo.gl/R5PYJUGw6gsqNzAf9" target="_blank" rel="noopener" aria-label="在 Google 地圖開啟晨均渼山"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0c0 5-6.5 11.2-6.5 11.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10.2" r="2.4" fill="currentColor"/></svg></a>
       <button type="button" class="ico menu-btn" id="menuBtn" aria-label="開啟選單" aria-expanded="false" aria-controls="siteNav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" fill="none"/></svg></button>
     </div>
   </div>
@@ -449,13 +459,8 @@ details.more[open]>summary{margin-bottom:12px}
       <p class="sub">晨均渼山，3.3 米室內樓高，最舒服的家，把每天努力的你好好接住；窗外，是永久的綠意。</p>
       <div class="offer" id="offer"></div>
       <p class="offer-note">※ 優惠方案以現場簽約為準，晨均建設保留調整、變更或終止優惠之權利，並保有最終解釋權。</p>
-      <div class="hq" id="heroQuiz">
-        <div class="hq-t"><b>1 分鐘，免費配對你的戶型</b><span>第 1 題：幾個人一起住？</span></div>
-        <div class="hq-opts"></div>
-        <p class="hq-note">點一下就開始，共 5 題，最後推薦最適合你的戶型。</p>
-      </div>
       <div class="ctas">
-        <a class="btn ghost" href="#book">直接預約賞屋</a>
+        <a class="btn primary" href="#quiz">1 分鐘配對戶型</a><a class="btn ghost" href="#book">直接預約賞屋</a>
       </div>
       <div class="facts"><span>16 戶社區型華廈</span><span>標準戶 37–38 坪</span><span>公設比 27.3%</span><span>iF 得獎建築團隊</span></div>
       </div>
@@ -463,46 +468,41 @@ details.more[open]>summary{margin-bottom:12px}
     </div>
   </section>
 
-  <!-- 為什麼選晨均渼山 -->
-  <section class="sec" id="why">
+  <!-- 渼山細節（2026/11/2 整合遇見渼山、渼山細節、渼山優勢） -->
+  <section class="sec" id="about">
     <div class="wrap">
       <div class="head">
-        <span class="eyebrow">遇見渼山</span>
-        <h2>只有渼山有的五個理由</h2>
+        <span class="eyebrow">渼山細節</span>
+        <h2>一個「最舒服生活的家」</h2>
+        <p class="lead">晨均渼山位於小港大坪頂特定區，地上 5 層、16 戶的社區型華廈。<br class="pc">每部電梯只服務兩戶，進出安靜、鄰里單純；戶戶面向綠色坡地，每天回家都看得到綠。</p>
       </div>
-      <div class="grid g3">
-        <div class="card"><span class="tag brass">Only One</span><h3>永久綠意</h3><p class="small muted">基地面向綠林，窗外就是長久的綠景。</p></div>
-        <div class="card"><span class="tag brass">Only One</span><h3>3.3 米室內樓高</h3><p class="small muted">標準層 3.3 米，空間開闊、採光充足。</p></div>
-        <div class="card"><span class="tag brass">Only One</span><h3>高坪效</h3><p class="small muted">實際可使用面積約 26 坪；同為 38 坪，室內多出 3.69 坪。</p></div>
-        <div class="card"><span class="tag brass">Only One</span><h3>iF 得獎建築師</h3><p class="small muted">工二建築，德國 iF 設計獎得獎團隊操刀。</p></div>
-        <div class="card"><span class="tag brass">Only One</span><h3>16 戶社區型華廈</h3><p class="small muted">一梯兩戶，優質鄰里關係，單純好管理。</p></div>
-        <div class="card"><span class="tag">Number One</span><h3>建築規劃・貼心設計・全齡住宅</h3><p class="small muted">人車分流、無障礙電梯、戶戶雙面採光，從兩人世界到三代同堂都住得舒服。</p></div>
+      <div class="card life-card fac-card" id="facCard" hidden></div>
+      <div class="grid g4">
+        <div class="card"><span class="k">室內樓高</span><span class="v">3.3 米</span><p class="small muted">空間開闊、採光充足；其他建案約 3–3.15 米。</p></div>
+        <div class="card"><span class="k">公設比</span><span class="v">27.3%</span><p class="small muted">同為 38 坪，室內多出 3.69 坪；其他建案公設比約 35–36.5%。</p></div>
+        <div class="card"><span class="k">梯戶配置</span><span class="v">一梯兩戶</span><p class="small muted">全社區 16 戶，鄰里單純好管理；其他建案 130–590 戶。</p></div>
+        <div class="card"><span class="k">案場狀態</span><span class="v">成屋可看</span><p class="small muted">已取得使用執照，實品屋現場直接看屋。</p></div>
       </div>
-    </div>
-  </section>
-
-  <!-- 戶型 -->
-  <section class="sec alt" id="units">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">空間提案</span>
-        <h2>每一種生活，都有一個名字。哪一個是你？</h2>
-        <p class="lead">2F–4F 標準戶權狀 37–38 坪，全戶開放格局，依家庭需求量身規劃。</p>
+      <div class="card hii-card" style="margin-top:16px"><div class="blogos"><img class="blogo" src="https://lh3.googleusercontent.com/d/1uOcE8gUKTzbIaTb8ahIj5uGU4SqFUB6N=w600" alt="工二建築 HII ARCHITECTS" loading="lazy"><span class="ifmark"><svg viewBox="0 0 59 59" aria-hidden="true"><path fill="#ED1D26" d="M1 58h57V1H1z"/><path fill="#FFF" d="M37.8 33.97h9.12v-9.12H37.8v9.12zM25.64 46.13h9.12V12.69h-9.12v33.44zM37.8 21.8h9.12v-9.12H37.8v9.12zm-19.76-9.73a5.17 5.17 0 1 0 0 10.34 5.17 5.17 0 0 0 0-10.34zM13.5 46.13h9.12V24.84H13.5v21.27z"/></svg><span><b>iF DESIGN AWARD</b>得獎建築團隊</span></span></div><p><b>建築設計｜工二建築事務所</b></p><p class="small muted">德國 iF 設計獎得獎團隊，操刀建築外觀、室內空間美學與植栽景觀，讓自然走進家裡；人車分流、無障礙電梯、戶戶雙面採光，從兩人世界到三代同堂都住得舒服。</p></div>
+      <details class="more" id="cmpMore" style="margin-top:16px"><summary>和附近建案比一比（4 個建案、9 個項目）</summary>
+      <div class="table-wrap">
+        <table class="cmp">
+          <thead><tr><th>項目</th><th class="me">晨均渼山</th><th>清景麟國家公園</th><th>華友聯 POWER CITY</th><th>友友 百達宏邸</th></tr></thead>
+          <tbody>
+            <tr><th>地點</th><td class="me">高坪八路（大坪頂）</td><td>松園六路（小港森林公園旁）</td><td>高松路 × 松華路</td><td>宏平路 × 崇愛街</td></tr>
+            <tr><th>規模</th><td class="me">地上 5 層／16 戶</td><td>地上 17 層／住 576 戶＋店 14 戶</td><td>地上 11–13 層／452 戶</td><td>地上 15 層／住 130 戶＋店 1 戶</td></tr>
+            <tr><th>坪數</th><td class="me">37–38 坪（室內約 26.2–27.6 坪）</td><td>2 房 24–31 坪、3 房 32–44 坪</td><td>2 房 22–28 坪、3 房 36–38 坪、4 房 46–47 坪</td><td>2 房約 27 坪、3 房 35–38 坪</td></tr>
+            <tr><th>室內樓高</th><td class="me">3.3 米</td><td>未公開</td><td>2–10F 3 米、11F 以上 3.15 米</td><td>未公開</td></tr>
+            <tr><th>梯戶比</th><td class="me">一梯兩戶</td><td>約 3–4 戶共用 1 部電梯（依棟別）</td><td>—</td><td>—</td></tr>
+            <tr><th>公設比</th><td class="me">27.3%</td><td>約 36%</td><td>35–36%</td><td>36.5%</td></tr>
+            <tr><th>車位</th><td class="me">機械 90／100／110 萬<br>平面 130／150 萬</td><td>平面，實登約 170–210 萬</td><td>平面 140–190 萬</td><td>平面＋機械，價格未公告</td></tr>
+            <tr><th>單價</th><td class="me" id="cmpPrice"></td><td>近一年均價約 32.4 萬/坪</td><td>均價約 28.3 萬/坪</td><td>近一年均價約 34.6 萬/坪</td></tr>
+            <tr><th>屋況</th><td class="me">成屋，實品屋可看</td><td>新成屋</td><td>新成屋（屋齡約 1 年）</td><td>新成屋</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="grid g4" id="unitCards"></div>
-      <a class="to-quiz" href="#quiz"><b>四種都喜歡、不知道選哪個？</b><span>1 分鐘、5 題，免費幫你配對最適合的戶型 ↓</span></a>
-    </div>
-  </section>
-
-  <!-- 互動推薦 -->
-  <section class="sec" id="quiz">
-    <div class="wrap">
-      <div class="head" style="margin-inline:auto;text-align:center;align-items:center">
-        <span class="eyebrow">理想生活測驗</span>
-        <h2>回答幾個問題，看看哪一戶最適合你</h2>
-        <p class="lead">免費、約 1 分鐘。回答 5 題，送你最適合的戶型、月付試算與車位建議，留姓名手機就能預約參觀。</p>
-      </div>
-      <div class="quiz" id="quizBox" aria-live="polite"></div>
+      <p class="small muted" style="margin-top:10px">來源：591 新建案、樂居、5168 實價登錄比價王、高雄房地王、本案 2024/4 區域調查。單價為實價登錄平台統計，各平台計算方式不同；梯戶比依公開資料整理，以建商資料為準。「—」表示公開資料未載明。</p>
+      </details>
     </div>
   </section>
 
@@ -520,75 +520,96 @@ details.more[open]>summary{margin-bottom:12px}
     </div>
   </section>
 
-  <!-- 建案介紹 -->
-  <section class="sec" id="about">
+  <!-- 戶型 -->
+  <section class="sec" id="units">
     <div class="wrap">
       <div class="head">
-        <span class="eyebrow">渼山細節</span>
-        <h2>一個「最舒服生活的家」</h2>
-        <p class="lead">晨均渼山位於小港大坪頂特定區，地上 5 層、16 戶的社區型華廈。<br class="pc">每部電梯只服務兩戶，進出安靜、鄰里單純；戶戶面向綠色坡地，每天回家都看得到綠。</p>
+        <span class="eyebrow">空間提案</span>
+        <h2>每一種生活，都有一個名字。哪一個是你？</h2>
+        <p class="lead">2F–4F 標準戶權狀 37–38 坪，全戶開放格局，依家庭需求量身規劃。</p>
       </div>
-      <div class="card life-card fac-card" id="facCard" hidden></div>
-      <div class="grid g4">
-        <div class="card"><span class="k">室內樓高</span><span class="v">3.3 米</span><p class="small muted">空間開闊、採光充足，回家就覺得空間在呼吸。</p></div>
-        <div class="card"><span class="k">同為 38 坪，室內多出</span><span class="v">3.69 坪</span><p class="small muted">公設比 27.3%，室內約 27.63 坪；以公設比 37% 的產品計算約 23.94 坪。</p></div>
-        <div class="card"><span class="k">梯戶配置</span><span class="v">一梯兩戶</span><p class="small muted">L 型基地分兩棟，等梯時間短，鄰里單純好管理。</p></div>
-        <div class="card"><span class="k">案場狀態</span><span class="v">成屋可看</span><p class="small muted">已取得使用執照，實品屋現場直接看屋。</p></div>
+      <div class="grid g4" id="unitCards"></div>
+      <a class="to-quiz" href="#quiz"><b>四種都喜歡、不知道選哪個？</b><span>1 分鐘、5 題，免費幫你配對最適合的戶型 ↓</span></a>
+    </div>
+  </section>
+
+  <!-- 理想生活測驗＋預約賞屋 -->
+  <section class="sec alt" id="quiz">
+    <div class="wrap">
+      <div class="head" style="margin-inline:auto;text-align:center;align-items:center">
+        <span class="eyebrow">理想生活測驗</span>
+        <h2>回答 5 題，找到最適合你的那一戶</h2>
+        <p class="lead">免費、約 1 分鐘。看完推薦，留姓名和手機就完成預約賞屋。</p>
       </div>
-      <div class="grid g3" style="margin-top:16px">
-        <div class="card"><h3>建築與結構</h3><ul class="small"><li>工二建築（德國 iF 設計獎得獎團隊）</li><li>15cm RC 樓版，混凝土與鋼筋皆送 TAF（全國認證基金會）認證的實驗室檢驗，結果有公信力</li><li>泥礦漆外牆：抗菌自潔、零甲醛，可降室內溫度 4–6 度</li></ul></div>
-        <div class="card"><h3>安靜與安心</h3><ul class="small"><li>勝群鋁門窗：抗風壓 3600Pa、水密 1000Pa、氣密第一級</li><li>晨均建設的「隔音三明治工法」：法國聖戈班隔音墊（可隔絕 21 分貝）＋ SPC 地板（可隔絕 17 分貝）雙層夾合<small style="display:block;font-size:.85em;opacity:.8;margin-top:.3em">※ 隔音數值為材料規格，實際效果依現場條件而異</small></li><li>中保無限<sup>＋</sup> 數位化物業管理、24 小時監控</li></ul></div>
-        <div class="card"><h3>好用的日常</h3><ul class="small"><li>大尺度廚房 2.5–3.3 米，SVAGO 洗碗機與感應爐</li><li>BWT 生飲淨水系統，打開水龍頭就能喝</li><li>全戶開放、上配管規劃，可規劃雙主臥、雙主浴</li><li>中保無限<sup>＋</sup> 智能宅配櫃：24 小時都能收件，包裹安心送達</li><li>社區資源處理區：垃圾、回收自己安排時間，不用再追垃圾車</li></ul></div>
+      <div class="quiz" id="quizBox" aria-live="polite"></div>
+      <p class="skip-q" id="skipQ">不想做測驗？<a href="#book">直接預約賞屋 ›</a></p>
+      <div class="book-box" id="book" hidden>
+        <form id="bookForm" class="card" novalidate>
+          <h3 class="book-t" id="bookTitle">留下姓名和手機，預約賞屋</h3>
+          <p class="pick" id="bookPick" hidden>已幫你選好 <b id="bookPickUnit"></b>，留個聯絡方式就完成預約。</p>
+          <p class="gift" id="giftLine" hidden>🎁 </p>
+          <div class="row">
+            <label><span>姓名 <span class="req">*</span></span><input class="txt" name="name" autocomplete="name" maxlength="30" required></label>
+            <label><span>手機 <span class="req">*</span></span><input class="txt" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="09xxxxxxxx" maxlength="12" required></label>
+          </div>
+          <details class="more" id="bookMore">
+            <summary>想先指定時間、戶型或留話給我們？（選填）</summary>
+            <div class="row">
+              <label>預約日期<input class="txt" name="date" type="date"></label>
+              <label>想看的戶型<select class="txt" name="unit" id="unitSelect"></select></label>
+            </div>
+            <div><span class="small" style="font-weight:500">預約時段</span><div class="slots" id="slotBtns" role="radiogroup" aria-label="預約時段"></div></div>
+            <div class="row">
+              <label>LINE ID<input class="txt" name="line" maxlength="40"></label>
+              <label>同行人數<select class="txt" name="people"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option value="6">6 人以上</option></select></label>
+            </div>
+            <label>想先讓我們知道的事<textarea class="txt" name="note" maxlength="500" placeholder="例如：會帶長輩一起來、想了解貸款"></textarea></label>
+            <label class="check"><input type="checkbox" name="marketing"> <span>我同意收到晨均建設的建案資訊與活動通知。</span></label>
+          </details>
+          <label class="hp" aria-hidden="true">網站<input name="website" tabindex="-1" autocomplete="off"></label>
+          <details class="privacy">
+            <summary>個人資料蒐集告知事項</summary>
+            <p style="margin-top:6px"><span class="js-builder">晨均建設股份有限公司</span>（以下稱本公司）依《個人資料保護法》第 8 條規定，向您告知下列事項：</p>
+            <ol>
+              <li>蒐集目的：不動產銷售與行銷、預約賞屋安排、客戶服務與聯繫、購屋資訊提供（法定特定目的代號：040 行銷、069 契約或類似契約關係之管理、090 消費者及客戶管理與服務）。</li>
+              <li>個人資料類別：姓名、手機、LINE ID、預約時間、購屋需求與問卷回答等您所提供的資料。</li>
+              <li>利用期間：自蒐集日起至蒐集目的消失為止，或依相關法令規定保存之期間。</li>
+              <li>利用地區：中華民國境內。</li>
+              <li>利用對象：本公司及本公司委託之銷售、行銷服務人員。</li>
+              <li>利用方式：以電話、簡訊、電子郵件、通訊軟體等方式聯繫，以及書面、電子方式處理與保存。</li>
+              <li>您可依《個人資料保護法》第 3 條規定，向本公司請求查詢、閱覽、製給複製本、補充或更正、停止蒐集處理利用或刪除您的個人資料<span id="pvContact"></span>。</li>
+              <li>您可自由選擇是否提供個人資料；若未提供必填資料，本公司將無法為您安排預約賞屋。</li>
+            </ol>
+          </details>
+          <label class="check"><input type="checkbox" name="consent"> <span>我已閱讀並同意<span class="js-builder">晨均建設股份有限公司</span>依上述告知事項，蒐集、處理及利用我的個人資料。<span class="req">*</span></span></label>
+          <div id="bookMsg" class="msg" hidden role="status"></div>
+          <button class="btn primary" type="submit" id="bookBtn">送出預約</button>
+          <p class="small muted" id="bookOr" hidden>或 <a id="bookLine" target="_blank" rel="noopener">用 LINE 直接問</a></p>
+        </form>
+        <div class="card done-card" id="bookDone" hidden role="status">
+          <h3>✓ 預約成功</h3>
+          <p id="bookDoneMsg"></p>
+          <p class="gift" id="doneGift" hidden></p>
+          <div class="contact" id="contactCard">
+            <p><b>接待中心</b>　<span id="ctAddr"></span></p>
+            <p id="ctPhoneP" hidden>電話　<a id="ctPhone"></a></p>
+            <p id="ctLineP" hidden>LINE　<a id="ctLine" target="_blank" rel="noopener"></a></p>
+            <p id="ctMapP" hidden><a id="ctMap" target="_blank" rel="noopener">在 Google 地圖開啟</a></p>
+            <p class="small muted">開放預約：每天 <span id="ctSlots"></span></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 為什麼選晨均建設（內容整理自晨均建設官網 chez-cca.com） -->
-  <section class="sec alt" id="brand">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">關於晨均</span>
-        <h2>均好世代，TO BE WITH YOU</h2>
-        <p class="lead">均好，是居住的每個面向都均衡到位：空間、採光、動線、設備、環境與長期生活感，一起照顧好。<br class="pc">晨均把營建品質放在第一位，精緻規模、堅穩切實，守護每一份信賴。</p>
-      </div>
-      <div class="grid g2">
-        <div class="card"><span class="tag">團隊</span><div class="blogos co"><img class="blogo" src="https://lh3.googleusercontent.com/d/11FtkVtdfd8xQ95qauJeoV6jeQO2xMvpI=w600" alt="弘力建設股份有限公司" loading="lazy"><span class="x" aria-hidden="true">×</span><img class="blogo" src="https://lh3.googleusercontent.com/d/1gV0Zr4ykMej2f77WLl7NOwOa3GloX8g_=w600" alt="晨均建設股份有限公司" loading="lazy"></div><p class="small muted">工務、業務、企劃、財務多年共事的默契，把豐厚的實務經驗投入每一個作品。</p></div>
-        <div class="card"><span class="tag">建築</span><div class="blogos"><img class="blogo" src="https://lh3.googleusercontent.com/d/1uOcE8gUKTzbIaTb8ahIj5uGU4SqFUB6N=w600" alt="工二建築 HII ARCHITECTS" loading="lazy"><span class="ifmark"><svg viewBox="0 0 59 59" aria-hidden="true"><path fill="#ED1D26" d="M1 58h57V1H1z"/><path fill="#FFF" d="M37.8 33.97h9.12v-9.12H37.8v9.12zM25.64 46.13h9.12V12.69h-9.12v33.44zM37.8 21.8h9.12v-9.12H37.8v9.12zm-19.76-9.73a5.17 5.17 0 1 0 0 10.34 5.17 5.17 0 0 0 0-10.34zM13.5 46.13h9.12V24.84H13.5v21.27z"/></svg><span><b>iF DESIGN AWARD</b>得獎建築團隊</span></span></div><h3>工二建築事務所</h3><p class="small muted">德國 iF 設計獎得獎團隊，與晨均合作建築外觀、室內空間美學與植栽景觀，讓自然走進家裡。</p></div>
-      </div>
-      <div class="grid g4" style="margin-top:16px">
-        <div class="card"><span class="k">晨均實諾</span><span class="v">保固 15 年</span><p class="small muted">結構體保固 15 年，貼心售後服務。</p></div>
-        <div class="card"><span class="k">晨均實諾</span><span class="v">按圖施工</span><p class="small muted">保證按圖施工、維持工程品管，良心築造，說到做到。</p></div>
-        <div class="card"><span class="k">晨均實諾</span><span class="v">自主審查</span><p class="small muted">強化工地管理，交屋前嚴格自主審查。</p></div>
-        <div class="card"><span class="k">晨均實諾</span><span class="v">人本售服</span><p class="small muted">交屋後持續陪伴，和住戶一同成長。</p></div>
-      </div>
-      <div class="card works-card" style="margin-top:16px">
-        <span class="k">歷年作品</span>
-        <div class="works"><b>晨均日渼</b><b>晨均渼山</b><span>弘力真諦</span><span>弘力墅也</span><span>弘力得月</span><span>弘力真湛</span><span>弘力36美境</span><span>弘力新四維</span><span>弘力寬庭</span><span>弘力弘麗</span></div>
-        <a class="btn ghost small" href="https://chez-cca.com/" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:6px">認識晨均建設 ↗</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 你可以獲得什麼 -->
+  <!-- 房貸試算 -->
   <section class="sec" id="gain">
     <div class="wrap">
       <div class="head">
-        <span class="eyebrow">渼好成家</span>
-        <h2>負擔得起的好品質</h2>
-        <p class="lead">渼山過去的實價登錄與大坪頂行情相當；現在的優惠價比登錄價更划算。<br class="pc">限量 3 戶・簽約送車位。</p>
+        <span class="eyebrow">房貸試算</span>
+        <h2>每個月要付多少？</h2>
       </div>
-      <div class="grid g2">
-        <div class="card">
-          <span class="k">現在的優惠</span>
-          <span class="v" id="gainPrice"></span>
-          <p id="gainNote" class="muted"></p>
-          <ul class="small">
-            <li>大坪頂電梯華廈近期行情：每坪約 27–27.6 萬</li>
-            <li id="gainUnit"></li>
-          </ul>
-          <p class="small muted">實價登錄資料來源：樂居，查詢日期 2026/10/18。</p>
-          <p class="small muted">※ 優惠方案以現場簽約為準，晨均建設保留調整、變更或終止優惠之權利，並保有最終解釋權。</p>
-        </div>
+      <div class="calc-box">
         <div class="card">
           <h3>房貸月付試算</h3>
           <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
@@ -601,143 +622,6 @@ details.more[open]>summary{margin-bottom:12px}
           <p class="small muted" id="cNote"></p>
         </div>
       </div>
-      <div class="grid g2" style="margin-top:16px">
-        <div class="card">
-          <h3>付款方式</h3>
-          <div class="table-wrap" style="border:0"><table class="cmp" style="min-width:0">
-            <thead><tr><th>購屋類型</th><th>訂金</th><th>簽約</th><th>備證款</th><th>銀行貸款</th><th>交屋</th></tr></thead>
-            <tbody><tr><th>首購</th><td>2%</td><td>8%</td><td>5%</td><td>80%</td><td>5%</td></tr>
-            <tr><th>置產</th><td>2%</td><td>8%</td><td>15%</td><td>70%</td><td>5%</td></tr></tbody></table></div>
-        </div>
-        <div class="card">
-          <h3>住進渼山，還有這些</h3>
-          <ul class="small"><li>BWT 生飲淨水、中保無限<sup>＋</sup> 智能宅配櫃、社區冰箱</li><li>公共電動車充電設備、人車分流</li><li id="parkLine"></li></ul>
-        </div>
-      </div>
-      <div class="flow-head" id="dream">
-        <h3>從看屋到交屋，一路陪你</h3>
-        <p class="small muted">第一步很簡單：預約一次賞屋，專人一對一陪你看。</p>
-      </div>
-      <div class="steps">
-        <div class="card"><h3>線上探索</h3><p class="small muted">回答問題，找到適合你的戶型與月付試算。</p></div>
-        <div class="card"><h3>預約賞屋</h3><p class="small muted">選好時段，專人與你確認。</p></div>
-        <div class="card"><h3>現場體驗</h3><p class="small muted">專人一對一建築走讀導覽，一起泡杯茶，好好聊生活。</p></div>
-        <div class="card"><h3>專屬報價</h3><p class="small muted">現場試算總價、付款拆款與房貸月付，每月要付多少一清二楚。</p></div>
-        <div class="card"><h3>下訂與簽約</h3><p class="small muted">訂金 2%、簽約 8%，保留你心儀的那一戶。</p></div>
-        <div class="card"><h3>貸款與備證</h3><p class="small muted">協助對接銀行與新青安申辦。</p></div>
-        <div class="card"><h3>驗屋</h3><p class="small muted">陪你逐項確認每個細節。</p></div>
-        <div class="card"><h3>交屋入住</h3><p class="small muted">點交鑰匙，成為渼山的一份子。</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 競品比較 -->
-  <section class="sec alt" id="compare">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">渼山優勢</span>
-        <h2>同樣預算，渼山多給你什麼？</h2>
-        <p class="lead">資料來源為實價登錄與公開平台，查詢日期 2026/10/19；實際以各建案公告為準。</p>
-      </div>
-      <div class="cmp-key">
-        <div><b>27.3%</b><span>公設比，其他建案約 35–36.5%</span></div>
-        <div><b>3.3 米</b><span>室內樓高，其他建案約 3–3.15 米或未公開</span></div>
-        <div><b>一梯兩戶</b><span>16 戶社區型華廈，其他建案 130–590 戶</span></div>
-      </div>
-      <details class="more" id="cmpMore"><summary>展開完整比較表（4 個建案、9 個項目）</summary>
-      <div class="table-wrap">
-        <table class="cmp">
-          <thead><tr><th>項目</th><th class="me">晨均渼山</th><th>清景麟國家公園</th><th>華友聯 POWER CITY</th><th>友友 百達宏邸</th></tr></thead>
-          <tbody>
-            <tr><th>地點</th><td class="me">高坪八路（大坪頂）</td><td>松園六路（小港森林公園旁）</td><td>高松路 × 松華路</td><td>宏平路 × 崇愛街</td></tr>
-            <tr><th>規模</th><td class="me">地上 5 層／16 戶</td><td>地上 17 層／住 576 戶＋店 14 戶</td><td>地上 11–13 層／452 戶</td><td>地上 15 層／住 130 戶＋店 1 戶</td></tr>
-            <tr><th>坪數</th><td class="me">37–38 坪（室內約 26.2–27.6 坪）</td><td>2 房 24–31 坪、3 房 32–44 坪</td><td>2 房 22–28 坪、3 房 36–38 坪、4 房 46–47 坪</td><td>2 房約 27 坪、3 房 35–38 坪</td></tr>
-            <tr><th>室內樓高</th><td class="me">3.3 米</td><td>未公開</td><td>2–10F 3 米、11F 以上 3.15 米</td><td>未公開</td></tr>
-            <tr><th>梯戶比</th><td class="me">一梯兩戶</td><td>約 3–4 戶共用 1 部電梯（依棟別）</td><td>—</td><td>—</td></tr>
-            <tr><th>公設比</th><td class="me">27.3%</td><td>約 36%</td><td>35–36%</td><td>36.5%</td></tr>
-            <tr><th>車位</th><td class="me">機械 90／100／110 萬<br>平面 130／150 萬</td><td>平面，實登約 170–210 萬</td><td>平面 140–190 萬</td><td>平面＋機械，價格未公告</td></tr>
-            <tr><th>單價</th><td class="me" id="cmpPrice"></td><td>近一年均價約 32.4 萬/坪</td><td>均價約 28.3 萬/坪</td><td>近一年均價約 34.6 萬/坪</td></tr>
-            <tr><th>屋況</th><td class="me">成屋，實品屋可看</td><td>新成屋</td><td>新成屋（屋齡約 1 年）</td><td>新成屋</td></tr>
-          </tbody>
-        </table>
-      </div>
-      </details>
-      <p class="small muted" style="margin-top:10px">來源：591 新建案、樂居、5168 實價登錄比價王、高雄房地王、本案 2024/4 區域調查。單價為實價登錄平台統計，各平台計算方式不同；梯戶比依公開資料整理，以建商資料為準。「—」表示公開資料未載明。</p>
-    </div>
-  </section>
-
-  <!-- 為什麼是你 -->
-  <section class="sec" id="you">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">為什麼是你</span>
-        <h2>也許，這就是你</h2>
-        <p class="lead">對設計有感、清楚知道自己要什麼，想把努力工作的日子，換成每天都舒服的家。</p>
-      </div>
-      <div class="grid g3 story">
-        <div class="card"><div class="sph"><img src="https://lh3.googleusercontent.com/d/1LjeQlFd99DrgZ7tG4JaraohdkhoSbTRf=w900" alt="一梯兩戶的當層梯間" loading="lazy"><span>渼山實景</span></div><span class="tag">準備成家</span><blockquote>「想要一個不用和人擠的家。現在兩個人住，以後有小孩再隔一間。」</blockquote><p class="small muted">一梯兩戶進出安靜，全戶開放格局能跟著家庭長大。</p><span class="who">情境示意</span></div>
-        <div class="card"><div class="sph"><img src="https://lh3.googleusercontent.com/d/1nny6SaRUJbrd4DMHCbbaHDenMKhyZtzi=w900" alt="在家工作的雙薪家庭情境" loading="lazy"></div><span class="tag">雙薪家庭</span><blockquote>「上班近一點，孩子各有一間房，空氣好一點。」</blockquote><p class="small muted">同樣 38 坪，室內多 3.69 坪；豐饒之家、日光之間都能規劃三房。</p><span class="who">情境示意</span></div>
-        <div class="card"><div class="sph"><img src="https://lh3.googleusercontent.com/d/1YgPHgf_5CtuQ4wveZAQ-zyxhJnzSK1Bm=w900" alt="坐在窗邊看綠景的生活情境" loading="lazy"></div><span class="tag">生活品味</span><blockquote>「回家只想好好放鬆，看得到綠、空間不壓迫。」</blockquote><p class="small muted">3.3 米樓高、雙面採光、窗外永久綠意。</p><span class="who">情境示意</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 預約 -->
-  <section class="sec alt" id="book">
-    <div class="wrap book">
-      <div class="head" style="margin-bottom:0">
-        <span class="eyebrow">預約賞屋</span>
-        <h2>來渼山，喝杯茶，好好聊生活</h2>
-        <p class="lead">留下姓名和手機就好，我們會在 1 個工作天內與你聯繫，一起約個方便的時間。</p>
-        <p class="gift" id="giftLine" hidden>🎁 </p>
-        <div class="card" style="margin-top:8px" id="contactCard">
-          <p><b>接待中心</b>　<span id="ctAddr"></span></p>
-          <p id="ctPhoneP" hidden>電話　<a id="ctPhone"></a></p>
-          <p id="ctLineP" hidden>LINE　<a id="ctLine" target="_blank" rel="noopener"></a></p>
-          <p id="ctMapP" hidden><a id="ctMap" target="_blank" rel="noopener">在 Google 地圖開啟</a></p>
-          <p class="small muted">開放預約：每天 <span id="ctSlots"></span></p>
-        </div>
-      </div>
-      <form id="bookForm" class="card" novalidate>
-        <p class="pick" id="bookPick" hidden>已幫你選好 <b id="bookPickUnit"></b>，留個聯絡方式就完成預約。</p>
-        <div class="row">
-          <label>姓名 <span class="req">*</span><input class="txt" name="name" autocomplete="name" maxlength="30" required></label>
-          <label>手機 <span class="req">*</span><input class="txt" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="09xxxxxxxx" maxlength="12" required></label>
-        </div>
-        <details class="more" id="bookMore">
-          <summary>想先指定時間、戶型或留話給我們？（選填）</summary>
-          <div class="row">
-            <label>預約日期<input class="txt" name="date" type="date"></label>
-            <label>想看的戶型<select class="txt" name="unit" id="unitSelect"></select></label>
-          </div>
-          <div><span class="small" style="font-weight:500">預約時段</span><div class="slots" id="slotBtns" role="radiogroup" aria-label="預約時段"></div></div>
-          <div class="row">
-            <label>LINE ID<input class="txt" name="line" maxlength="40"></label>
-            <label>同行人數<select class="txt" name="people"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option value="6">6 人以上</option></select></label>
-          </div>
-          <label>想先讓我們知道的事<textarea class="txt" name="note" maxlength="500" placeholder="例如：會帶長輩一起來、想了解貸款"></textarea></label>
-          <label class="check"><input type="checkbox" name="marketing"> <span>我同意收到晨均建設的建案資訊與活動通知。</span></label>
-        </details>
-        <label class="hp" aria-hidden="true">網站<input name="website" tabindex="-1" autocomplete="off"></label>
-        <details class="privacy">
-          <summary>個人資料蒐集告知事項</summary>
-          <p style="margin-top:6px"><span class="js-builder">晨均建設股份有限公司</span>（以下稱本公司）依《個人資料保護法》第 8 條規定，向您告知下列事項：</p>
-          <ol>
-            <li>蒐集目的：不動產銷售與行銷、預約賞屋安排、客戶服務與聯繫、購屋資訊提供（法定特定目的代號：040 行銷、069 契約或類似契約關係之管理、090 消費者及客戶管理與服務）。</li>
-            <li>個人資料類別：姓名、手機、LINE ID、預約時間、購屋需求與問卷回答等您所提供的資料。</li>
-            <li>利用期間：自蒐集日起至蒐集目的消失為止，或依相關法令規定保存之期間。</li>
-            <li>利用地區：中華民國境內。</li>
-            <li>利用對象：本公司及本公司委託之銷售、行銷服務人員。</li>
-            <li>利用方式：以電話、簡訊、電子郵件、通訊軟體等方式聯繫，以及書面、電子方式處理與保存。</li>
-            <li>您可依《個人資料保護法》第 3 條規定，向本公司請求查詢、閱覽、製給複製本、補充或更正、停止蒐集處理利用或刪除您的個人資料<span id="pvContact"></span>。</li>
-            <li>您可自由選擇是否提供個人資料；若未提供必填資料，本公司將無法為您安排預約賞屋。</li>
-          </ol>
-        </details>
-        <label class="check"><input type="checkbox" name="consent"> <span>我已閱讀並同意<span class="js-builder">晨均建設股份有限公司</span>依上述告知事項，蒐集、處理及利用我的個人資料。<span class="req">*</span></span></label>
-        <div id="bookMsg" class="msg" hidden role="status"></div>
-        <button class="btn primary" type="submit" id="bookBtn">送出預約</button>
-        <p class="small muted" id="bookOr" hidden>或 <a id="bookLine" target="_blank" rel="noopener">用 LINE 直接問</a></p>
-      </form>
     </div>
   </section>
 
@@ -748,6 +632,7 @@ details.more[open]>summary{margin-bottom:12px}
     <p style="font-family:var(--serif);font-size:1.1rem;color:#fff">晨均渼山</p>
     <p><span id="ftBuilder"></span><span id="ftLicense"></span></p>
     <p id="ftAddr"></p>
+    <p><a class="ft-cca" href="https://chez-cca.com/" target="_blank" rel="noopener">認識晨均建設 ↗</a></p>
     <p class="small" style="opacity:.75">本網站圖文、價格與數據僅供參考，實際坪數、價格及付款條件以正式買賣契約為準；各項優惠方案晨均建設保有調整、變更、終止及最終解釋之權利。房貸試算為估算，實際條件以金融機構書面報價為準。</p>
   </div>
 </footer>
@@ -790,6 +675,7 @@ document.addEventListener('click', e => {
   const a = e.target.closest && e.target.closest('a[href^="#"]');
   if (!a) return;
   const id = a.getAttribute('href').slice(1), el = id ? document.getElementById(id) : document.body;
+  if (id === 'book' && window.openBook) { e.preventDefault(); window.openBook(); return; }
   if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
 });
 try {
@@ -818,12 +704,7 @@ const SUV_OK = { '平面-大': 1, '平面-標準': 1, '機中': 1, '機下': 1 }
   const sz = String(C.priceNote || '').match(/(\d+(?:\.\d+)?)\s*坪/);
   $('offer').innerHTML = C.price ? '<span class="olab">優惠價</span><i class="br"></i><b>' + (sz ? sz[1] + ' 坪 ' : '') + money(C.price) + ' 萬' + QI + '</b>' +
     (C.promo ? '<i class="br"></i><span class="promo">' + esc(C.promo) + '</span>' : '') : '';
-  $('gainPrice').innerHTML = C.price ? money(C.price) + ' 萬' + QI : '';
-  $('gainNote').textContent = [C.priceNote, C.promo].filter(Boolean).join('｜');
-  $('gainUnit').textContent = C.price ? '現在優惠價：' + PING + ' 坪 ' + money(C.price) + ' 萬起，房屋每坪約 ' + (C.price / PING).toFixed(1) + ' 萬' : '';
   $('cmpPrice').innerHTML = C.price ? '優惠價約 ' + (C.price / PING).toFixed(1) + ' 萬/坪起' : '';
-  const avail = D.parks.filter(p => p.status === '可售');
-  $('parkLine').textContent = avail.length ? '車位：機械 90–110 萬、平面 130–150 萬，平面與機械中下層可停休旅車' + (C.promo ? '（' + C.promo + '）' : '') : '';
 })();
 
 /* ───── 戶型卡片：封面照（點開看空間照）＋平面圖按鈕 ───── */
@@ -863,8 +744,8 @@ function photo(id, w) {
   document.querySelectorAll('.book-btn').forEach(b => b.addEventListener('click', () => {
     const k = b.dataset.k, first = D.units.find(x => x.type === k && x.status === '可售');
     const code = picked && picked.type === k ? picked.code : (first ? first.code : '');
-    const sel = $('unitSelect'); sel.value = code; if (sel.value !== code) sel.value = '';
-    document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+    const name = (D.units.find(x => x.code === code) || {}).name || '';
+    if (code) window.prefillBook(code, name); else window.openBook();
   }));
 })();
 
@@ -1160,19 +1041,20 @@ function renderResult() {
     (model.length ? '<p class="small"><span class="tag brass">實品屋可看</span> 同戶型實品屋 ' + esc(model.join('、')) + '，現場直接感受。</p>' : '') +
     (C.price ? '<p>優惠價 <b>' + money(C.price) + ' 萬起</b>（' + esc(C.priceNote) + '）' + (loan ? '，新青安貸 8 成、30 年，前 3 年月付約 <b>' + money(loan.segs[0].pay) + ' 元</b>' : '') + '</p>' : '') +
     (park ? '<p class="small">' + esc(park) + '</p>' : '') +
-    (C.gift ? '<p class="gift">🎁 ' + esc(C.gift) + '</p>' : '') +
-    '<div class="rbtns"><button type="button" class="btn primary" id="rBookNow">預約看 ' + u.code + '，只要留姓名和手機</button>' + lineBtn + '</div>' +
+    '<div class="rbtns"><button type="button" class="btn primary" id="rBookNow">預約看 ' + u.code + ' ↓</button>' + lineBtn + '</div>' +
     '<div class="rbtns sub"><button type="button" class="btn ghost small" id="rAgain">重新測驗</button></div></div>' +
-    (alts.length ? '<div><p class="small muted" style="margin-bottom:8px">也可以看看</p><div class="alts">' + alts.map(a => '<button type="button" class="card go" data-k="' + a.u.type + '" data-c="' + a.u.code + '"><h3>' + esc(a.u.name) + '｜' + a.u.code + '</h3><p class="small muted">' + esc((a.w[0] || a.u.feature || a.u.light || '')) + '</p><span class="small" style="color:var(--forest);font-weight:700">看這個戶型 ›</span></button>').join('') + '</div></div>' : '') +
+    // 2026/11/2 簡化：結果頁不再列「也可以看看」，預約表直接接在推薦下面（備選戶別仍會記進預約資料）
+    (false && alts.length ? '<div><p class="small muted" style="margin-bottom:8px">也可以看看</p><div class="alts">' + alts.map(a => '<button type="button" class="card go" data-k="' + a.u.type + '" data-c="' + a.u.code + '"><h3>' + esc(a.u.name) + '｜' + a.u.code + '</h3><p class="small muted">' + esc((a.w[0] || a.u.feature || a.u.light || '')) + '</p><span class="small" style="color:var(--forest);font-weight:700">看這個戶型 ›</span></button>').join('') + '</div></div>' : '') +
     '</div>';
-  $('rAgain').addEventListener('click', () => { Object.keys(A).forEach(k => delete A[k]); step = 0; lastResult = null; renderQuiz(); });
+  $('rAgain').addEventListener('click', () => { Object.keys(A).forEach(k => delete A[k]); step = 0; lastResult = null; renderQuiz(); $('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
   goUnit(u.type, u.code, false); // 戶型卡片也標上推薦戶別，從卡片預約會帶同一戶
+  window.prefillBook(u.code, u.name, false); // 問卷做完，姓名手機表單直接出現在結果下面
   const rc = $('rCover'); if (rc) { photo(P.cover, 1000).then(src => { rc.style.backgroundImage = 'url("' + src + '")'; rc.classList.add('loaded'); }).catch(() => {});
     rc.addEventListener('click', () => { if (nG) openLB(P.gallery, u.name + '｜空間照片'); }); }
   const rp = $('rPlan'); if (rp) { photo(P.plan, 800).then(src => { rp.style.backgroundImage = 'url("' + src + '")'; rp.classList.add('loaded'); }).catch(() => {});
     rp.addEventListener('click', () => openLB([P.plan], u.name + '｜平面配置參考圖（家具配置僅供參考，實際以現場為準）', true)); }
   // 推薦結果直接接預約：幫客人選好戶別、捲到預約表，表單只要姓名和手機
-  $('rBookNow').addEventListener('click', () => { trackClick('book_intent', 'result', { unit: u.code }); window.prefillBook && window.prefillBook(u.code, u.name); });
+  $('rBookNow').addEventListener('click', () => { trackClick('book_intent', 'result', { unit: u.code }); window.prefillBook(u.code, u.name); });
   const rl = $('rLine'); if (rl) rl.addEventListener('click', () => trackClick('line_click', 'result', { unit: u.code }));
   box.querySelectorAll('.card.go').forEach(b => b.addEventListener('click', () => goUnit(b.dataset.k, b.dataset.c)));
 }
@@ -1182,6 +1064,8 @@ renderQuiz();
 (function header() {
   if (C.ig) $('hdIg').href = C.ig;
   if (C.lineUrl) $('hdLine').href = C.lineUrl;
+  if (C.map) $('hdMap').href = C.map;
+  $('hdMap').addEventListener('click', () => trackClick('map_click', 'header'));
   $('hdIg').addEventListener('click', () => trackClick('ig_click', 'header'));
   $('hdLine').addEventListener('click', () => trackClick('line_click', 'header'));
   $('ctLine').addEventListener('click', () => trackClick('line_click', 'contact'));
@@ -1192,16 +1076,6 @@ renderQuiz();
   document.addEventListener('click', e => { if (hd.classList.contains('open') && !hd.contains(e.target)) set(false); });
 })();
 
-/* 首頁的第 1 題：點一下就記下答案、跳到問卷第 2 題 */
-(function heroQuiz() {
-  const q = Q[0], box = document.querySelector('#heroQuiz .hq-opts');
-  box.innerHTML = q.opts.map(o => '<button type="button" class="hq-opt" data-v="' + esc(o) + '">' + esc(o) + '</button>').join('');
-  box.addEventListener('click', e => {
-    const b = e.target.closest('.hq-opt'); if (!b) return;
-    trackQuiz('start'); A[q.id] = b.dataset.v; step = 1; renderQuiz();
-    $('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-})();
 
 /* 捲到預約表單時收起手機底部按鈕列，避免蓋住送出鈕 */
 (function () {
@@ -1259,22 +1133,32 @@ renderQuiz();
     btn.disabled = true; btn.textContent = '送出中…';
     const done = r => { btn.disabled = false; btn.textContent = '送出預約';
       ga_('generate_lead', { site_src: SRC || 'direct', unit: payload.unit || '' });
-      show('預約成功！' + (r && r.id ? '預約編號 ' + r.id + '。' : '') + '我們會在 1 個工作天內與你聯繫' + (payload.date ? '確認時間' : '，一起約個方便的時間') + '，期待在渼山見到你。', true);
-      form.reset(); slot = ''; drawSlots(); $('bookPick').hidden = true; if (window.MV_GAME_DONE) window.MV_GAME_DONE(); };
+      $('bookDoneMsg').textContent = (r && r.id ? '預約編號 ' + r.id + '。' : '') + '我們會在 1 個工作天內與你聯繫' + (payload.date ? '確認時間' : '，一起約個方便的時間') + '，期待在渼山見到你。';
+      msg.hidden = true; form.reset(); slot = ''; drawSlots(); $('bookPick').hidden = true;
+      form.hidden = true; $('bookDone').hidden = false; $('bookDone').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (window.MV_GAME_DONE) window.MV_GAME_DONE(); };
     const fail = err => { btn.disabled = false; btn.textContent = '送出預約'; show((err && err.message) || '送出失敗，請稍後再試，或直接來電。'); };
     if (window.google && google.script && google.script.run) google.script.run.withSuccessHandler(done).withFailureHandler(fail).submitBooking(payload);
     else { console.log('本機預覽：預約資料', payload); setTimeout(() => done({ id: 'PREVIEW' }), 400); }
   });
 
   // 賞屋禮（試算表「設定」的「賞屋禮」）、預約區的 LINE 替代入口
-  if (C.gift) { $('giftLine').hidden = false; $('giftLine').textContent = '🎁 ' + C.gift; }
+  if (C.gift) { $('giftLine').hidden = false; $('giftLine').textContent = '🎁 ' + C.gift; $('doneGift').hidden = false; $('doneGift').textContent = '🎁 ' + C.gift + '，賞屋當天現場領取。'; }
   if (C.lineUrl) { $('bookOr').hidden = false; $('bookLine').href = C.lineUrl; $('bookLine').addEventListener('click', () => trackClick('line_click', 'book')); }
   // 推薦結果頁的「預約看 2F-C」：幫客人選好戶別、捲到表單、游標停在姓名
-  window.prefillBook = (code, name) => {
+  // 預約表平常收著：做完問卷、或點任何「預約賞屋」才打開（已預約成功就顯示接待中心資訊）
+  window.openBook = scroll => {
+    $('book').hidden = false; $('skipQ').hidden = true;
+    if (scroll === false) return;
+    const tgt = form.hidden ? $('bookDone') : form;
+    tgt.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!form.hidden) setTimeout(() => { try { form.elements.name.focus({ preventScroll: true }); } catch (e) {} }, 600);
+  };
+  window.prefillBook = (code, name, scroll) => {
     const sel = $('unitSelect'); if ([...sel.options].some(o => o.value === code)) sel.value = code;
-    $('bookPickUnit').textContent = code + ' ' + name; $('bookPick').hidden = false;
-    $('book').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(() => { try { form.elements.name.focus({ preventScroll: true }); } catch (e) {} }, 600);
+    $('bookPickUnit').textContent = code + ' ' + name;
+    $('bookTitle').textContent = '預約看 ' + code + '，留下姓名和手機就完成';
+    window.openBook(scroll);
   };
 })();
 /* ───── 闖關測試版「回家之路」：只有 window.MV_GAME 為 true（GitHub 的 game.html）才啟動，正式網站不受影響 ───── */
