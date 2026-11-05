@@ -673,7 +673,18 @@ try {
 const C = D.cfg;
 // 文宣 QR Code 帶的來源（?src=poster 等）。沒帶標記但是從 reurl 短網址或 Facebook 轉過來的，記成「FB（縮網址）」（投放中的貼文用的是 reurl，沒辦法改網址）
 const SRC = D.src || (/reurl\.cc|facebook\.com|fb\.com|fb\.me|instagram\.com/i.test(document.referrer || '') ? 'fbref' : '');
-if (window.google && google.script && google.script.run) google.script.run.withFailureHandler(() => {}).logVisit(SRC); // 每次開頁都記，沒來源＝直接進站
+// 造訪診斷：載入時頁面是否看得見（prerender／hidden＝預先載入或背景載入，不是人在看）、裝置、是否在 FB／IG／LINE 內建瀏覽器、從哪個網域轉來
+const META = (function () {
+  const ua = navigator.userAgent || '';
+  return { vis: document.prerendering ? 'prerender' : document.visibilityState,
+    dev: /iPhone|iPad|iPod/.test(ua) ? 'iPhone' : /Android/.test(ua) ? 'Android' : '電腦',
+    app: /FBAN|FBAV|FB_IAB|FBIOS|Instagram|Line\//.test(ua) ? '是' : '否',
+    ref: (document.referrer || '').replace(/^https?:\/\//, '').split('/')[0].slice(0, 40) };
+})();
+if (window.google && google.script && google.script.run) google.script.run.withFailureHandler(() => {}).logVisit(SRC, META); // 每次開頁都記，沒來源＝直接進站
+// 停留 10 秒（頁面在前景的秒數）再記一筆到「停留紀錄」，用來分辨真人和預先載入
+(function () { let t = 0; const id = setInterval(() => { if (document.visibilityState !== 'visible') return; t++;
+  if (t >= 10) { clearInterval(id); if (window.google && google.script && google.script.run) google.script.run.withFailureHandler(() => {}).logStay(SRC, META); } }, 1000); })();
 const $ = id => document.getElementById(id);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const money = n => Number(n).toLocaleString('zh-TW');
@@ -1254,10 +1265,11 @@ const API = 'https://script.google.com/macros/s/AKfycbypHgraua4d7UmsFQJSLcsC93Zc
       withSuccessHandler: f => runner(f, fail),
       withFailureHandler: f => runner(ok, f),
       submitBooking: data => call({ action: 'book', data: data }, ok, fail),
-      logVisit: src => { // 背景換新資料而重新整理的那一次不重複記造訪
+      logVisit: (src, meta) => { // 背景換新資料而重新整理的那一次不重複記造訪
         try { if (sessionStorage.getItem('mv_reload')) { sessionStorage.removeItem('mv_reload'); return; } } catch (e) {}
-        call({ action: 'visit', src: src }, ok, fail);
+        call({ action: 'visit', src: src, meta: meta || null }, ok, fail);
       },
+      logStay: (src, meta) => call({ action: 'stay', src: src, meta: meta || null }, ok, fail),
       logQuiz: (kind, src, extra) => call({ action: 'quiz', kind: kind, src: src, extra: extra || null }, ok, fail)
     };
   }
