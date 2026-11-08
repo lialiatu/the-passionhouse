@@ -131,7 +131,12 @@ h2.one.b12{font-size:clamp(1.3rem,6.7vw,2.2rem)}
 
 /* 8 頁尾品牌卡 */
 .endcard{text-align:center}
-.endcard .lines{margin:14px 0 10px;padding:4px 0;font-family:var(--serif);font-weight:900;font-size:1.3rem;line-height:1.6}
+.endcard .lines{margin:14px 0 10px;padding:4px 0;font-family:var(--serif);font-weight:900;font-size:clamp(1rem,4.4vw,1.3rem);line-height:1.6}
+.nw{white-space:nowrap}
+.maplink{display:inline-block;padding:10px 18px;border-radius:999px;border:1.5px solid var(--red);color:var(--red);font-weight:700;text-decoration:none}
+.stamp img.lg{display:block;width:74%;height:auto;margin:4px auto 0}
+.stamp img.ps{display:block;width:46%;height:auto;margin:12px auto 10px}
+.pop>.hlogo{position:absolute;top:20px;left:20px;width:150px;height:auto;z-index:2}
 .endcard .lines em{font-style:normal;color:var(--red)}
 .endcard .who{font-weight:700;font-size:.95rem;margin:10px 0 18px}
 .endcard .addr{font-weight:900;font-size:1.15rem}
@@ -183,6 +188,7 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
 <!-- 1 首頁：價格就是鉤子 -->
 <section class="pop" id="top">
   <img class="bg" src="https://lh3.googleusercontent.com/d/1OwZqgeVaP8i_jYqSa8QKXEkkmuAQ50dg=w1200" alt="晨均渼山 窗外綠坡實景" fetchpriority="high">
+  <img class="hlogo" src="mcombo_white.png" alt="晨均渼山 THE PASSION HOUSE">
   <span class="chip">小港大坪頂｜一梯兩戶綠景住宅</span>
   <p class="olab" style="font-weight:700;letter-spacing:.12em;opacity:.9">優惠價</p>
   <div class="price"><span class="sz" id="pSize">38 坪</span><span class="num" id="pNum">988</span> 萬<span class="qi">起</span></div>
@@ -193,7 +199,7 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
 
 <!-- 2 品牌章＋一句話定位 -->
 <section class="p">
-  <div class="stamp"><div><b>晨均渼山</b><i>THE PASSION HOUSE</i><span>16 戶社區型華廈</span></div></div>
+  <div class="stamp"><div><img class="lg" src="mlogo_red.png" alt="晨均渼山"><img class="ps" src="mpassion_red.png" alt="THE PASSION HOUSE"><span>16 戶社區型華廈</span></div></div>
   <p class="slash">＼ 成屋現場看・看得到才安心 ／</p>
   <p class="big">37–38 坪・<em>2–3</em> 房</p>
   <p class="pipe">大坪頂特定區｜一梯兩戶｜窗外綠坡</p>
@@ -276,14 +282,15 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
   </div>
   <p class="center" style="font-weight:900;font-size:1.15rem;margin-top:26px">10 分鐘到機場與捷運</p>
   <p class="center small muted">高雄國際機場約 10 分、捷運小港站約 11 分；<br>回到家，窗外就是綠。</p>
-  <div class="map"><iframe src="https://www.google.com/maps?q=22.54508,120.38376&z=14&output=embed" loading="lazy" title="晨均渼山 位置地圖" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  <div class="map"><iframe src="https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s22.54508,120.38376!6i15!3m1!1szh-TW!5m1!1szh-TW" loading="lazy" title="晨均渼山 位置地圖" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  <p class="center" style="margin-top:12px"><a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=22.54508,120.38376" target="_blank" rel="noopener">📍 用 Google 地圖導航到接待中心</a></p>
   <p class="note" style="margin-top:6px">開車時間為路線規劃估算，未計塞車與紅綠燈。</p>
 </section>
 
 <!-- 8 頁尾品牌卡 -->
 <section class="p paper endcard">
-  <div class="stamp plain"><div><b>晨均渼山</b><i>THE PASSION HOUSE</i><span>小港大坪頂</span></div></div>
-  <div class="lines">一梯兩戶｜3.3 米樓板高度｜永久綠意<br>38 坪｜<em>988 萬起</em></div>
+  <div class="stamp plain"><div><img class="lg" src="mlogo_red.png" alt="晨均渼山"><img class="ps" src="mpassion_red.png" alt="THE PASSION HOUSE"><span>小港大坪頂</span></div></div>
+  <div class="lines"><span class="nw">一梯兩戶</span>｜<span class="nw">3.3 米樓板高度</span>｜<span class="nw">永久綠意</span><br>38 坪｜<em>988 萬起</em></div>
   <p class="who">投資興建：晨均建設 ｜ 建築設計：工二建築</p>
   <p class="addr">接待中心｜<span id="eAddr">高坪八路 32 號</span></p>
   <a class="tel" id="eTel" href="tel:072165218">07.216.5218</a>
