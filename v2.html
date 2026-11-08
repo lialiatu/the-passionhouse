@@ -34,6 +34,8 @@ h2 em{font-style:normal;color:var(--red)}
 .red h2 em{color:#FFD9A0}
 h2.one{white-space:nowrap;font-size:clamp(1.25rem,5.9vw,2rem)}
 h2.one.big1{font-size:clamp(1.6rem,8.1vw,2.5rem)}
+h2.one.b11{font-size:clamp(1.4rem,7.3vw,2.3rem)}
+h2.one.b12{font-size:clamp(1.3rem,6.7vw,2.2rem)}
 .rule{height:1px;background:currentColor;opacity:.25;margin:14px 0 16px}
 .small{font-size:.86rem}
 .muted{color:var(--muted)}
@@ -56,7 +58,7 @@ h2.one.big1{font-size:clamp(1.6rem,8.1vw,2.5rem)}
 
 /* 2 品牌章 */
 .stamp{width:min(250px,72%);margin:0 auto;border:2px solid var(--ink);border-radius:18px;padding:8px}
-.stamp.plain,.stamp.plain>div{border:0;padding-left:0;padding-right:0}
+.stamp.plain,.stamp.plain>div,.stamp.plain i{border:0;padding-left:0;padding-right:0}
 .stamp>div{border:1px solid var(--ink);border-radius:12px;padding:18px 10px 14px;text-align:center}
 .stamp b{display:block;font-family:var(--serif);font-weight:900;font-size:2.3rem;letter-spacing:.12em;line-height:1.2}
 .stamp i{display:block;font-style:normal;font-size:.62rem;letter-spacing:.32em;margin:8px 0 6px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:4px 0}
@@ -126,7 +128,7 @@ h2.one.big1{font-size:clamp(1.6rem,8.1vw,2.5rem)}
 
 /* 8 頁尾品牌卡 */
 .endcard{text-align:center}
-.endcard .lines{margin:22px 0 10px;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);padding:12px 0;font-family:var(--serif);font-weight:900;font-size:1.3rem;line-height:1.6}
+.endcard .lines{margin:14px 0 10px;padding:4px 0;font-family:var(--serif);font-weight:900;font-size:1.3rem;line-height:1.6}
 .endcard .lines em{font-style:normal;color:var(--red)}
 .endcard .who{font-weight:700;font-size:.95rem;margin:10px 0 18px}
 .endcard .addr{font-weight:900;font-size:1.15rem}
@@ -210,7 +212,7 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
 <!-- 4 只有渼山有（圓章） -->
 <section class="p paper">
   <p class="small muted">最舒服生活的家，從這六件事開始</p>
-  <h2>只有渼山有的<br><em>六個理由</em></h2>
+  <h2 class="one b11">只有渼山有的・<em>六個理由</em></h2>
   <div class="rule"></div>
   <div class="circles">
     <div class="cir"><b>永久<br>綠意</b><span>窗外就是綠坡</span></div>
@@ -286,7 +288,7 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
 
 <!-- 9 預約表單 -->
 <section class="p" id="form">
-  <h2>預約賞屋<br><em>喝杯茶，好好聊</em></h2>
+  <h2 class="one b12">預約賞屋・<em>喝杯茶，好好聊</em></h2>
   <div class="formcard">
     <form id="bk" novalidate>
       <p class="gift" id="gift">🎁 本月預約賞屋，完成賞屋送價值 $1,000 伴手禮</p>
