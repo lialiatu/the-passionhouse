@@ -90,9 +90,12 @@ h2.one.b12{font-size:clamp(1.3rem,6.7vw,2.2rem)}
 
 /* 5 好坪規劃 */
 .units{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
-.unit{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line);text-align:left;font:inherit;color:inherit;cursor:pointer;padding:0}
-.unit .ph{border-radius:0;aspect-ratio:4/3;position:relative}
-.unit .ph img{object-position:50% 12%}
+.unit{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line);text-align:left;font:inherit;color:inherit;cursor:pointer;padding:0;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch}
+.unit .ph{border-radius:0;aspect-ratio:1/1;position:relative;overflow:hidden}
+/* 照片整張縮放放進框內（直式、橫式都看得完整），空白處用同一張照片模糊鋪底 */
+.unit .ph img.fit{position:relative;object-fit:contain;z-index:1}
+.unit .ph img.blur{position:absolute;inset:0;object-fit:cover;filter:blur(14px) brightness(.95);transform:scale(1.15)}
+.unit .ph .ai{z-index:2}
 .unit .ph .ai{position:absolute;right:6px;top:6px;background:rgba(0,0,0,.55);color:#fff;font-size:.6rem;border-radius:4px;padding:1px 5px}
 .unit div.t{padding:10px 12px 12px}
 .unit b{font-family:var(--serif);font-size:1.05rem;display:block}
@@ -357,7 +360,7 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
       .concat(p.plan ? [{ id: p.plan, w: 1400, plan: true, cap: u.name + '｜平面圖・權狀 ' + u.size + ' 坪（家具配置僅供參考，實際以現場為準）' }] : []); };
   function drawUnits() {
     $('units').innerHTML = UNITS.map((u, i) => { const p = PH[u.k] || {};
-      return '<button type="button" class="unit" data-i="' + i + '"><div class="ph">' + (p.cover ? '<img src="' + img(p.cover, 600) + '" alt="' + u.name + '" loading="lazy">' : '') + (p.coverAi ? '<span class="ai">AI 示意</span>' : '') +
+      return '<button type="button" class="unit" data-i="' + i + '"><div class="ph">' + (p.cover ? '<img class="blur" src="' + img(p.cover, 600) + '" alt="" aria-hidden="true" loading="lazy"><img class="fit" src="' + img(p.cover, 600) + '" alt="' + u.name + '" loading="lazy">' : '') + (p.coverAi ? '<span class="ai">AI 示意</span>' : '') +
         '</div><div class="t"><b>' + u.name + '</b><span>權狀 ' + u.size + ' 坪・室內 ' + u.inner + ' 坪</span><span>' + u.line + '</span><span class="more">' + (p.coverAi ? 'AI 示意＋平面圖' : '實景 ' + ((p.gallery || []).length || 1) + ' 張＋平面圖') + ' ›</span></div></button>'; }).join('');
   }
   drawUnits();
