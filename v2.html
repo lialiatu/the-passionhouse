@@ -87,6 +87,7 @@ h2 em{font-style:normal;color:var(--red)}
 .units{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
 .unit{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line);text-align:left;font:inherit;color:inherit;cursor:pointer;padding:0}
 .unit .ph{border-radius:0;aspect-ratio:4/3;position:relative}
+.unit .ph img{object-position:50% 12%}
 .unit .ph .ai{position:absolute;right:6px;top:6px;background:rgba(0,0,0,.55);color:#fff;font-size:.6rem;border-radius:4px;padding:1px 5px}
 .unit div.t{padding:10px 12px 12px}
 .unit b{font-family:var(--serif);font-size:1.05rem;display:block}
@@ -100,19 +101,18 @@ h2 em{font-style:normal;color:var(--red)}
 .mats{display:grid;grid-template-columns:1fr 1fr;gap:22px 10px;margin-top:24px}
 .mat h3{font-family:var(--serif);font-weight:900;font-size:1.25rem;text-align:center;margin-bottom:10px}
 .mat h3 em{font-style:normal;color:var(--red)}
-.dots{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
-.dot{width:72px;text-align:center}
-.dot i{display:grid;place-items:center;width:62px;height:62px;margin:0 auto;border-radius:50%;background:var(--ink);color:#fff;font-style:normal;font-weight:900;font-size:.7rem;line-height:1.15;padding:4px;letter-spacing:.02em}
+.dots{display:flex;justify-content:center;flex-wrap:nowrap;gap:6px}
+.dot{width:70px;text-align:center}
+.dot i{display:grid;place-items:center;width:66px;height:66px;margin:0 auto;border-radius:50%;background:var(--ink);color:#fff;font-style:normal;font-weight:900;font-size:.88rem;line-height:1.15;padding:4px;letter-spacing:.02em}
 .dot span{display:block;font-size:.66rem;line-height:1.3;margin-top:5px;color:var(--ink)}
 .mats .wide{grid-column:1/-1}
 
 /* 7 好地段 */
-.ring{position:relative;width:min(330px,100%);aspect-ratio:1/.82;margin:18px auto 6px}
-.ring .c{position:absolute;width:82px;height:82px;border-radius:50%;background:#fff;display:grid;place-items:center;text-align:center;font-weight:900;font-family:var(--serif);font-size:1.05rem;line-height:1.2;box-shadow:0 0 0 6px rgba(184,137,63,.14),0 6px 16px rgba(0,0,0,.08)}
-.ring .c small{display:block;font-family:var(--sans);font-weight:500;font-size:.62rem;color:var(--muted)}
-.ring .mid{left:50%;top:52%;transform:translate(-50%,-50%);width:112px;height:112px;background:var(--red);color:#fff;font-size:1.25rem}
-.ring .mid small{color:#FFD9A0;font-size:.7rem}
-.ring .c1{left:50%;top:0;transform:translateX(-50%)}.ring .c2{left:2%;top:22%}.ring .c3{right:2%;top:22%}.ring .c4{left:9%;bottom:0}.ring .c5{right:9%;bottom:0}
+.ring{position:relative;width:min(340px,100%);aspect-ratio:1/.9;margin:18px auto 6px}
+.ring .c{position:absolute;width:98px;height:98px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:900;font-family:var(--serif);font-size:.9rem;line-height:1.2;padding:4px;box-shadow:0 0 0 6px rgba(184,137,63,.14),0 6px 16px rgba(0,0,0,.08)}
+.ring .c small{display:block;font-family:var(--sans);font-weight:700;font-size:.68rem;color:var(--red);margin-top:1px}
+.ring .mid{left:50%;top:50%;transform:translate(-50%,-50%);width:108px;height:108px;background:var(--red);color:#fff;font-size:1.35rem;line-height:1.25}
+.ring .c1{left:50%;top:0;transform:translateX(-50%)}.ring .c2{left:0;top:24%}.ring .c3{right:0;top:24%}.ring .c4{left:7%;bottom:0}.ring .c5{right:7%;bottom:0}
 .hand{text-align:center;font-family:var(--serif);font-weight:900;font-size:1.7rem;color:var(--red);margin:10px 0 4px}
 .lifeph{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
 .lifeph figure{position:relative}
@@ -214,11 +214,11 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
     <div class="cir"><b>永久<br>綠意</b><span>窗外就是綠坡</span></div>
     <div class="cir"><b>3.3 米<br>樓高</b><span>他案 3–3.15 米</span></div>
     <div class="cir"><b>公設<br>27.3%</b><span>他案 35% 起</span></div>
-    <div class="cir"><b>iF 得獎<br>建築師</b><span>工二建築</span></div>
+    <div class="cir"><b>工二<br>建築</b><span>iF 得獎建築師</span></div>
     <div class="cir"><b>一梯<br>兩戶</b><span>全社區 16 戶</span></div>
-    <div class="cir"><b>全齡<br>住宅</b><span>無障礙電梯</span></div>
+    <div class="cir"><b>全齡<br>住宅</b><span>崇友 10 人座電梯</span></div>
   </div>
-  <p class="urgent">全案只有 16 戶<small>錯過這次，不一定還有下次</small></p>
+  <p class="urgent">單純均質 16 戶<small>綠意、樓高、坪效、好鄰居，一次擁有</small></p>
 </section>
 
 <!-- 5 好坪規劃 -->
@@ -237,13 +237,13 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
 
 <!-- 6 用心建材（對應「五心允諾」） -->
 <section class="p paper">
-  <h2>四<em>心</em>建材</h2>
+  <h2>建材規劃<br><em>從心出發</em></h2>
   <p class="small muted" style="margin-top:6px">好建材、不浮誇，真功夫蓋好房。</p>
   <div class="mats">
     <div class="mat"><h3>安靜<em>心</em></h3><div class="dots"><div class="dot"><i>勝群<br>鋁窗</i><span>氣密第一級</span></div><div class="dot"><i>聖戈班</i><span>隔音墊<br>隔 21 分貝</span></div></div></div>
     <div class="mat"><h3>健康<em>心</em></h3><div class="dots"><div class="dot"><i>BWT</i><span>生飲淨水</span></div><div class="dot"><i>泥礦漆</i><span>外牆抗菌<br>零甲醛</span></div></div></div>
     <div class="mat"><h3>好用<em>心</em></h3><div class="dots"><div class="dot"><i>SVAGO</i><span>洗碗機</span></div><div class="dot"><i>智能<br>宅配櫃</i><span>24 小時收件</span></div></div></div>
-    <div class="mat"><h3>安全<em>心</em></h3><div class="dots"><div class="dot"><i>中保<br>無限＋</i><span>24 小時監控</span></div><div class="dot"><i>TAF</i><span>混凝土鋼筋<br>認證檢驗</span></div></div></div>
+    <div class="mat"><h3>安全<em>心</em></h3><div class="dots"><div class="dot"><i>中保<br>無限＋</i><span>24 小時監控</span></div><div class="dot"><i>國產<br>實業</i><span>混凝土<br>TAF 認證檢驗</span></div></div></div>
   </div>
   <p class="note center" style="margin-top:16px">隔音數值為材料規格，實際效果依現場條件而異。</p>
 </section>
@@ -252,12 +252,12 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
 <section class="p">
   <h2 class="center">五好<em>地段</em></h2>
   <div class="ring">
-    <div class="c c1">生活<small>超商步行可達</small></div>
-    <div class="c c2">校園<small>國小 5 分</small></div>
-    <div class="c c3">醫療<small>小港醫院 8 分</small></div>
-    <div class="c mid">晨均渼山<small>大坪頂特定區</small></div>
-    <div class="c c4">綠地<small>植物園 5 分</small></div>
-    <div class="c c5">交通<small>機場 10 分</small></div>
+    <div class="c c1">連鎖超商<small>步行可達</small></div>
+    <div class="c c2">高雄<br>餐旅大學<small>開車 8 分</small></div>
+    <div class="c c3">小港醫院<small>開車 8 分</small></div>
+    <div class="c mid">晨均<br>渼山</div>
+    <div class="c c4">大坪頂<br>熱帶植物園<small>開車 5 分</small></div>
+    <div class="c c5">小港<br>國際機場<small>開車 10 分</small></div>
   </div>
   <p class="hand">一次到位！</p>
   <p class="center" style="font-weight:900;font-size:1.15rem">生活超便利，日常好輕鬆</p>
@@ -275,7 +275,7 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
 <!-- 8 頁尾品牌卡 -->
 <section class="p paper endcard">
   <div class="stamp"><div><b>晨均渼山</b><i>THE PASSION HOUSE</i><span>小港大坪頂</span></div></div>
-  <div class="lines">一梯兩戶｜3.3 米樓高｜永久綠意<br>37–38 坪｜<em>988 萬起</em></div>
+  <div class="lines">一梯兩戶｜3.3 米樓高｜永久綠意<br>38 坪｜<em>988 萬起</em></div>
   <p class="who">投資興建：晨均建設 ｜ 建築設計：工二建築</p>
   <p class="addr">接待中心｜<span id="eAddr">高坪八路 32 號</span></p>
   <a class="tel" id="eTel" href="tel:072165218">07.216.5218</a>
@@ -290,7 +290,6 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
       <p class="gift" id="gift">🎁 本月預約賞屋，完成賞屋送價值 $1,000 伴手禮</p>
       <label class="f">姓名 <span class="req">*</span><input name="name" autocomplete="name" maxlength="30" required></label>
       <label class="f">手機 <span class="req">*</span><input name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="09xxxxxxxx" maxlength="12" required></label>
-      <label class="f">方便聯絡的時間<select name="when"><option value="">都可以</option><option>平日白天</option><option>平日晚上</option><option>假日</option></select></label>
       <label class="hp" aria-hidden="true">網站<input name="website" tabindex="-1" autocomplete="off"></label>
       <label class="chk"><input type="checkbox" name="consent"><span>我同意晨均建設股份有限公司依下方告知事項，蒐集、處理及利用我的個人資料。<span class="req">*</span></span></label>
       <details class="pv"><summary>個人資料蒐集告知事項</summary><ol>
@@ -394,7 +393,7 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
     if (!/^09\d{8}$/.test(phone)) return err('請填寫正確的手機號碼（09 開頭共 10 碼）');
     if (!f.elements.consent.checked) return err('請勾選同意個人資料蒐集告知事項');
     msg.hidden = true; go.disabled = true; go.textContent = '送出中…';
-    const data = { name: v('name'), phone, note: v('when') ? '方便聯絡：' + v('when') : '', people: 2, consent: true, marketing: false, website: v('website'), src: SRC };
+    const data = { name: v('name'), phone, note: '', people: 2, consent: true, marketing: false, website: v('website'), src: SRC };
     post({ action: 'book', data }).then(r => {
       if (r && r.ok === false) throw new Error(r.error || '送出失敗');
       ga('generate_lead', {});
