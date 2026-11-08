@@ -165,7 +165,8 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
 /* 燈箱 */
 .lb{position:fixed;inset:0;z-index:80;background:rgba(20,4,8,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
 .lb[hidden]{display:none}
-.lb img{max-height:78vh;border-radius:8px;background:#fff}
+.lb img{max-height:74vh;max-width:100%;border-radius:8px;object-fit:contain}
+.lb img.plan{background:#fff}
 .lb p{color:#fff;font-size:.85rem;margin-top:10px;text-align:center}
 .lb button{position:absolute;top:12px;right:14px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:1.6rem;cursor:pointer}
 .lb .nav{position:static;margin-top:12px;display:flex;gap:12px}
@@ -349,21 +350,30 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
     { k: 'B', name: '日光之間', size: 37.17, inner: 26.2, line: '三面大採光，可隔 3 房' },
     { k: 'C', name: '返璞歸真', size: 37.52, inner: 27, line: '配 ROCA 鋼板浴缸' },
     { k: 'D', name: '旅行的記憶', size: 37.45, inner: 26.7, line: '雙面採光，格局方正' }];
-  let PH = { A: { cover: '1M9Gra23blOBVemJSIT82STn_0FIB7Kr1', plan: '1V8-q7zJCbBvUZKPkZnmd0IvOfgk5QIKZ' }, B: { cover: '1gAFz8BuZ8IREL2oIKhxKbx4HR4LcWX1v', plan: '1VqqBYSl3loProunjkwWX1VByGuIk8bSn', coverAi: true },
-    C: { cover: '127cOCXwRG3jyKpL9rch9xqKTPiI_Iw17', plan: '1lSOUj73tFvIsqU4AUk66beD8YN1PxFov' }, D: { cover: '1tAaz3NlvKEJ_wAkZZHZUtJfwZKrlosoa', plan: '1JBFo1YuvA2ToCo3nAXds3H5miFKWOZKj' } };
+  let PH = {"A": {"cover": "1M9Gra23blOBVemJSIT82STn_0FIB7Kr1", "gallery": ["146LNaDn_tOlyR0g3lnhOye3tw5f8SL9L", "1pljq6hdzxkwFl206nje3ucyASAzyhPwx", "13l7JDzO1WPwOIOSzYfhzQIhhtB5IEYrw"], "plan": "1V8-q7zJCbBvUZKPkZnmd0IvOfgk5QIKZ"}, "B": {"cover": "1gAFz8BuZ8IREL2oIKhxKbx4HR4LcWX1v", "gallery": ["1gAFz8BuZ8IREL2oIKhxKbx4HR4LcWX1v"], "plan": "1VqqBYSl3loProunjkwWX1VByGuIk8bSn", "coverAi": true}, "C": {"cover": "127cOCXwRG3jyKpL9rch9xqKTPiI_Iw17", "gallery": ["1dp_V2JLZuVb0LkJDgGF3MQcYE71xgJOg", "1so4Cx4wJFG28Aq45eUXVM3Te5I5KkioY", "1ImrkOYEq29gH7WdWRf_QriRLBuf3Yy0O"], "plan": "1lSOUj73tFvIsqU4AUk66beD8YN1PxFov"}, "D": {"cover": "1tAaz3NlvKEJ_wAkZZHZUtJfwZKrlosoa", "gallery": ["1Gz9rLhDG0dufJ-tTb8KF4omP8AHlD__U", "1MqwBQyKD3rF9uTHu07vNj1QNI7kwyfTL", "1Z0cPDUiILffgdD_JD7rqc-IcGtDl_qBr"], "plan": "1JBFo1YuvA2ToCo3nAXds3H5miFKWOZKj"}};
+  // 每個戶型的燈箱內容：先看實景照（gallery），最後一張平面圖
+  const slides = u => { const p = PH[u.k] || {}, g = (p.gallery && p.gallery.length ? p.gallery : (p.cover ? [p.cover] : []));
+    return g.map((id, i) => ({ id, w: 1600, cap: u.name + (p.coverAi ? '｜AI 示意圖' : '｜實景照') }))
+      .concat(p.plan ? [{ id: p.plan, w: 1400, plan: true, cap: u.name + '｜平面圖・權狀 ' + u.size + ' 坪（家具配置僅供參考，實際以現場為準）' }] : []); };
   function drawUnits() {
     $('units').innerHTML = UNITS.map((u, i) => { const p = PH[u.k] || {};
       return '<button type="button" class="unit" data-i="' + i + '"><div class="ph">' + (p.cover ? '<img src="' + img(p.cover, 600) + '" alt="' + u.name + '" loading="lazy">' : '') + (p.coverAi ? '<span class="ai">AI 示意</span>' : '') +
-        '</div><div class="t"><b>' + u.name + '</b><span>權狀 ' + u.size + ' 坪・室內 ' + u.inner + ' 坪</span><span>' + u.line + '</span><span class="more">看平面圖 ›</span></div></button>'; }).join('');
+        '</div><div class="t"><b>' + u.name + '</b><span>權狀 ' + u.size + ' 坪・室內 ' + u.inner + ' 坪</span><span>' + u.line + '</span><span class="more">' + (p.coverAi ? 'AI 示意＋平面圖' : '實景 ' + ((p.gallery || []).length || 1) + ' 張＋平面圖') + ' ›</span></div></button>'; }).join('');
   }
   drawUnits();
   // 平面圖燈箱
-  let li = 0;
-  const show = i => { li = (i + UNITS.length) % UNITS.length; const u = UNITS[li], p = PH[u.k] || {};
-    $('lbImg').src = img(p.plan, 1400); $('lbImg').alt = u.name + ' 平面圖'; $('lbCap').textContent = u.name + '｜權狀 ' + u.size + ' 坪（家具配置僅供參考，實際以現場為準）'; $('lb').hidden = false; };
-  $('units').addEventListener('click', e => { const b = e.target.closest('.unit'); if (b) { show(+b.dataset.i); ga('plan_view', { unit: UNITS[li].k }); } });
+  let ui = 0, si = 0, SL = [];
+  const show = () => { const x = SL[si]; $('lbImg').src = img(x.id, x.w); $('lbImg').alt = x.cap; $('lbImg').classList.toggle('plan', !!x.plan);
+    $('lbCap').textContent = x.cap + (SL.length > 1 ? '　（' + (si + 1) + ' / ' + SL.length + '）' : ''); $('lb').hidden = false; };
+  const open = i => { ui = i; SL = slides(UNITS[i]); si = 0; if (SL.length) show(); };
+  const step = n => { si = (si + n + SL.length) % SL.length; show(); };
+  $('units').addEventListener('click', e => { const b = e.target.closest('.unit'); if (b) { open(+b.dataset.i); ga('plan_view', { unit: UNITS[ui].k }); } });
+  // 手機左右滑換張
+  let tx = null; $('lb').addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+  $('lb').addEventListener('touchend', e => { if (tx == null) return; const dx = e.changedTouches[0].clientX - tx; tx = null; if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1); });
   $('lbX').onclick = () => { $('lb').hidden = true; };
-  $('lbP').onclick = () => show(li - 1); $('lbN').onclick = () => show(li + 1);
+  $('lbP').onclick = () => step(-1); $('lbN').onclick = () => step(1);
+  document.addEventListener('keydown', e => { if ($('lb').hidden) return; if (e.key === 'ArrowLeft') step(-1); if (e.key === 'ArrowRight') step(1); });
   $('lb').addEventListener('click', e => { if (e.target === $('lb')) $('lb').hidden = true; });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') $('lb').hidden = true; });
 
