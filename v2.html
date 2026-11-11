@@ -131,7 +131,11 @@ h2.one.b12{font-size:clamp(1.3rem,6.7vw,2.2rem)}
 .ring .c{position:absolute;width:98px;height:98px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:900;font-family:var(--serif);font-size:.9rem;line-height:1.2;padding:4px;box-shadow:0 0 0 6px rgba(184,137,63,.14),0 6px 16px rgba(0,0,0,.08)}
 .ring .c small{display:block;font-family:var(--sans);font-weight:700;font-size:.68rem;color:var(--red);margin-top:1px}
 .ring .mid{left:50%;top:52%;transform:translate(-50%,-50%);width:136px;height:136px;background:var(--red);color:#fff;font-size:1.8rem;line-height:1.25}
-.ring .c1{left:50%;top:0;transform:translateX(-50%)}.ring .c2{left:0;top:24%}.ring .c3{right:0;top:24%}.ring .c4{left:7%;bottom:0}.ring .c5{right:7%;bottom:0}
+/* 五個圓等距排成正五角形，跟中間的圓間距一致；尺寸跟著螢幕寬度等比縮放 */
+.ring{--W:min(380px,calc(100vw - 16px));width:var(--W);height:calc(var(--W) * .99);aspect-ratio:auto;left:50%;transform:translateX(-50%);margin:18px 0 6px}
+.ring .c{width:calc(var(--W) * .25);height:calc(var(--W) * .25);transform:translate(-50%,-50%)}
+.ring .mid{left:50%;top:calc(var(--W) * .53);width:calc(var(--W) * .356);height:calc(var(--W) * .356)}
+.ring .c1{left:50%;top:calc(var(--W) * .145)}.ring .c2{left:13.39%;top:calc(var(--W) * .411)}.ring .c3{left:86.61%;top:calc(var(--W) * .411)}.ring .c4{left:27.37%;top:calc(var(--W) * .8415)}.ring .c5{left:72.63%;top:calc(var(--W) * .8415)}
 .hand{text-align:center;font-family:var(--serif);font-weight:900;font-size:1.7rem;color:var(--red);margin:10px 0 4px}
 .lifeph{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
 .lifeph figure{position:relative}
