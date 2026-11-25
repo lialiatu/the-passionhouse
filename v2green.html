@@ -389,7 +389,7 @@ details.pv ol{padding-left:1.3em;margin-top:6px}
   function drawUnits() {
     $('units').innerHTML = UNITS.map((u, i) => { const p = PH[u.k] || {};
       return '<button type="button" class="unit" data-i="' + i + '"><div class="ph">' + (p.cover ? '<img class="blur" src="' + img(p.cover, 600) + '" alt="" aria-hidden="true" loading="lazy"><img class="fit" src="' + img(p.cover, 600) + '" alt="' + u.name + '" loading="lazy">' : '') + (p.coverAi ? '<span class="ai">AI 示意</span>' : '') +
-        '</div><div class="t"><b>' + u.name + '</b><span>權狀 ' + u.size + ' 坪・室內 ' + u.inner + ' 坪</span><span>' + u.line + '</span><span class="more">' + (p.coverAi ? 'AI 示意＋平面圖' : '實景 ' + ((p.gallery || []).length || 1) + ' 張＋平面圖') + ' ›</span></div></button>'; }).join('');
+        '</div><div class="t"><b>' + u.k + '戶 ' + u.name + '</b><span>權狀 ' + u.size + ' 坪・室內 ' + u.inner + ' 坪</span><span>' + u.line + '</span><span class="more">' + (p.coverAi ? 'AI 示意＋平面圖' : '實景 ' + ((p.gallery || []).length || 1) + ' 張＋平面圖') + ' ›</span></div></button>'; }).join('');
   }
   drawUnits();
   // 平面圖燈箱
